@@ -12,7 +12,7 @@ public class Main extends Application {
     public static void main(String[] args) {
         FonctionTest test = new FonctionTest();
         test.test();
-        //launch(args);
+        launch(args);
     }
 
     @Override
