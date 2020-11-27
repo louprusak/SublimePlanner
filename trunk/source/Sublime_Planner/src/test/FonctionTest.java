@@ -6,14 +6,28 @@ import java.time.LocalDateTime;
 
 public class FonctionTest {
 
+    //*********************Attributs*********************//
+
+    /**
+     * Attribut contenant tous les documents
+     */
     private Documents doc;
 
+    //*********************Constructeur*********************//
+
+    /**
+     * Constructeur de la classe FonctionTest
+     */
     public FonctionTest() {
         doc = new Documents();
     }
 
-    public void test(){
+    //*********************Fonctions*********************//
 
+    /**
+     * Fonction permettant d'affcher les documents et d'appeller des tests spécifiques
+     */
+    public void test(){
         System.out.println("***************test documents***************");
         System.out.println(doc.toString());
 
@@ -25,6 +39,12 @@ public class FonctionTest {
         System.out.println(doc.toString());
     }
 
+    /**
+     * Fonction permettant de tester toutes les fonctions de la classe ToDoListe ainsi que celles de la classe Tache
+     * - test de l'ajout
+     * - test de la suppression
+     * - test de la modification
+     */
     public void testToDoListe(){
         System.out.println("***************test to do liste***************");
         Tache t1 = new Tache("tache 1");
@@ -46,6 +66,12 @@ public class FonctionTest {
         System.out.println(doc.getMatodoliste().toString());
     }
 
+    /**
+     * Fonction permettant de tester toutes les fonctions de la classe Planner ainsi que celles de la classe Creneau
+     * - test de l'ajout
+     * - test de la suppression
+     * - test de la modification
+     */
     public void testPlanner(){
         System.out.println("***************test planner***************");
         LocalDateTime dd1 = LocalDateTime.of(1111, 11, 20, 8, 45);
@@ -69,6 +95,13 @@ public class FonctionTest {
         System.out.println(doc.getMonplanner().toString());
     }
 
+    /**
+     * Fonction permettant de tester toutes les fonctions de la classe BlocNotes ainsi que celles de la classe Notes
+     * - test de l'ajout
+     * - test de la suppression
+     * - test de la modification
+     * - test du vidage
+     */
     public void testBlocNotes(){
         System.out.println("***************test block notes***************");
         Notes n1 = new Notes("note 1", "text de la note 1");
