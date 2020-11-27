@@ -16,10 +16,10 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("../layout/Accueil.fxml"));
-        stage.setTitle("Sublime Planner");
-        stage.setScene(new Scene(root,1000,600));
-        stage.show();
+        primaryStage.setTitle("Sublime Planner");
+        primaryStage.setScene(new Scene(root,1000,600));
+        primaryStage.show();
     }
 }
