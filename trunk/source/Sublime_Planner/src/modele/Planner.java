@@ -75,7 +75,7 @@ public class Planner {
 
     //*********************Redéfinition*********************//
 
- 
+
     @Override
     public String toString(){
         String message = "Mon planneur : ";
