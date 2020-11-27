@@ -6,6 +6,8 @@ public class Creneau {
 
     //*********************Attributs*********************//
 
+    private int id;
+
     private String evenement;
 
     private LocalDateTime dateDebut;
@@ -13,6 +15,14 @@ public class Creneau {
     private LocalDateTime dateFin;
 
     //*********************Getter Setter*********************//
+
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id){
+        this.id =id;
+    }
 
     public String getEvenement() {
         return evenement;
@@ -57,12 +67,12 @@ public class Creneau {
             return false;
         }
         Creneau item = (Creneau) obj;
-        return this.getEvenement().equals(item.getEvenement()) && this.getDateDebut().equals(item.getDateDebut()) && this.getDateFin().equals(item.getDateFin());
+        return this.getId() == item.getId() && this.getEvenement().equals(item.getEvenement()) && this.getDateDebut().equals(item.getDateDebut()) && this.getDateFin().equals(item.getDateFin());
     }
 
     @Override
     public String toString(){
-        return evenement + "\n\tDate de début : " + dateDebut + "\n\tDate de fin : " +dateFin;
+        return id + " : " + evenement + "\n\tDate de début : " + dateDebut + "\n\tDate de fin : " +dateFin;
     }
 
 }

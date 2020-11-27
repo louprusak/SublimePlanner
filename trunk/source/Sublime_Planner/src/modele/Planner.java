@@ -6,11 +6,13 @@ public class Planner {
 
     //*********************Attributs*********************//
 
-    LinkedList<Creneau> listCreneau;
+    private int indiceId = 0;
+
+    private LinkedList<Creneau> listCreneau;
 
     //*********************Getter Setter*********************//
 
-    private LinkedList<Creneau> getListCreneau() {
+    public LinkedList<Creneau> getListCreneau() {
         return listCreneau;
     }
 
@@ -24,6 +26,8 @@ public class Planner {
 
     public boolean ajouterUnCreneau(Creneau obj){
         if (obj != null){
+            obj.setId(indiceId+1);
+            indiceId++;
             listCreneau.add(obj);
             return listCreneau.contains(obj);
         }
@@ -40,6 +44,7 @@ public class Planner {
 
     public boolean modifierUnCreneau(Creneau obj, Creneau old){
         if (obj != null && old != null && listCreneau.contains(old)) {
+            obj.setId(old.getId());
             old.setEvenement(obj.getEvenement());
             old.setDateDebut(obj.getDateDebut());
             old.setDateFin(obj.getDateFin());
@@ -55,7 +60,7 @@ public class Planner {
     public String toString(){
         String message = "Mon planneur : ";
         if (listCreneau.size() == 0){
-            message += "\n\t le planneur est vide.";
+            message += "\n\t Le planneur est vide.";
         } else {
             StringBuilder messageBuilder = new StringBuilder(message);
             for (Creneau creneau : listCreneau){

@@ -6,6 +6,8 @@ public class ToDoListe {
 
     //*********************Attributs*********************//
 
+    private int indiceId = 0;
+
     private LinkedList<Tache> listTache;
 
     //*********************Getter Setter*********************//
@@ -24,6 +26,8 @@ public class ToDoListe {
 
     public boolean ajouterUneTache(Tache obj){
         if (obj != null && !listTache.contains(obj)){
+            obj.setId(indiceId+1);
+            indiceId++;
             listTache.add(obj);
             return listTache.contains(obj);
         }
@@ -40,6 +44,7 @@ public class ToDoListe {
 
     public boolean modifierUneTache(Tache obj, Tache old){
         if (obj != null && old != null && listTache.contains(old) && !listTache.contains(obj)) {
+            obj.setId(old.getId());
             old.setTache(obj.getTache());
             return old.equals(obj);
         }
@@ -52,7 +57,7 @@ public class ToDoListe {
     public String toString(){
         String message = "Ma To Do Liste : ";
         if (listTache.size() == 0){
-            message += "\n\t la to do liste est vide.";
+            message += "\n\t La to do liste est vide.";
         } else {
             StringBuilder messageBuilder = new StringBuilder(message);
             for (Tache tache : listTache){
