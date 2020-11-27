@@ -6,11 +6,13 @@ public class BlocNotes {
 
     //*********************Attributs*********************//
 
-    LinkedList<Notes> listNotes;
+    private int indiceId = 0;
+
+    private LinkedList<Notes> listNotes;
 
     //*********************Getter Setter*********************//
 
-    private LinkedList<Notes> getListNotes() {
+    public LinkedList<Notes> getListNotes() {
         return listNotes;
     }
 
@@ -24,6 +26,8 @@ public class BlocNotes {
 
     public boolean ajouterUneNote(Notes obj){
         if (obj != null){
+            obj.setId(indiceId+1);
+            indiceId++;
             listNotes.add(obj);
             return listNotes.contains(obj);
         }
@@ -40,6 +44,8 @@ public class BlocNotes {
 
     public boolean modifierUneNote(Notes obj, Notes old){
         if (obj != null && old != null && listNotes.contains(old)){
+            obj.setId(old.getId());
+            old.setNom(obj.getNom());
             old.setTextNote(obj.getTextNote());
             return old.equals(obj);
         }
@@ -60,11 +66,11 @@ public class BlocNotes {
     public String toString(){
         String message = "Mon block note :";
         if (listNotes.size() == 0){
-            message += "\n\t le block note est vide.";
+            message += "\n\t Le block note est vide.";
         } else {
             StringBuilder messageBuilder = new StringBuilder(message);
             for (Notes notes : listNotes){
-                messageBuilder.append("\n\t").append(notes.toString());
+                messageBuilder.append("\n").append(notes.toString());
             }
             message = messageBuilder.toString();
 

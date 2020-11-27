@@ -68,10 +68,11 @@ public class FonctionTest {
         System.out.println("Modiff anormal c3 dans c2 :" + doc.getMonplanner().modifierUnCreneau(c3, c2));
         System.out.println(doc.getMonplanner().toString());
     }
+
     public void testBlocNotes(){
         System.out.println("***************test block notes***************");
-        Notes n1 = new Notes("note 1");
-        Notes n2 = new Notes("note 2");
+        Notes n1 = new Notes("note 1", "text de la note 1");
+        Notes n2 = new Notes("note 2", "test de la note 2");
         Notes n3 = null;
         System.out.println(n1.toString());
         System.out.println(n2.toString());
@@ -84,6 +85,8 @@ public class FonctionTest {
         System.out.println(doc.getMonblocnotes().toString());
         System.out.println("Modif normal n1 dans n2 :" + doc.getMonblocnotes().modifierUneNote(n1, n2));
         System.out.println("Modif anormal n3 dans n2 :" + doc.getMonblocnotes().modifierUneNote(n3, n2));
+        System.out.println(doc.getMonblocnotes().toString());
+        System.out.println("Vider la note n2 : " + doc.getMonblocnotes().viderUneNote(n2));
         System.out.println(doc.getMonblocnotes().toString());
     }
 

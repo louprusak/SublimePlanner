@@ -4,9 +4,20 @@ public class Tache {
 
     //*********************Attributs*********************//
 
+    private int id;
+
     private String tache;
 
     //*********************Getter Setter*********************//
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTache() {
         return tache;
@@ -33,11 +44,11 @@ public class Tache {
             return false;
         }
         Tache item = (Tache) obj;
-        return this.getTache().equals(item.getTache());
+        return this.getId() == item.getId() && this.getTache().equals(item.getTache());
     }
 
     @Override
     public String toString(){
-        return tache;
+        return id + " : " + tache;
     }
 }
