@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane xmlns="http://javafx.com/javafx/11.0.1">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="20"/>
+        <ColumnConstraints percentWidth="80"/>
+
+    </columnConstraints>
+
+    <GridPane GridPane.columnIndex="0">
+        <Button text="Mon Compte" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+            <graphic>
+                <ImageView fitHeight="100" fitWidth="100" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+                    <!--                        <Image url="/images/pp.jpg" />-->
+                </ImageView>
+            </graphic>
+            <GridPane.margin>
+                <Insets bottom="10.0" top="10.0"/>
+            </GridPane.margin>
+        </Button>
+        <ListView  GridPane.rowIndex="1"/>
+        <columnConstraints>
+            <ColumnConstraints/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints/>
+            <RowConstraints/>
+        </rowConstraints>
+    </GridPane>
+
+
+    <GridPane GridPane.columnIndex="1">
+        <rowConstraints>
+            <RowConstraints/>
+            <RowConstraints/>
+        </rowConstraints>
+        <GridPane GridPane.hgrow="ALWAYS" GridPane.rowIndex="0">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="10"/>
+                <ColumnConstraints/>
+                <ColumnConstraints/>
+            </columnConstraints>
+            <Button text="retour" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER"
+                    GridPane.vgrow="ALWAYS"/>
+            <Text text="Notes" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS"
+                  GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                <font>
+                    <Font size="30.0"/>
+                </font>
+            </Text>
+            <Button text="Ajouter Une Note" GridPane.columnIndex="2"/>
+            <rowConstraints>
+                <RowConstraints/>
+            </rowConstraints>
+        </GridPane>
+        <ScrollPane GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0"/>
+        </ScrollPane>
+
+
+    </GridPane>
+
+
+</GridPane>
