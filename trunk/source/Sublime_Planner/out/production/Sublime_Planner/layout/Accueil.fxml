@@ -1,80 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<!--<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-            prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1">
-   <left>
-       <GridPane>
-           <Button text="Mon Compte" GridPane.halignment="CENTER" GridPane.rowIndex="0">
-                <graphic>
-                    <ImageView fitHeight="100" fitWidth="100" GridPane.rowIndex="0" GridPane.halignment="CENTER">
-                        <Image url="/images/pp.jpg" />
-                    </ImageView>
-                </graphic>
-           </Button>
-           <ListView GridPane.rowIndex="1"/>
-       </GridPane>
-   </left>
-
-    <center>
-        <GridPane>
-            <GridPane GridPane.rowIndex="0">
-                <Text text="Mois" GridPane.rowIndex="0"/>
-                <Text text="Calendrier" GridPane.rowIndex="1"/>
-            </GridPane>
-            <Text text="Créneaux horaires" GridPane.rowIndex="1"/>
-        </GridPane>
-    </center>
-
-    <right>
-        <GridPane>
-            <Text text="To Do" GridPane.halignment="CENTER" GridPane.rowIndex="0"/>
-            <ListView GridPane.rowIndex="1"/>
-
-        </GridPane>
-    </right>
-</BorderPane>-->
-
-<GridPane xmlns="http://javafx.com/javafx/11.0.1">
+<GridPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
         <ColumnConstraints percentWidth="20" />
         <ColumnConstraints percentWidth="40" />
         <ColumnConstraints percentWidth="40" />
     </columnConstraints>
 
-    <GridPane GridPane.columnIndex="0">
-        <Button text="Mon Compte" GridPane.halignment="CENTER" GridPane.rowIndex="0">
-            <graphic>
-                <ImageView fitHeight="100" fitWidth="100" GridPane.halignment="CENTER" GridPane.rowIndex="0">
-                    <!--                        <Image url="/images/pp.jpg" />-->
-                </ImageView>
-            </graphic>
+    <GridPane style="-fx-background-color: #1E3E59;" GridPane.columnIndex="0" GridPane.vgrow="ALWAYS">
+        <ImageView fitHeight="50" fitWidth="70" GridPane.halignment="CENTER">
+            <image>
+                <!--<Image url="/images/home1.png" />-->
+            </image>
+        </ImageView>
+        <Text fill="white" text="HOME" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Text>
+        <Button maxWidth="1.7976931348623157E308" text="&gt; EDT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
             <GridPane.margin>
-                <Insets bottom="10.0" top="10.0" />
+                <Insets top="20.0" />
             </GridPane.margin>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
         </Button>
-        <ListView GridPane.rowIndex="1" />
+        <Button maxWidth="1.7976931348623157E308" text="&gt; Notes" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets top="20.0" />
+            </GridPane.margin>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+        </Button>
+        <Button maxWidth="1.7976931348623157E308" text="&gt; ToDoList" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets top="20.0" />
+            </GridPane.margin>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+        </Button>
+
         <columnConstraints>
             <ColumnConstraints />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints />
             <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
         </rowConstraints>
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        </padding>
     </GridPane>
 
 
-    <GridPane GridPane.columnIndex="1">
+    <GridPane GridPane.columnIndex="1" GridPane.vgrow="ALWAYS">
         <Text stroke="#070707" text="Belle Journée !" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0">
             <font>
                 <Font size="30.0" />
@@ -88,28 +79,8 @@
                 <Insets bottom="10.0" top="10.0" />
             </GridPane.margin>
         </Text>
-        <DatePicker promptText="20/10/2020" style="-fx-background-color: blue;" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-      <ListView prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray; -fx-background-radius: 30;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
-         <GridPane.margin>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </GridPane.margin>
-      </ListView>
-        <columnConstraints>
-            <ColumnConstraints />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-         <RowConstraints />
-        </rowConstraints>
-        <GridPane.margin>
-            <Insets top="20.0" />
-        </GridPane.margin>
-    </GridPane>
-
-    <GridPane GridPane.columnIndex="2">
-        <ListView style="-fx-background-color: gray; -fx-background-radius: 30;" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+        <DatePicker promptText="20/10/2020" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+        <ListView prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A84011; -fx-background-radius: 30;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
             <GridPane.margin>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </GridPane.margin>
@@ -119,9 +90,38 @@
         </columnConstraints>
         <rowConstraints>
             <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+        </rowConstraints>
+        <GridPane.margin>
+            <Insets top="20.0" />
+        </GridPane.margin>
+    </GridPane>
+
+    <GridPane GridPane.columnIndex="2" GridPane.vgrow="ALWAYS">
+        <Text text="ToDoListe" GridPane.halignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin></Text>
+        <ListView style="-fx-background-color: #61615E; -fx-background-radius: 30;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+            <GridPane.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="5.0" />
+            </GridPane.margin>
+        </ListView>
+        <columnConstraints>
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints />
+         <RowConstraints />
         </rowConstraints>
     </GridPane>
     <rowConstraints>
+        <RowConstraints />
         <RowConstraints />
     </rowConstraints>
 
