@@ -7,7 +7,7 @@ public class Documents {
     /**
      * Attribut contenant la todoliste
      */
-    private ToDoListe matodoliste;
+    private ListeToDo malistetodo;
 
     /**
      * Attibut contenant le planner
@@ -25,8 +25,8 @@ public class Documents {
      * Getter de la todoliste
      * @return le contenus de ma todoliste
      */
-    public ToDoListe getMatodoliste() {
-        return matodoliste;
+    public ListeToDo getMalistetodo() {
+        return malistetodo;
     }
 
     /**
@@ -51,7 +51,7 @@ public class Documents {
      * Constructeur de ma classe Documents
      */
     public Documents() {
-        matodoliste = new ToDoListe();
+        malistetodo = new ListeToDo();
         monplanner = new Planner();
         monblocnotes = new BlocNotes();
     }
@@ -65,7 +65,7 @@ public class Documents {
     @Override
     public String toString(){
         String message;
-        message = matodoliste.toString() + "\n" + monplanner.toString() + "\n" + monblocnotes.toString();
+        message = malistetodo.toString() + "\n" + monplanner.toString() + "\n" + monblocnotes.toString();
         return message;
     }
 

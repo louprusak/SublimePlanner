@@ -8,6 +8,8 @@ public class Tache {
 
     private String tache;
 
+    private boolean avancement = false;
+
     //*********************Getter Setter*********************//
 
 
@@ -27,6 +29,13 @@ public class Tache {
         this.tache = nom;
     }
 
+    public boolean getAvancement(){
+        return avancement;
+    }
+
+    public void setAvancement(boolean avancement) {
+        this.avancement = avancement;
+    }
     //*********************Constructeur*********************//
 
     public Tache(String nom) {
@@ -49,6 +58,6 @@ public class Tache {
 
     @Override
     public String toString(){
-        return id + " : " + tache;
+        return id + " : " + tache +  " " + avancement;
     }
 }
