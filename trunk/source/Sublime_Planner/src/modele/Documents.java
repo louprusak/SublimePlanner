@@ -64,9 +64,7 @@ public class Documents {
      */
     @Override
     public String toString(){
-        String message;
-        message = malistetodo.toString() + "\n" + monplanner.toString() + "\n" + monblocnotes.toString();
-        return message;
+        return malistetodo.toString() + "\n" + monplanner.toString() + "\n" + monblocnotes.toString();
     }
 
 }

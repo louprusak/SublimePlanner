@@ -12,7 +12,7 @@ public class Planner {
     private int indiceId = 0;
 
     /**
-     * Attrbut de type liste contenant un ensemble de Creneau
+     * liste de Creneau
      */
     private LinkedList<Creneau> listCreneau;
 
@@ -40,7 +40,7 @@ public class Planner {
     /**
      * Fonction permettant d'ajouter un Creneau à la liste
      * @param obj Creneau à ajouter à la liste
-     * @return retourne true si la liste de Creneau contient le Creneau donné en parramètre
+     * @return retourne true si la liste de Creneau contient le Creneau donné en paramètre sinon false
      */
     public boolean ajouterUnCreneau(Creneau obj){
         if (obj != null){
@@ -52,7 +52,11 @@ public class Planner {
         return false;
     }
 
-
+    /**
+     * Fonction permettant de supprimer un Creneau à la liste
+     * @param obj Creneau à supprimer de la liste
+     * @return retourne true si la liste de Creneau ne contient pas le Creneau donné en paramètre sinon false
+     */
     public boolean supprimerUnCreneau(Creneau obj){
         if (obj != null && listCreneau.contains(obj)){
             listCreneau.remove(obj);
@@ -61,7 +65,12 @@ public class Planner {
         return false;
     }
 
-
+    /**
+     * Fonction permettant de modifier un Creneau à la liste
+     * @param obj Creneau à ajouter à liste
+     * @param old Creneau à supprimer de la liste
+     * @return retourne true si la liste de Creneau contient le Creneau donné en paramètre sinon false
+     */
     public boolean modifierUnCreneau(Creneau obj, Creneau old){
         if (obj != null && old != null && listCreneau.contains(old)) {
             obj.setId(old.getId());
@@ -75,7 +84,10 @@ public class Planner {
 
     //*********************Redéfinition*********************//
 
-
+    /**
+     * Redéfinition de la méthode toString de la classe Planner
+     * @return message à afficher
+     */
     @Override
     public String toString(){
         String message = "Mon planneur : ";
