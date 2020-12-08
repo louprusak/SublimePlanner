@@ -21,7 +21,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/layout/Note.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/layout/ToDoListe.fxml"));
         primaryStage.setTitle("Sublime Planner");
 
         primaryStage.setScene(new Scene(root,H_SIZE,V_SIZE));
