@@ -11,7 +11,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.image.Image?>
+<GridPane fx:controller="controllers.MainController" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
         <ColumnConstraints percentWidth="15" />
         <ColumnConstraints percentWidth="45" />
@@ -19,9 +20,9 @@
     </columnConstraints>
 
     <GridPane style="-fx-background-color: #1E3E59;" GridPane.columnIndex="0" GridPane.vgrow="ALWAYS">
-        <ImageView fitHeight="50" fitWidth="70" GridPane.halignment="CENTER">
+        <ImageView fitHeight="50" fitWidth="50" GridPane.halignment="CENTER">
             <image>
-                <!--<Image url="/images/home1.png" />-->
+                <Image url="/images/logo.png" />
             </image>
         </ImageView>
         <Text fill="white" text="HOME" GridPane.halignment="CENTER" GridPane.rowIndex="1">
@@ -29,7 +30,7 @@
                 <Font name="Britannic Bold" size="20.0" />
             </font>
         </Text>
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white;" text="EDT" wrapText="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+        <Button fx:id="ButtonEDT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white;" wrapText="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
             <GridPane.margin>
                 <Insets top="20.0" />
             </GridPane.margin>
@@ -40,7 +41,7 @@
             <Font name="Britannic Bold" size="12.0" />
          </font>
         </Button>
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white;" text="Notes" wrapText="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+        <Button fx:id="ButtonBlocNotes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white;" wrapText="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
             <GridPane.margin>
                 <Insets top="20.0" />
             </GridPane.margin>
@@ -51,7 +52,7 @@
             <Font name="Britannic Bold" size="12.0" />
          </font>
         </Button>
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white;" text="ToDoList" wrapText="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
+        <Button fx:id="ButtonToDoListe" onAction="#gotoToDoListe" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white;" wrapText="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
             <GridPane.margin>
                 <Insets top="20.0" />
             </GridPane.margin>
