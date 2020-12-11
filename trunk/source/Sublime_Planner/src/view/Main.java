@@ -1,11 +1,11 @@
 package view;
 
+import controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import test.FonctionTest;
 
 public class Main extends Application {
@@ -21,7 +21,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/layout/Accueil.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/layout/Accueil.fxml"));
+        Parent root = loader.load();
+        MainController controller = (MainController) loader.getController();
         primaryStage.setTitle("Sublime Planner");
 
         primaryStage.setScene(new Scene(root,H_SIZE,V_SIZE));
