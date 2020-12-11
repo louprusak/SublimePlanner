@@ -13,15 +13,17 @@
 <?import javafx.scene.image.Image?>
 
 
-<GridPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:controller="controllers.EDTController" xmlns="http://javafx.com/javafx/11.0.1"
+          xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
-        <ColumnConstraints percentWidth="15" />
+        <ColumnConstraints percentWidth="15"/>
         <ColumnConstraints percentWidth="40"/>
         <ColumnConstraints percentWidth="45"/>
     </columnConstraints>
 
     <GridPane style="-fx-background-color: #1E3E59;" GridPane.columnIndex="0" GridPane.vgrow="ALWAYS">
-        <Button text="Home" textFill="white" style="-fx-background-color: black" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+        <Button fx:id="HomeButton" text="Home" textFill="white" style="-fx-background-color: black" GridPane.hgrow="ALWAYS"
+                GridPane.vgrow="ALWAYS" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#goToHome">
             <graphic>
                 <ImageView fitHeight="50" fitWidth="70">
                     <image>
@@ -31,51 +33,59 @@
             </graphic>
         </Button>
 
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white;" text="EDT" wrapText="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+        <Button fx:id="ButtonEDT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                style="-fx-background-color: white;" text="EDT" wrapText="true" GridPane.hgrow="ALWAYS"
+                GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" onAction="#goToEDT">
             <GridPane.margin>
-                <Insets top="20.0" />
+                <Insets top="20.0"/>
             </GridPane.margin>
             <padding>
-                <Insets bottom="10.0" top="10.0" />
+                <Insets bottom="10.0" top="10.0"/>
             </padding>
             <font>
-                <Font name="Britannic Bold" size="12.0" />
+                <Font name="Britannic Bold" size="12.0"/>
             </font>
         </Button>
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white;" text="Notes" wrapText="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+
+        <Button fx:id="ButtonBlocNotes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                style="-fx-background-color: white;" text="Notes" wrapText="true" GridPane.hgrow="ALWAYS"
+                GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" onAction="#goToBlocNotes">
             <GridPane.margin>
-                <Insets top="20.0" />
+                <Insets top="20.0"/>
             </GridPane.margin>
             <padding>
-                <Insets bottom="10.0" top="10.0" />
+                <Insets bottom="10.0" top="10.0"/>
             </padding>
             <font>
-                <Font name="Britannic Bold" size="12.0" />
+                <Font name="Britannic Bold" size="12.0"/>
             </font>
         </Button>
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white;" text="ToDoList" wrapText="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+
+        <Button fx:id="ButtonToDoListe" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                style="-fx-background-color: white;" text="ToDoList" wrapText="true" GridPane.hgrow="ALWAYS"
+                GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" onAction="#goToToDoListe">
             <GridPane.margin>
-                <Insets top="20.0" />
+                <Insets top="20.0"/>
             </GridPane.margin>
             <padding>
-                <Insets bottom="10.0" top="10.0" />
+                <Insets bottom="10.0" top="10.0"/>
             </padding>
             <font>
-                <Font name="Britannic Bold" size="12.0" />
+                <Font name="Britannic Bold" size="12.0"/>
             </font>
         </Button>
 
         <columnConstraints>
-            <ColumnConstraints />
+            <ColumnConstraints/>
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints percentHeight="25" />
-            <RowConstraints percentHeight="25" />
-            <RowConstraints percentHeight="25" />
-            <RowConstraints percentHeight="25" />
+            <RowConstraints percentHeight="25"/>
+            <RowConstraints percentHeight="25"/>
+            <RowConstraints percentHeight="25"/>
+            <RowConstraints percentHeight="25"/>
         </rowConstraints>
         <padding>
-            <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
+            <Insets bottom="30.0" left="10.0" right="10.0" top="30.0"/>
         </padding>
     </GridPane>
 
@@ -95,9 +105,10 @@
             <Insets left="20"/>
         </padding>
 
-        <Text text="Emploi du Temps" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.halignment="LEFT" GridPane.vgrow="ALWAYS">
+        <Text text="Emploi du Temps" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.halignment="LEFT"
+              GridPane.vgrow="ALWAYS">
             <font>
-                <Font name="Berlin Sans FB" size="40" />
+                <Font name="Berlin Sans FB" size="40"/>
             </font>
         </Text>
 
@@ -123,20 +134,18 @@
 
         <Text text="Tous les événements" GridPane.halignment="CENTER" GridPane.columnIndex="0">
             <font>
-                <Font name="Berlin Sans FB" size="18.0" />
+                <Font name="Berlin Sans FB" size="18.0"/>
             </font>
         </Text>
 
-        <ListView style="-fx-background-color: #A84011; -fx-background-radius: 30;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+        <ListView style="-fx-background-color: #A84011; -fx-background-radius: 30;" GridPane.hgrow="ALWAYS"
+                  GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
             <GridPane.margin>
-                <Insets bottom="20.0" left="20.0" right="20.0" top="5.0" />
+                <Insets bottom="20.0" left="20.0" right="20.0" top="5.0"/>
             </GridPane.margin>
         </ListView>
 
     </GridPane>
-
-
-
 
 
 </GridPane>

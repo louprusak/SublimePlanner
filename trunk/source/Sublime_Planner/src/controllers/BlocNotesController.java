@@ -13,7 +13,9 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class NoteController implements Initializable {
+
+
+public class BlocNotesController implements Initializable{
 
     @FXML
     public Button HomeButton;
@@ -24,9 +26,7 @@ public class NoteController implements Initializable {
     @FXML
     public Button ButtonToDoListe;
     @FXML
-    public Button ButtonDelete;
-    @FXML
-    public Button ButtonExport;
+    public Button ButtonAddNote;
 
     public static final int H_SIZE = 1000;
     public static final int V_SIZE = 600;
@@ -41,9 +41,10 @@ public class NoteController implements Initializable {
         ButtonEDT.setText("EDT");
         ButtonBlocNotes.setText("Bloc-Notes");
         ButtonToDoListe.setText("To-Do Liste");
-        ButtonDelete.setText("Supprimer");
-        ButtonExport.setText("Exporter en .txt");
+        ButtonAddNote.setText("Ajouter une Note");
     }
+
+
 
     public void goToToDoListe(ActionEvent actionEvent) throws Exception {
         Parent root2 = FXMLLoader.load(getClass().getResource("/layout/ToDoListe.fxml"));
@@ -75,11 +76,5 @@ public class NoteController implements Initializable {
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(scene2);
         window.show();
-    }
-
-    public void deleteNote(ActionEvent actionEvent) {
-    }
-
-    public void export(ActionEvent actionEvent) {
     }
 }
