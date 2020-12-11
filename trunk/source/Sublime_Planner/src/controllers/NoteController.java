@@ -16,17 +16,17 @@ import java.util.ResourceBundle;
 public class NoteController implements Initializable {
 
     @FXML
-    public Button HomeButton;
+    private Button HomeButton;
     @FXML
-    public Button ButtonEDT;
+    private Button ButtonEDT;
     @FXML
-    public Button ButtonBlocNotes;
+    private Button ButtonBlocNotes;
     @FXML
-    public Button ButtonToDoListe;
+    private Button ButtonToDoListe;
     @FXML
-    public Button ButtonDelete;
+    private Button ButtonDelete;
     @FXML
-    public Button ButtonExport;
+    private Button ButtonExport;
 
     public static final int H_SIZE = 1000;
     public static final int V_SIZE = 600;

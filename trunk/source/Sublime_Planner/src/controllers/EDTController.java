@@ -16,13 +16,13 @@ import java.util.ResourceBundle;
 public class EDTController implements Initializable {
 
     @FXML
-    public Button HomeButton;
+    private Button HomeButton;
     @FXML
-    public Button ButtonEDT;
+    private Button ButtonEDT;
     @FXML
-    public Button ButtonBlocNotes;
+    private Button ButtonBlocNotes;
     @FXML
-    public Button ButtonToDoListe;
+    private Button ButtonToDoListe;
 
     public static final int H_SIZE = 1000;
     public static final int V_SIZE = 600;
