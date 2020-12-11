@@ -95,7 +95,7 @@
 
             <Text fill="WHITE" text="Notes" GridPane.columnIndex="0" GridPane.halignment="LEFT">
                 <font>
-                    <Font name="System Bold" size="25.0" />
+                    <Font name="Berlin Sans FB" size="40" />
                 </font>
                 <GridPane.margin>
                     <Insets left="10.0" />

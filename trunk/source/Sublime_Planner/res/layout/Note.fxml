@@ -103,7 +103,7 @@
             </padding></Button>
             <Text fill="WHITE" text="Titre Note" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                 <font>
-                    <Font name="System Bold" size="25.0" />
+                    <Font name="Berlin Sans FB" size="40" />
                 </font>
                 <GridPane.margin>
                     <Insets left="10.0" />
