@@ -7,11 +7,6 @@ public class Planner {
     //*********************Attributs*********************//
 
     /**
-     * Attribut contenant le dernier id utiliser par un Creneau pour attribuer à chaque Creneau un id unique
-     */
-    private int indiceId = 0;
-
-    /**
      * liste de Creneau
      */
     private LinkedList<Creneau> listCreneau;
@@ -44,8 +39,7 @@ public class Planner {
      */
     public boolean ajouterUnCreneau(Creneau obj){
         if (obj != null){
-            obj.setId(indiceId+1);
-            indiceId++;
+            obj.setId(listCreneau.size()+1);
             listCreneau.add(obj);
             return listCreneau.contains(obj);
         }
