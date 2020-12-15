@@ -7,11 +7,6 @@ public class ListeToDo {
     //*********************Attributs*********************//
 
     /**
-     * Attribut contenant le dernier id utiliser par une ToDoListe pour attribuer à chaque ToDoListe un id unique
-     */
-    private int indiceId = 0;
-
-    /**
      * Liste de ToDoListe
      */
     private LinkedList<ToDoListe> listeToDo;
@@ -44,8 +39,7 @@ public class ListeToDo {
      */
     public boolean ajouterToDoListe(ToDoListe obj){
         if (obj != null && !listeToDo.contains(obj)){
-            obj.setId(indiceId+1);
-            indiceId++;
+            obj.setId(listeToDo.size()+1);
             listeToDo.add(obj);
             return listeToDo.contains(obj);
         }

@@ -7,11 +7,6 @@ public class BlocNotes {
     //*********************Attributs*********************//
 
     /**
-     * Attribut contenant le dernier id utiliser par un Notes pour attribuer à chaque Notes un id unique
-     */
-    private int indiceId = 0;
-
-    /**
      * liste des Notes
      */
     private LinkedList<Notes> listNotes;
@@ -44,8 +39,7 @@ public class BlocNotes {
      */
     public boolean ajouterUneNote(Notes obj){
         if (obj != null){
-            indiceId++;
-            obj.setId(indiceId);
+            obj.setId(listNotes.size()+1);
             listNotes.add(obj);
             return listNotes.contains(obj);
         }

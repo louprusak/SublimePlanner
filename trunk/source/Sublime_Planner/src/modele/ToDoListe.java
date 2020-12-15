@@ -17,11 +17,6 @@ public class ToDoListe {
     private String nomToDo;
 
     /**
-     * Attribut contenant le dernier id utiliser par une Tache pour attribuer à chaque Tache un id unique
-     */
-    private int indiceId = 0;
-
-    /**
      * liste de Tache
      */
     private LinkedList<Tache> listTache;
@@ -88,8 +83,7 @@ public class ToDoListe {
      */
     public boolean ajouterUneTache(Tache obj){
         if (obj != null && !listTache.contains(obj)){
-            indiceId++;
-            obj.setId(indiceId);
+            obj.setId(listTache.size()+1);
             listTache.add(obj);
             return listTache.contains(obj);
         }
@@ -163,7 +157,7 @@ public class ToDoListe {
      */
     @Override
     public String toString(){
-        String message = nomToDo + " : ";
+        String message = nomToDo + " : " + id;
         if (listTache.size() == 0){
             message += "\n\t La to do liste est vide.";
         } else {
