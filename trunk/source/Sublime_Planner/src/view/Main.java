@@ -10,8 +10,12 @@ import test.FonctionTest;
 
 public class Main extends Application {
 
-    public static final int H_SIZE = 1000;
-    public static final int V_SIZE = 600;
+    private static final int H_SIZE = 1000;
+    private static final int V_SIZE = 600;
+
+    private static final String MAIN_WINDOW_FXML = "/layout/Accueil.fxml";
+    private static final String MAIN_WINDOW_TITLE = "Sublime Planner";
+
 
     public static void main(String[] args) {
         FonctionTest test = new FonctionTest();
@@ -21,10 +25,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/layout/Accueil.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(MAIN_WINDOW_FXML));
         Parent root = loader.load();
         MainController controller = (MainController) loader.getController();
-        primaryStage.setTitle("Sublime Planner");
+        primaryStage.setTitle(MAIN_WINDOW_TITLE);
 
         primaryStage.setScene(new Scene(root,H_SIZE,V_SIZE));
         primaryStage.show();
