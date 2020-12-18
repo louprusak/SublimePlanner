@@ -39,7 +39,11 @@ public class BlocNotes {
      */
     public boolean ajouterUneNote(Notes obj){
         if (obj != null){
-            obj.setId(listNotes.size()+1);
+            int id = 0;
+            for (Notes note : listNotes){
+                id = note.getId();
+            }
+            obj.setId(id+1);
             listNotes.add(obj);
             return listNotes.contains(obj);
         }

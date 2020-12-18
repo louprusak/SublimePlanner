@@ -22,7 +22,7 @@
     </columnConstraints>
 
     <GridPane style="-fx-background-color: #1E3E59;" GridPane.columnIndex="0" GridPane.vgrow="ALWAYS">
-        <Button fx:id="HomeButton" text="Home" textFill="white" style="-fx-background-color: black" GridPane.hgrow="ALWAYS"
+        <Button fx:id="HomeButton" textFill="white" style="-fx-background-color: black" GridPane.hgrow="ALWAYS"
                 GridPane.vgrow="ALWAYS" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#goToHome">
             <graphic>
                 <ImageView fitHeight="50" fitWidth="70">
@@ -34,7 +34,7 @@
         </Button>
 
         <Button fx:id="ButtonEDT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                style="-fx-background-color: white;" text="EDT" wrapText="true" GridPane.hgrow="ALWAYS"
+                style="-fx-background-color: white;" wrapText="true" GridPane.hgrow="ALWAYS"
                 GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" onAction="#goToEDT">
             <GridPane.margin>
                 <Insets top="20.0"/>
@@ -48,7 +48,7 @@
         </Button>
 
         <Button fx:id="ButtonBlocNotes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                style="-fx-background-color: white;" text="Notes" wrapText="true" GridPane.hgrow="ALWAYS"
+                style="-fx-background-color: white;" wrapText="true" GridPane.hgrow="ALWAYS"
                 GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" onAction="#goToBlocNotes">
             <GridPane.margin>
                 <Insets top="20.0"/>
@@ -62,7 +62,7 @@
         </Button>
 
         <Button fx:id="ButtonToDoListe" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                style="-fx-background-color: white;" text="ToDoList" wrapText="true" GridPane.hgrow="ALWAYS"
+                style="-fx-background-color: white;" wrapText="true" GridPane.hgrow="ALWAYS"
                 GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" onAction="#goToToDoListe">
             <GridPane.margin>
                 <Insets top="20.0"/>
@@ -114,15 +114,15 @@
 
         <Text text="Lundi 20 janvier 2020" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS"/>
 
-        <DatePicker promptText="20/10/2020" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS"/>
+        <DatePicker fx:id="DatePicker" promptText="20/10/2020" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS"/>
 
-        <TextField text="heure de début" GridPane.rowIndex="3" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS"/>
+        <TextField fx:id="HeureDebut" GridPane.rowIndex="3" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS"/>
 
-        <TextField text="heure de fin" GridPane.rowIndex="4" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS"/>
+        <TextField fx:id="HeureFin" GridPane.rowIndex="4" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS"/>
 
-        <TextArea text="description" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS"/>
+        <TextArea fx:id="Desc" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS"/>
 
-        <Button text="Ajouter un événement" GridPane.rowIndex="6" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS"/>
+        <Button fx:id="ButtonAjout" GridPane.rowIndex="6" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" onAction="#ajoutEvenement"/>
 
     </GridPane>
 
@@ -138,7 +138,7 @@
             </font>
         </Text>
 
-        <ListView style="-fx-background-color: #A84011; -fx-background-radius: 30;" GridPane.hgrow="ALWAYS"
+        <ListView fx:id="ListeEvenements" style="-fx-background-color: #A84011; -fx-background-radius: 30;" GridPane.hgrow="ALWAYS"
                   GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
             <GridPane.margin>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="5.0"/>

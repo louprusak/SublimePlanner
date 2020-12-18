@@ -50,27 +50,27 @@ public class FonctionTest {
         ToDoListe to1 = new ToDoListe("todoliste 1");
         ToDoListe to2 = new ToDoListe("todoliste 2");
         ToDoListe to3 = null;
-        assert doc.getMalistetodo().ajouterToDoListe(to1) : "Ajout normal to1 : ";
-        assert doc.getMalistetodo().ajouterToDoListe(to2) : "Ajout normal to2 : ";
-        assert !doc.getMalistetodo().ajouterToDoListe(to2) : "Ajout anormal to2 : ";
-        assert !doc.getMalistetodo().ajouterToDoListe(to3) : "Ajout anormal to3 : ";
-        assert doc.getMalistetodo().supprimerToDoListe(to1) : "Suppr normal to1 : ";
-        assert !doc.getMalistetodo().supprimerToDoListe(to1) : "Suppr anormal to1 : ";
-        assert doc.getMalistetodo().modifierNomToDoListe(to2, "todoliste2bis") : "Modif normal to2 : ";
+        assert doc.getMalistetodo().ajouterToDoListe(to1) : "Ajout de to1";
+        assert doc.getMalistetodo().ajouterToDoListe(to2) : "Ajout de to2";
+        assert !doc.getMalistetodo().ajouterToDoListe(to2) : "Ajout de to2";
+        assert !doc.getMalistetodo().ajouterToDoListe(to3) : "Ajout de to3";
+        assert doc.getMalistetodo().supprimerToDoListe(to1) : "Suppr de to1 : ";
+        assert !doc.getMalistetodo().supprimerToDoListe(to1) : "Suppr de to1 : ";
+        assert doc.getMalistetodo().modifierNomToDoListe(to2, "todoliste2bis") : "Modif du nom de to2 : ";
         Tache t1 = new Tache("tache 1");
         Tache t2 = new Tache("tache 2");
         Tache t3 = null;
         System.out.println(t1.toString());
         System.out.println(t2.toString());
-        assert doc.getMalistetodo().ajouterUneTache(to2, t1);
-        assert !doc.getMalistetodo().ajouterUneTache(to2, t1);
-        assert doc.getMalistetodo().ajouterUneTache(to2, t2);
-        assert !doc.getMalistetodo().ajouterUneTache(to2, t3);
-        assert doc.getMalistetodo().supprimerUneTache(to2, t1);
-        assert !doc.getMalistetodo().supprimerUneTache(to2, t1);
-        assert doc.getMalistetodo().modifierUneTache(to2, t1,t2);
-        assert !doc.getMalistetodo().modifierUneTache(to2, t3,t2);
-        assert doc.getMalistetodo().modifierAvancement(to2, t2);
+        assert doc.getMalistetodo().ajouterUneTache(to2, t1) : "Ajout de t1";
+        assert !doc.getMalistetodo().ajouterUneTache(to2, t1) : "Ajout de t1";
+        assert doc.getMalistetodo().ajouterUneTache(to2, t2) : "Ajout de t2";
+        assert !doc.getMalistetodo().ajouterUneTache(to2, t3) : "Ajout de t3";
+        assert doc.getMalistetodo().supprimerUneTache(to2, t1) : "Suppr de t1";
+        assert !doc.getMalistetodo().supprimerUneTache(to2, t1) : "Suppr de t1";
+        assert doc.getMalistetodo().modifierUneTache(to2, t1,t2) : "Modif de t2";
+        assert !doc.getMalistetodo().modifierUneTache(to2, t3,t2) : "Modif de t2";
+        assert doc.getMalistetodo().modifierAvancement(to2, t2) : "Modif de l'avancement de t2";
         System.out.println(doc.getMalistetodo().toString());
     }
 
@@ -91,12 +91,12 @@ public class FonctionTest {
         Creneau c3 = null;
         System.out.println(c1.toString());
         System.out.println(c2.toString());
-        assert doc.getMonplanner().ajouterUnCreneau(c1);
-        assert doc.getMonplanner().ajouterUnCreneau(c2);
-        assert !doc.getMonplanner().ajouterUnCreneau(c3);
-        assert doc.getMonplanner().supprimerUnCreneau(c1);
-        assert doc.getMonplanner().modifierUnCreneau(c1, c2);
-        assert !doc.getMonplanner().modifierUnCreneau(c3, c2);
+        assert doc.getMonplanner().ajouterUnCreneau(c1) : "Ajout de c1";
+        assert doc.getMonplanner().ajouterUnCreneau(c2) : "Ajout de c2";
+        assert !doc.getMonplanner().ajouterUnCreneau(c3) : "Ajout de c3";
+        assert doc.getMonplanner().supprimerUnCreneau(c1) : "Suppr de c1";
+        assert doc.getMonplanner().modifierUnCreneau(c1, c2) : "Modif de c2";
+        assert !doc.getMonplanner().modifierUnCreneau(c3, c2) : "Modif de c2";
         System.out.println(doc.getMonplanner().toString());
     }
 
@@ -114,13 +114,13 @@ public class FonctionTest {
         Notes n3 = null;
         System.out.println(n1.toString());
         System.out.println(n2.toString());
-        assert doc.getMonblocnotes().ajouterUneNote(n1);
-        assert doc.getMonblocnotes().ajouterUneNote(n2);
-        assert !doc.getMonblocnotes().ajouterUneNote(n3);
-        assert doc.getMonblocnotes().supprimerUneNote(n1);
-        assert doc.getMonblocnotes().modifierUneNote(n1, n2);
-        assert !doc.getMonblocnotes().modifierUneNote(n3, n2);
-        assert doc.getMonblocnotes().viderUneNote(n2);
+        assert doc.getMonblocnotes().ajouterUneNote(n1) : "Ajout de n1";
+        assert doc.getMonblocnotes().ajouterUneNote(n2) : "Ajout de n2";
+        assert !doc.getMonblocnotes().ajouterUneNote(n3) : "Ajout de n3";
+        assert doc.getMonblocnotes().supprimerUneNote(n1) : "Suppr de n1";
+        assert doc.getMonblocnotes().modifierUneNote(n1, n2) : "Modif de n2";
+        assert !doc.getMonblocnotes().modifierUneNote(n3, n2) : "Modif de n2";
+        assert doc.getMonblocnotes().viderUneNote(n2) : "Vider n2";
         System.out.println(doc.getMonblocnotes().toString());
     }
 

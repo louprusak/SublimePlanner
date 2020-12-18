@@ -7,10 +7,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
+import modele.Creneau;
+import modele.Documents;
+import org.w3c.dom.Text;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 public class EDTController implements Initializable {
@@ -23,6 +28,18 @@ public class EDTController implements Initializable {
     private Button ButtonBlocNotes;
     @FXML
     private Button ButtonToDoListe;
+    @FXML
+    private DatePicker DatePicker;
+    @FXML
+    private TextField HeureDebut;
+    @FXML
+    private TextField HeureFin;
+    @FXML
+    private TextArea Desc;
+    @FXML
+    private Button ButtonAjout;
+    @FXML
+    private ListView ListeEvenements;
 
     public static final int H_SIZE = 1000;
     public static final int V_SIZE = 600;
@@ -37,6 +54,10 @@ public class EDTController implements Initializable {
         ButtonEDT.setText("EDT");
         ButtonBlocNotes.setText("Bloc-Notes");
         ButtonToDoListe.setText("To-Do Liste");
+        HeureDebut.setPromptText("Heure de début (h:mn)");
+        HeureFin.setPromptText("Heure de fin (h:mn)");
+        Desc.setPromptText("Description");
+        ButtonAjout.setText("Ajouter un événement");
     }
 
     public void goToToDoListe(ActionEvent actionEvent) throws Exception {
@@ -69,5 +90,18 @@ public class EDTController implements Initializable {
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(scene2);
         window.show();
+    }
+
+    public void ajoutEvenement(ActionEvent actionEvent) {
+        Creneau c;
+        try {
+            LocalDate ld = DatePicker.getValue();
+            LocalDateTime dateDebut = LocalDateTime.of(ld.getYear(), ld.getMonth(), ld.getDayOfMonth(), Integer.parseInt(HeureDebut.getText()), 10);
+            LocalDateTime dateFin = LocalDateTime.of(ld.getYear(), ld.getMonth(), ld.getDayOfMonth(), Integer.parseInt(HeureFin.getText()), 10);
+            c = new Creneau(Desc.getText(), dateDebut, dateFin);
+            System.out.println(c);
+        } catch (Exception e){
+            System.out.println("erreur");
+        }
     }
 }

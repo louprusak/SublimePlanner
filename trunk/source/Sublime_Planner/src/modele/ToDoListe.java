@@ -83,7 +83,12 @@ public class ToDoListe {
      */
     public boolean ajouterUneTache(Tache obj){
         if (obj != null && !listTache.contains(obj)){
-            obj.setId(listTache.size()+1);
+            int id = 0;
+            for (Tache tache : listTache){
+                id = tache.getId();
+                System.out.println("****"+id);
+            }
+            obj.setId(id+1);
             listTache.add(obj);
             return listTache.contains(obj);
         }
@@ -110,7 +115,7 @@ public class ToDoListe {
      * @return true si la Tache à été modifié sinon false
      */
     public boolean modifierUneTache(Tache obj, Tache old){
-        if (obj != null && old != null && listTache.contains(old) && !listTache.contains(obj)) {
+        if (obj != null && old != null && listTache.contains(old)) {
             obj.setId(old.getId());
             old.setDesc(obj.getDesc());
             old.setAvancement(obj.getAvancement());

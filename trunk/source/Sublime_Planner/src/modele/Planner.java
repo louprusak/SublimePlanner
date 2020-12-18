@@ -39,7 +39,11 @@ public class Planner {
      */
     public boolean ajouterUnCreneau(Creneau obj){
         if (obj != null){
-            obj.setId(listCreneau.size()+1);
+            int id = 0;
+            for (Creneau creneau : listCreneau){
+                id = creneau.getId();
+            }
+            obj.setId(id+1);
             listCreneau.add(obj);
             return listCreneau.contains(obj);
         }

@@ -39,7 +39,11 @@ public class ListeToDo {
      */
     public boolean ajouterToDoListe(ToDoListe obj){
         if (obj != null && !listeToDo.contains(obj)){
-            obj.setId(listeToDo.size()+1);
+            int id = 0;
+            for (ToDoListe todo : listeToDo){
+                id = todo.getId();
+            }
+            obj.setId(id+1);
             listeToDo.add(obj);
             return listeToDo.contains(obj);
         }
