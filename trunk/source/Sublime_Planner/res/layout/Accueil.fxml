@@ -12,6 +12,7 @@
 <?import javafx.scene.text.Text?>
 
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.control.TextArea?>
 <GridPane fx:controller="controllers.MainController" xmlns="http://javafx.com/javafx/11.0.1"
           xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
@@ -104,9 +105,18 @@
                 <Insets bottom="10.0" top="10.0"/>
             </GridPane.margin>
         </Text>
-        <DatePicker fx:id="datePicker" promptText="20/10/2020" GridPane.halignment="CENTER" GridPane.rowIndex="2"/>
+        <Text fx:id="TodayDate" text="Lundi 20 décembre 2020" GridPane.rowIndex="2" GridPane.halignment="CENTER">
+            <font>
+                <Font name="Berlin Sans FB" size="15.0"/>
+            </font>
+            <GridPane.margin>
+                <Insets bottom="10.0"/>
+            </GridPane.margin>
+        </Text>
+
+        <DatePicker fx:id="DatePicker" promptText="20/10/2020" GridPane.halignment="CENTER" GridPane.rowIndex="3"/>
         <ListView prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A84011; -fx-background-radius: 30;"
-                  GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+                  GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
             <GridPane.margin>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
             </GridPane.margin>
@@ -115,6 +125,7 @@
             <ColumnConstraints/>
         </columnConstraints>
         <rowConstraints>
+            <RowConstraints/>
             <RowConstraints/>
             <RowConstraints/>
             <RowConstraints/>

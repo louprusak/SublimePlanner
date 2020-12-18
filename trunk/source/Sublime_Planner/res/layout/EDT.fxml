@@ -99,6 +99,10 @@
             <RowConstraints/>
             <RowConstraints/>
         </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50"/>
+            <ColumnConstraints percentWidth="50"/>
+        </columnConstraints>
 
         <padding>
             <Insets right="20"/>
@@ -106,23 +110,25 @@
         </padding>
 
         <Text text="Emploi du Temps" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.halignment="LEFT"
-              GridPane.vgrow="ALWAYS">
+              GridPane.vgrow="ALWAYS" GridPane.columnSpan="2">
             <font>
                 <Font name="Berlin Sans FB" size="40"/>
             </font>
         </Text>
 
-        <Text text="Lundi 20 janvier 2020" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS"/>
+        <Text fx:id="TextDate" text="Lundi 20 janvier 2020" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" GridPane.columnSpan="2"/>
 
-        <DatePicker fx:id="DatePicker" promptText="20/10/2020" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS"/>
+        <DatePicker fx:id="DatePicker" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" GridPane.columnSpan="2"/>
 
-        <TextField fx:id="HeureDebut" GridPane.rowIndex="3" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS"/>
+        <TextField fx:id="HeureDebut" GridPane.rowIndex="3" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" GridPane.hgrow="ALWAYS"/>
+        <TextField fx:id="MinuteDebut" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" GridPane.hgrow="ALWAYS"/>
 
-        <TextField fx:id="HeureFin" GridPane.rowIndex="4" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS"/>
+        <TextField fx:id="HeureFin" GridPane.rowIndex="4" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" GridPane.hgrow="ALWAYS"/>
+        <TextField fx:id="MinuteFin" GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" GridPane.hgrow="ALWAYS"/>
 
-        <TextArea fx:id="Desc" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS"/>
+        <TextArea fx:id="Desc" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" GridPane.columnSpan="2"/>
 
-        <Button fx:id="ButtonAjout" GridPane.rowIndex="6" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" onAction="#ajoutEvenement"/>
+        <Button fx:id="ButtonAjout" GridPane.rowIndex="6" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" onAction="#ajoutEvenement" GridPane.columnSpan="2"/>
 
     </GridPane>
 

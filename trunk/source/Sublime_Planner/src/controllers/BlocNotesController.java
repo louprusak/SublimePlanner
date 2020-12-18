@@ -28,8 +28,6 @@ public class BlocNotesController implements Initializable{
     @FXML
     private Button ButtonAddNote;
 
-    public static final int H_SIZE = 1000;
-    public static final int V_SIZE = 600;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -48,32 +46,36 @@ public class BlocNotesController implements Initializable{
 
     public void goToToDoListe(ActionEvent actionEvent) throws Exception {
         Parent root2 = FXMLLoader.load(getClass().getResource("/layout/ToDoListe.fxml"));
-        Scene scene2 = new Scene(root2, H_SIZE, V_SIZE);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        Scene actual = window.getScene();
+        Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
         window.setScene(scene2);
         window.show();
     }
 
     public void goToEDT(ActionEvent actionEvent) throws Exception {
         Parent root2 = FXMLLoader.load(getClass().getResource("/layout/EDT.fxml"));
-        Scene scene2 = new Scene(root2, H_SIZE, V_SIZE);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        Scene actual = window.getScene();
+        Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
         window.setScene(scene2);
         window.show();
     }
 
     public void goToBlocNotes(ActionEvent actionEvent) throws Exception {
         Parent root2 = FXMLLoader.load(getClass().getResource("/layout/BlocNotes.fxml"));
-        Scene scene2 = new Scene(root2, H_SIZE, V_SIZE);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        Scene actual = window.getScene();
+        Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
         window.setScene(scene2);
         window.show();
     }
 
     public void goToHome(ActionEvent actionEvent) throws Exception {
         Parent root2 = FXMLLoader.load(getClass().getResource("/layout/Accueil.fxml"));
-        Scene scene2 = new Scene(root2, H_SIZE, V_SIZE);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        Scene actual = window.getScene();
+        Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
         window.setScene(scene2);
         window.show();
     }
