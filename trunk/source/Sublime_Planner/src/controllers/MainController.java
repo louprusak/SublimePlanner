@@ -8,9 +8,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 
@@ -23,13 +26,18 @@ public class MainController implements Initializable {
     private Button ButtonBlocNotes;
     @FXML
     private Button ButtonToDoListe;
+    @FXML
+    private DatePicker datePicker;
 
     public static final int H_SIZE = 1000;
     public static final int V_SIZE = 600;
 
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeTxt();
+
     }
 
     public void initializeTxt(){

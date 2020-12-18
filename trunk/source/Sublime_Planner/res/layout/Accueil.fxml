@@ -104,7 +104,7 @@
                 <Insets bottom="10.0" top="10.0"/>
             </GridPane.margin>
         </Text>
-        <DatePicker promptText="20/10/2020" GridPane.halignment="CENTER" GridPane.rowIndex="2"/>
+        <DatePicker fx:id="datePicker" promptText="20/10/2020" GridPane.halignment="CENTER" GridPane.rowIndex="2"/>
         <ListView prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A84011; -fx-background-radius: 30;"
                   GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
             <GridPane.margin>
