@@ -6,20 +6,14 @@ import java.time.LocalDateTime;
 
 public class FonctionTest {
 
-    //*********************Attributs*********************//
-
-    /**
-     * Attribut contenant tous les documents
-     */
-    private Documents doc;
-
     //*********************Constructeur*********************//
 
     /**
      * Constructeur de la classe FonctionTest
+     * @param doc
      */
     public FonctionTest() {
-        doc = new Documents();
+
     }
 
     //*********************Fonctions*********************//
@@ -27,13 +21,13 @@ public class FonctionTest {
     /**
      * Fonction permettant d'affcher les documents et d'appeller des tests spécifiques
      */
-    public void test(){
+    public void test(Documents doc){
         System.out.println("***************test documents***************");
         System.out.println(doc.toString());
 
-        testToDoListe();
-        testPlanner();
-        testBlocNotes();
+        testToDoListe(doc);
+        testPlanner(doc);
+        testBlocNotes(doc);
 
         System.out.println("***************test documents***************");
         System.out.println(doc.toString());
@@ -45,7 +39,7 @@ public class FonctionTest {
      * - test de la suppression
      * - test de la modification
      */
-    public void testToDoListe(){
+    public void testToDoListe(Documents doc){
         System.out.println("***************test to do liste***************");
         ToDoListe to1 = new ToDoListe("todoliste 1");
         ToDoListe to2 = new ToDoListe("todoliste 2");
@@ -80,7 +74,7 @@ public class FonctionTest {
      * - test de la suppression
      * - test de la modification
      */
-    public void testPlanner(){
+    public void testPlanner(Documents doc){
         System.out.println("***************test planner***************");
         LocalDateTime dd1 = LocalDateTime.of(1111, 11, 20, 8, 45);
         LocalDateTime df1 = LocalDateTime.of(1111, 11, 20, 9, 15);
@@ -107,7 +101,7 @@ public class FonctionTest {
      * - test de la modification
      * - test du vidage
      */
-    public void testBlocNotes(){
+    public void testBlocNotes(Documents doc){
         System.out.println("***************test block notes***************");
         Notes n1 = new Notes("note 1", "text de la note 1");
         Notes n2 = new Notes("note 2", "test de la note 2");

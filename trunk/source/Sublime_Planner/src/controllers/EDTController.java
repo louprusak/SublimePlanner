@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import modele.Creneau;
+import view.Main;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -56,10 +57,6 @@ public class EDTController implements Initializable {
     }
 
     public void initializeTxt(){
-
-
-
-
         HomeButton.setText("Home");
         ButtonEDT.setText("EDT");
         ButtonBlocNotes.setText("Bloc-Notes");
@@ -129,12 +126,31 @@ public class EDTController implements Initializable {
 
     public void ajoutEvenement(ActionEvent actionEvent) throws Exception {
         Creneau c;
-
+        try {
             LocalDate ld = DatePicker.getValue();
-            LocalDateTime dateDebut = LocalDateTime.of(ld.getYear(), ld.getMonth(), ld.getDayOfMonth(), Integer.parseInt(HeureDebut.getText()), 10);
-            LocalDateTime dateFin = LocalDateTime.of(ld.getYear(), ld.getMonth(), ld.getDayOfMonth(), Integer.parseInt(HeureFin.getText()), 10);
-            c = new Creneau(Desc.getText(), dateDebut, dateFin);
-            System.out.println(c);
-
+            try {
+                LocalDateTime dateDebut = LocalDateTime.of(ld.getYear(), ld.getMonth(), ld.getDayOfMonth(), Integer.parseInt(HeureDebut.getText()), Integer.parseInt(MinuteDebut.getText()));
+                try {
+                    LocalDateTime dateFin = LocalDateTime.of(ld.getYear(), ld.getMonth(), ld.getDayOfMonth(), Integer.parseInt(HeureFin.getText()), Integer.parseInt(MinuteFin.getText()));
+                    try {
+                        if (!Desc.getText().equals("")){
+                            c = new Creneau(Desc.getText(), dateDebut, dateFin);
+                            Main.doc.getMonplanner().ajouterUnCreneau(c);
+                            System.out.println(Main.doc.toString());
+                        } else {
+                            System.out.println("Erreur description vide.");
+                        }
+                    } catch (Exception e){
+                        System.out.println("Erreur de l'ajout.");
+                    }
+                } catch (Exception e){
+                    System.out.println("Erreur dans la date de fin.");
+                }
+            } catch (Exception e){
+                System.out.println("Erreur dans la date de début.");
+            }
+        } catch (Exception e){
+            System.out.println("Erreur dans le date picker.");
+        }
     }
 }
