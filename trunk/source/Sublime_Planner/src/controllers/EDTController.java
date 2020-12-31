@@ -16,6 +16,7 @@ import modele.Creneau;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class EDTController implements Initializable {
@@ -56,10 +57,6 @@ public class EDTController implements Initializable {
     }
 
     public void initializeTxt(){
-
-
-
-
         HomeButton.setText("Home");
         ButtonEDT.setText("EDT");
         ButtonBlocNotes.setText("Bloc-Notes");
@@ -75,17 +72,8 @@ public class EDTController implements Initializable {
     }
 
     public void initializeDate(){
-        /*LocalDate ld = LocalDate.now();
-        String dayOfWeek = ld.getDayOfWeek().toString();
-        int dayOfMonth = ld.getDayOfMonth();
-        String month = ld.getMonth().toString();
-        int year = ld.getYear();
-
-        String message = dayOfWeek + " " + dayOfMonth + " " + month + " " + year;
-
-        TextDate.setText(message);*/
+        Locale.setDefault(Locale.FRANCE);
         DatePicker.setValue(LocalDate.now());
-
         TextDate.textProperty().bind(Bindings.format("%s %d %s %d",DatePicker.valueProperty().getValue().getDayOfWeek(),
                 DatePicker.valueProperty().getValue().getDayOfMonth(),DatePicker.valueProperty().getValue().getMonth(),
                 DatePicker.valueProperty().getValue().getYear()));
