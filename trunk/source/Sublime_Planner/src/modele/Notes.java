@@ -12,10 +12,10 @@ public class Notes {
     /**
      * Propriété JavaFx de l'ID de la note
      */
-    private IntegerProperty id = new SimpleIntegerProperty();
-    public int getId(){return id.get();}
-    public IntegerProperty idProperty(){return id;}
-    public void setId(int id){this.id.set(id);}
+    private IntegerProperty idNote = new SimpleIntegerProperty();
+    public int getId(){return idNote.get();}
+    public IntegerProperty idProperty(){return idNote;}
+    public void setId(int id){this.idNote.set(id);}
 
     /**
      * Propriété JavaFx du nom de la note
@@ -71,7 +71,7 @@ public class Notes {
      */
     @Override
     public String toString(){
-        String message =  id + " : "+ nom + "\n\t";
+        String message =  idNote + " : "+ nom + "\n\t";
         if (textNote.equals("")) {
             message += "La note est vide.";
         } else {

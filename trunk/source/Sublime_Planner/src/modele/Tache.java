@@ -1,5 +1,7 @@
 package modele;
 
+import javafx.beans.property.*;
+
 public class Tache {
 
     //*********************Attributs*********************//
@@ -7,69 +9,31 @@ public class Tache {
     /**
      * id de la Tache
      */
-    private int id;
+    private IntegerProperty idTache = new SimpleIntegerProperty();
+    public int getId(){return idTache.get();}
+    public IntegerProperty idTacheProperty(){return idTache;}
+    public void setId(int id){this.idTache.set(id);}
 
     /**
      * description de la tache
      */
-    private String desc;
+    private StringProperty desc = new SimpleStringProperty();
+    public String getDesc(){return desc.get();}
+    public StringProperty descProperty(){return desc;}
+    public void setDesc(String desc){this.desc.set(desc);}
 
     /**
      * avancement de la tache
      * true = finie
      * false = en cour
      */
-    private boolean avancement = false;
+    private BooleanProperty avancement = new SimpleBooleanProperty();
+    public Boolean getAvancement(){return avancement.get();}
+    public BooleanProperty avancementProperty(){return avancement;}
+    public void setAvancement(Boolean avancement){this.avancement.set(avancement);}
 
-    //*********************Getter Setter*********************//
 
-    /**
-     * Getter de l'id
-     * @return l'id
-     */
-    public int getId() {
-        return id;
-    }
 
-    /**
-     * Setter de l'id
-     * @param id nouveau id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Getter du description
-     * @return le description
-     */
-    public String getDesc() {
-        return desc;
-    }
-
-    /**
-     * Setter du description
-     * @param desc nouvelle description
-     */
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    /**
-     * Getter de l'avancement
-     * @return l'avancement
-     */
-    public boolean getAvancement(){
-        return avancement;
-    }
-
-    /**
-     * Setter de l'avancement
-     * @param avancement nouveau avancement
-     */
-    public void setAvancement(boolean avancement) {
-        this.avancement = avancement;
-    }
     //*********************Constructeur*********************//
 
     /**
@@ -77,7 +41,7 @@ public class Tache {
      * @param desc description de la tache
      */
     public Tache(String desc) {
-        this.desc = desc;
+         setDesc(desc);
     }
 
     //*********************Redéfinition*********************//
@@ -105,6 +69,6 @@ public class Tache {
      */
     @Override
     public String toString(){
-        return id + " : " + desc +  " " + avancement;
+        return idTache + " : " + desc +  " " + avancement;
     }
 }
