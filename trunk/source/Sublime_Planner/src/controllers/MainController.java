@@ -16,6 +16,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 
@@ -50,6 +51,7 @@ public class MainController implements Initializable {
     }
 
     public void initializeDate(){
+        Locale.setDefault(Locale.FRANCE);
         LocalDate ld = LocalDate.now();
         String dayOfWeek = ld.getDayOfWeek().toString();
         int dayOfMonth = ld.getDayOfMonth();
