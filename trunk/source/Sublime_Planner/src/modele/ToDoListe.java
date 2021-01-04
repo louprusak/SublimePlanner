@@ -143,7 +143,7 @@ public class ToDoListe {
      */
     @Override
     public String toString(){
-        String message = nomToDo + " : " + id;
+        String message = nomToDo + " : " + idToDo;
         if (listTache.size() == 0){
             message += "\n\t La to do liste est vide.";
         } else {
