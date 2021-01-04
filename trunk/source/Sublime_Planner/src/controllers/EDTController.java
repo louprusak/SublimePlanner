@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.converter.DateStringConverter;
 import modele.Creneau;
 
 import java.net.URL;
@@ -77,6 +78,8 @@ public class EDTController implements Initializable {
         TextDate.textProperty().bind(Bindings.format("%s %d %s %d",DatePicker.valueProperty().getValue().getDayOfWeek(),
                 DatePicker.valueProperty().getValue().getDayOfMonth(),DatePicker.valueProperty().getValue().getMonth(),
                 DatePicker.valueProperty().getValue().getYear()));
+
+        //TextDate.textProperty().bindBidirectional(DatePicker.valueProperty().getValue(),new DateStringConverter());
     }
 
     public void goToToDoListe(ActionEvent actionEvent) throws Exception {

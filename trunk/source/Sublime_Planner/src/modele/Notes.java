@@ -1,73 +1,38 @@
 package modele;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Notes {
 
-    //*********************Attributs*********************//
+    //*********************Propriétés / Getter / Setter*********************//
 
     /**
-     * id de la Notes
+     * Propriété JavaFx de l'ID de la note
      */
-    private int id;
+    private IntegerProperty id = new SimpleIntegerProperty();
+    public int getId(){return id.get();}
+    public IntegerProperty idProperty(){return id;}
+    public void setId(int id){this.id.set(id);}
 
     /**
-     * nom de la Notes
+     * Propriété JavaFx du nom de la note
      */
-    private String nom;
+    private StringProperty nom = new SimpleStringProperty();
+    public String getNom(){return nom.get();}
+    public StringProperty nomProperty(){return nom;}
+    public void setNom(String nom){this.nom.set(nom);}
 
     /**
-     * text Notes
+     * Propriété JavaFx du text / contenu de la note
      */
-    private String textNote;
+    private StringProperty textNote = new SimpleStringProperty();
+    public String getTextNote(){return textNote.get();}
+    public StringProperty textNoteProperty(){return textNote;}
+    public void setTextNote(String textNote){this.textNote.set(textNote);}
 
-    //*********************Getter Setter*********************//
-
-    /**
-     * Getter de l'id
-     * @return l'id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Setter de l'id
-     * @param id nouveau id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Getter du nom
-     * @return nouveau nom
-     */
-    public String getNom() {
-        return nom;
-    }
-
-    /**
-     * Setter du nom
-     * @param nom nouveau nom
-     */
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    /**
-     * Getter du text
-     * @return le text
-     */
-    public String getTextNote() {
-        return textNote;
-    }
-
-    /**
-     * Setter du text
-     * @param textNote nouveau text
-     */
-    public void setTextNote(String textNote) {
-        this.textNote = textNote;
-    }
 
     //*********************Constructeur*********************//
 
@@ -77,8 +42,8 @@ public class Notes {
      * @param textNote texte de la Notes
      */
     public Notes(String nom, String textNote) {
-        this.nom = nom;
-        this.textNote = textNote;
+        setNom(nom);
+        setTextNote(textNote);
     }
 
     //*********************Redéfinition*********************//
