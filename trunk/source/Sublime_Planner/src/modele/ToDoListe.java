@@ -1,5 +1,10 @@
 package modele;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.util.LinkedList;
 
 public class ToDoListe {
@@ -9,12 +14,18 @@ public class ToDoListe {
     /**
      * id de la ToDoListe
      */
-    private int id;
+    private IntegerProperty idToDo = new SimpleIntegerProperty();
+    public int getId(){return idToDo.get();}
+    public IntegerProperty idToDo(){return idToDo;}
+    public void setId(int id){this.idToDo.set(id);}
 
     /**
      * nom de la ToDoListe
      */
-    private String nomToDo;
+    private StringProperty nomToDo = new SimpleStringProperty();
+    public String getNomToDo(){return nomToDo.get();}
+    public StringProperty nomToDoProperty(){return nomToDo;}
+    public void setNomToDo(String desc){this.nomToDo.set(desc);}
 
     /**
      * liste de Tache
@@ -23,37 +34,7 @@ public class ToDoListe {
 
     //*********************Getter Setter*********************//
 
-    /**
-     * Getter de l'id
-     * @return l'id
-     */
-    public int getId() {
-        return id;
-    }
 
-    /**
-     * Setter de l'id
-     * @param id nouveau id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Getter du nom
-     * @return le nom
-     */
-    public String getNomToDo() {
-        return nomToDo;
-    }
-
-    /**
-     * Setter du nom
-     * @param nomToDo nouveau nom
-     */
-    public void setNomToDo(String nomToDo) {
-        this.nomToDo = nomToDo;
-    }
 
     /**
      * Getter de la liste
@@ -70,7 +51,7 @@ public class ToDoListe {
      * @param nomToDo nom de la ToDoListe
      */
     public ToDoListe(String nomToDo) {
-        this.nomToDo = nomToDo;
+        setNomToDo(nomToDo);
         listTache = new LinkedList<>();
     }
 
@@ -162,7 +143,7 @@ public class ToDoListe {
      */
     @Override
     public String toString(){
-        String message = nomToDo + " : " + id;
+        String message = nomToDo + " : " + idToDo;
         if (listTache.size() == 0){
             message += "\n\t La to do liste est vide.";
         } else {

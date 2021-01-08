@@ -9,7 +9,7 @@ public class Planner {
     /**
      * liste de Creneau
      */
-    private LinkedList<Creneau> listCreneau;
+    private  LinkedList<Creneau> listCreneau;
 
     //*********************Getter Setter*********************//
 
