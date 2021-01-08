@@ -10,7 +10,6 @@ public class FonctionTest {
 
     /**
      * Constructeur de la classe FonctionTest
-     * @param doc
      */
     public FonctionTest() {
 
@@ -25,7 +24,7 @@ public class FonctionTest {
         System.out.println("***************test documents***************");
         System.out.println(doc.toString());
 
-        testToDoListe(doc);
+        //testToDoListe(doc);
         testPlanner(doc);
         testBlocNotes(doc);
 
@@ -82,15 +81,12 @@ public class FonctionTest {
         LocalDateTime df2 = LocalDateTime.of(2222, 11, 20, 15, 15);
         Creneau c1 = new Creneau("creneau 1 ", dd1, df1);
         Creneau c2 = new Creneau("creneau 2 ", dd2, df2);
-        Creneau c3 = null;
         System.out.println(c1.toString());
         System.out.println(c2.toString());
-        assert doc.getMonplanner().ajouterUnCreneau(c1) : "Ajout de c1";
-        assert doc.getMonplanner().ajouterUnCreneau(c2) : "Ajout de c2";
-        assert !doc.getMonplanner().ajouterUnCreneau(c3) : "Ajout de c3";
-        assert doc.getMonplanner().supprimerUnCreneau(c1) : "Suppr de c1";
-        assert doc.getMonplanner().modifierUnCreneau(c1, c2) : "Modif de c2";
-        assert !doc.getMonplanner().modifierUnCreneau(c3, c2) : "Modif de c2";
+        assert doc.getMonplanner().add(c1) : "ajout creneau 1";
+        assert doc.getMonplanner().add(c2) : "ajout creneau 2";
+        assert doc.getMonplanner().remove(c1) : "suppr creneau 1";
+        assert doc.getMonplanner().set(doc.getMonplanner().indexOf(c2), c1) == c2 : "modif creneau n2 en n1";
         System.out.println(doc.getMonplanner().toString());
     }
 
@@ -103,18 +99,14 @@ public class FonctionTest {
      */
     public void testBlocNotes(Documents doc){
         System.out.println("***************test block notes***************");
-        Notes n1 = new Notes("note 1", "text de la note 1");
-        Notes n2 = new Notes("note 2", "test de la note 2");
-        Notes n3 = null;
+        Note n1 = new Note("note 1", "text de la note 1");
+        Note n2 = new Note("note 2", "test de la note 2");
         System.out.println(n1.toString());
         System.out.println(n2.toString());
-        assert doc.getMonblocnotes().ajouterUneNote(n1) : "Ajout de n1";
-        assert doc.getMonblocnotes().ajouterUneNote(n2) : "Ajout de n2";
-        assert !doc.getMonblocnotes().ajouterUneNote(n3) : "Ajout de n3";
-        assert doc.getMonblocnotes().supprimerUneNote(n1) : "Suppr de n1";
-        assert doc.getMonblocnotes().modifierUneNote(n1, n2) : "Modif de n2";
-        assert !doc.getMonblocnotes().modifierUneNote(n3, n2) : "Modif de n2";
-        assert doc.getMonblocnotes().viderUneNote(n2) : "Vider n2";
+        assert doc.getMonblocnotes().add(n1) : "ajout note 1";
+        assert doc.getMonblocnotes().add(n2) : "ajout note 2";
+        assert doc.getMonblocnotes().remove(n1) : "suppr note 1";
+        assert doc.getMonblocnotes().set(doc.getMonblocnotes().indexOf(n2),n1) == n2 : "modif note n2 en n1";
         System.out.println(doc.getMonblocnotes().toString());
     }
 

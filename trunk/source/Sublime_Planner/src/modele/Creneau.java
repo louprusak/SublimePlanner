@@ -1,96 +1,45 @@
 package modele;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.time.LocalDateTime;
 
 public class Creneau {
 
-    //*********************Attributs*********************//
+    //*********************Propriétés / Getter / Setter*********************//
 
     /**
      * id du Creneau
      */
-    private int id;
+    private IntegerProperty idCreneau = new SimpleIntegerProperty();
+    public int getId(){return idCreneau.get();}
+    public IntegerProperty idCreneauProperty(){return idCreneau;}
+    public void setId(int id){this.idCreneau.set(id);}
 
     /**
      * evenement du Creneau
      */
-    private String evenement;
+    private StringProperty evenement = new SimpleStringProperty();
+    public String getEvenement(){return evenement.get();}
+    public StringProperty evenementProperty(){return evenement;}
+    public void setEvenement(String evenement){this.evenement.set(evenement);}
 
     /**
      * date de début de l'évenement
      */
     private LocalDateTime dateDebut;
+    public LocalDateTime getDateDebut(){return dateDebut;};
+    public void setDateDebut(LocalDateTime ldt){this.dateDebut = ldt;}
 
     /**
      * date de fin de l'évenement
      */
     private LocalDateTime dateFin;
-
-    //*********************Getter Setter*********************//
-
-    /**
-     * Getter de l'id
-     * @return l'id
-     */
-    public int getId(){
-        return id;
-    }
-
-    /**
-     * Setter de l'id
-     * @param id nouveau id
-     */
-    public void setId(int id){
-        this.id =id;
-    }
-
-    /**
-     * Getter de l'évenement
-     * @return l'évenement
-     */
-    public String getEvenement() {
-        return evenement;
-    }
-
-    /**
-     * Setter de l'évenement
-     * @param evenement nouveau évenement
-     */
-    public void setEvenement(String evenement) {
-        this.evenement = evenement;
-    }
-
-    /**
-     * Getter de la date de début
-     * @return la date de début
-     */
-    public LocalDateTime getDateDebut() {
-        return dateDebut;
-    }
-
-    /**
-     * Setter de la date de début
-     * @param dateDebut nouvelle date de début
-     */
-    public void setDateDebut(LocalDateTime dateDebut) {
-        this.dateDebut = dateDebut;
-    }
-
-    /**
-     * Getter de la date de fin
-     * @return la date de fin
-     */
-    public LocalDateTime getDateFin() {
-        return dateFin;
-    }
-
-    /**
-     * Setter de la date de fin
-     * @param dateFin nouvelle date de fin
-     */
-    public void setDateFin(LocalDateTime dateFin) {
-        this.dateFin = dateFin;
-    }
+    public LocalDateTime getDateFin(){return dateFin;};
+    public void setDateFin(LocalDateTime ldt){this.dateFin = ldt;}
 
     //*********************Constructeur*********************//
 
@@ -101,9 +50,9 @@ public class Creneau {
      * @param dateFin date de fin
      */
     public Creneau(String evenement, LocalDateTime dateDebut, LocalDateTime dateFin) {
-        this.evenement = evenement;
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
+        setEvenement(evenement);
+        setDateFin(dateDebut);
+        setDateFin(dateFin);
     }
 
     //*********************Redéfinition*********************//
@@ -131,7 +80,7 @@ public class Creneau {
      */
     @Override
     public String toString(){
-        return id + " : " + evenement + "\n\tDate de début : " + dateDebut + "\n\tDate de fin : " +dateFin;
+        return this.getId() + " : " + this.getEvenement()+ "\n\tDate de début : " + getDateDebut() + "\n\tDate de fin : " + getDateFin();
     }
 
 }

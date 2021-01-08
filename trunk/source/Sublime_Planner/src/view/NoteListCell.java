@@ -1,14 +1,11 @@
 package view;
 
-import javafx.beans.binding.Bindings;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListCell;
-import javafx.scene.text.Text;
-import modele.Notes;
+import modele.Note;
 
-public class NoteListCell extends ListCell<Notes> {
+public class NoteListCell extends ListCell<Note> {
     @Override
-    protected void updateItem(Notes item, boolean empty){
+    protected void updateItem(Note item, boolean empty){
         super.updateItem(item, empty);
         /*if(!empty){
             textProperty().bind(item.nameProperty());

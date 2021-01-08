@@ -130,7 +130,7 @@ public class EDTController implements Initializable {
                     try {
                         if (!Desc.getText().equals("")){
                             c = new Creneau(Desc.getText(), dateDebut, dateFin);
-                            Main.doc.getMonplanner().ajouterUnCreneau(c);
+                            Main.doc.getMonplanner().add(c);
                             System.out.println(Main.doc.toString());
                         } else {
                             System.out.println("Erreur description vide.");
