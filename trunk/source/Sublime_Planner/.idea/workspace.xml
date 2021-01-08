@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="65e50aa7-8776-4415-b9cb-ed0d3977bc3b" name="Default Changelist" comment="test commit intellij">
+      <change beforePath="$PROJECT_DIR$/src/modele/ListeToDo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/ListeToDo.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1ke1GNmM3E4IlB9szRlHPB6H3hm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="D:/00 - Logiciels et Jeux/JAVAFX/openjfx-11.0.2_windows-x64_bin-sdk.zip" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\maxma\OneDrive\Bureau\Cours\Sublime Planner\sublimeplanner\trunk\source\Sublime_Planner\res\layout" />
+      <recent name="C:\Users\maxma\OneDrive\Bureau\Cours\Sublime Planner\sublimeplanner\trunk\source\Sublime_Planner\src\view" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="view/Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="15" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="view/Main" />
+      <module name="Sublime_Planner" />
+      <option name="VM_PARAMETERS" value="--module-path ${JFX_PATH} --add-modules=javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.view/Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65e50aa7-8776-4415-b9cb-ed0d3977bc3b" name="Default Changelist" comment="" />
+      <created>1606046146717</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606046146717</updated>
+    </task>
+    <task id="LOCAL-00001" summary="test commit intellij">
+      <created>1606216048857</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606216048857</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Modification des vues de l'application">
+      <created>1606475632639</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606475632639</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Ajout des vues Note et Notes et modification de la vue principale">
+      <created>1606670161795</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606670161795</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Ajout de documentation, d'images et modification des vues">
+      <created>1607080740064</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607080740064</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Ajout Controlleurs">
+      <created>1607422750708</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607422750708</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Ajout et modifications de vues">
+      <created>1607425617573</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607425617573</updated>
+    </task>
+    <task id="LOCAL-00007" summary="modif vue accueil">
+      <created>1607677232930</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607677232930</updated>
+    </task>
+    <task id="LOCAL-00008" summary="modif vue accueil">
+      <created>1607677325117</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607677325117</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Création de la vue EDT et modifications des autres vues">
+      <created>1607679437868</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607679437868</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Création des controllers manquant et définition des actions entre les fenêtre et les boutons.">
+      <created>1607682741292</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1607682741292</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changement des attributs des controllers en privés.">
+      <created>1607684886505</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1607684886505</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changement de littéraux en dur dans le code de Main">
+      <created>1608024035457</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1608024035457</updated>
+    </task>
+    <task id="LOCAL-00013" summary="commit">
+      <created>1608282429469</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1608282429469</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Travail sur l'affichage des dates et binding avec les DatePicker">
+      <created>1608289752087</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1608289752087</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Modifications dates sur les vues et ajout de la vue NoteListCell.">
+      <created>1609412152378</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1609412152378</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Changement des attributs en propriétés javafx de la classes notes">
+      <created>1609772257646</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1609772257646</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Changement des attributs en propriétés javafx">
+      <created>1609775622400</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1609775622400</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Changement des attributs en propriétés javafx">
+      <created>1609775640777</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1609775640777</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test commit intellij" />
+    <MESSAGE value="Modification des vues de l'application" />
+    <MESSAGE value="Ajout des vues Note et Notes et modification de la vue principale" />
+    <MESSAGE value="Ajout de documentation, d'images et modification des vues" />
+    <MESSAGE value="Ajout Controlleurs" />
+    <MESSAGE value="Ajout et modifications de vues" />
+    <MESSAGE value="modif vue accueil" />
+    <MESSAGE value="Création de la vue EDT et modifications des autres vues" />
+    <MESSAGE value="Création des controllers manquant et définition des actions entre les fenêtre et les boutons." />
+    <MESSAGE value="Changement des attributs des controllers en privés." />
+    <MESSAGE value="Changement de littéraux en dur dans le code de Main" />
+    <MESSAGE value="commit" />
+    <MESSAGE value="Travail sur l'affichage des dates et binding avec les DatePicker" />
+    <MESSAGE value="Modifications dates sur les vues et ajout de la vue NoteListCell." />
+    <MESSAGE value="Changement des attributs en propriétés javafx de la classes notes" />
+    <MESSAGE value="Changement des attributs en propriétés javafx" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changement des attributs en propriétés javafx" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="569" y="265" key="#Configure_Path_Variables" timestamp="1606046161986">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="569" y="265" key="#Configure_Path_Variables/0.0.1536.824@0.0.1536.824" timestamp="1606046161986" />
+    <state x="279" y="85" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610098224439">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1606047417534" />
+    <state x="-1641" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1609839876325" />
+    <state x="279" y="85" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610098224439" />
+    <state x="718" y="143" key="#com.intellij.ide.util.MemberChooser" timestamp="1609773148058">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1606067507044" />
+    <state x="718" y="143" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609773148058" />
+    <state x="554" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1610098220894">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="554" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610098220894" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608283559476">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608283559476" />
+    <state x="184" y="86" key="DiffContextDialog" timestamp="1607677344238">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="DiffContextDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607677344238" />
+    <state x="591" y="194" key="FileChooserDialogImpl" timestamp="1610097846862">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="473" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606046422917" />
+    <state x="591" y="194" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610097846862" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1610098163800">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="564" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606068005116" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608030328020" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610098163800" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1610098163799">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="564" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606068005116" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608030328020" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610098163799" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1610098163799">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="564" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606068005116" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608030328020" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610098163799" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1610098163799">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="564" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606068005116" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608030328020" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610098163799" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1606475706530">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606066984198" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606475706530" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1606475706530">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1606066984198" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606475706530" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1606475706530">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1606066984198" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606475706530" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1606475706530">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1606066984198" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606475706530" />
+    <state x="184" y="86" key="MergeDialog" timestamp="1607677271106">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607677271106" />
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1607677271112">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607677271112" />
+    <state x="637" y="222" key="RollbackChangesDialog" timestamp="1608283547825">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="637" y="222" key="RollbackChangesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608283547825" />
+    <state x="311" y="0" key="SettingsEditor" timestamp="1610098857969">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606047569570" />
+    <state x="-1609" y="0" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1609840378367" />
+    <state x="311" y="0" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610098857969" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609775647457">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1368" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608024078359" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609775647457" />
+    <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1607425387716">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607425387716" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610097740312">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1143" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608024053453" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610097740312" />
+    <state x="-1763" y="-15" width="1634" height="1027" maximized="true" key="dock-window-1" timestamp="1609410609959">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="0" width="1252" height="810" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1606067371830" />
+    <state x="-1763" y="-15" width="1634" height="1027" maximized="true" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609410609959" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Sublime_Planner$Main.ic" NAME="Main Coverage Results" MODIFIED="1606046339495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
