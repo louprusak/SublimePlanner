@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+
+<GridPane fx:controller="controllers.EDTController" xmlns="http://javafx.com/javafx/11.0.1"
+          xmlns:fx="http://javafx.com/fxml/1">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="15"/>
+        <ColumnConstraints percentWidth="40"/>
+        <ColumnConstraints percentWidth="45"/>
+    </columnConstraints>
+
+    <GridPane style="-fx-background-color: #1E3E59;" GridPane.columnIndex="0" GridPane.vgrow="ALWAYS">
+        <Button fx:id="HomeButton" textFill="white" style="-fx-background-color: black" GridPane.hgrow="ALWAYS"
+                GridPane.vgrow="ALWAYS" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#goToHome">
+            <graphic>
+                <ImageView fitHeight="50" fitWidth="70">
+                    <image>
+                        <Image url="/images/home1.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Button fx:id="ButtonEDT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                style="-fx-background-color: white;" wrapText="true" GridPane.hgrow="ALWAYS"
+                GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" onAction="#goToEDT">
+            <GridPane.margin>
+                <Insets top="20.0"/>
+            </GridPane.margin>
+            <padding>
+                <Insets bottom="10.0" top="10.0"/>
+            </padding>
+            <font>
+                <Font name="Britannic Bold" size="12.0"/>
+            </font>
+        </Button>
+
+        <Button fx:id="ButtonBlocNotes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                style="-fx-background-color: white;" wrapText="true" GridPane.hgrow="ALWAYS"
+                GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" onAction="#goToBlocNotes">
+            <GridPane.margin>
+                <Insets top="20.0"/>
+            </GridPane.margin>
+            <padding>
+                <Insets bottom="10.0" top="10.0"/>
+            </padding>
+            <font>
+                <Font name="Britannic Bold" size="12.0"/>
+            </font>
+        </Button>
+
+        <Button fx:id="ButtonToDoListe" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                style="-fx-background-color: white;" wrapText="true" GridPane.hgrow="ALWAYS"
+                GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" onAction="#goToToDoListe">
+            <GridPane.margin>
+                <Insets top="20.0"/>
+            </GridPane.margin>
+            <padding>
+                <Insets bottom="10.0" top="10.0"/>
+            </padding>
+            <font>
+                <Font name="Britannic Bold" size="12.0"/>
+            </font>
+        </Button>
+
+        <columnConstraints>
+            <ColumnConstraints/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints percentHeight="25"/>
+            <RowConstraints percentHeight="25"/>
+            <RowConstraints percentHeight="25"/>
+            <RowConstraints percentHeight="25"/>
+        </rowConstraints>
+        <padding>
+            <Insets bottom="30.0" left="10.0" right="10.0" top="30.0"/>
+        </padding>
+    </GridPane>
+
+    <GridPane GridPane.columnIndex="1" GridPane.vgrow="ALWAYS" GridPane.hgrow="ALWAYS">
+        <rowConstraints>
+            <RowConstraints percentHeight="10"/>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
+            <RowConstraints/>
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50"/>
+            <ColumnConstraints percentWidth="50"/>
+        </columnConstraints>
+
+        <padding>
+            <Insets right="20"/>
+            <Insets left="20"/>
+        </padding>
+
+        <Text text="Emploi du Temps" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.halignment="LEFT"
+              GridPane.vgrow="ALWAYS" GridPane.columnSpan="2">
+            <font>
+                <Font name="Berlin Sans FB" size="40"/>
+            </font>
+        </Text>
+
+        <Text fx:id="TextDate" text="Lundi 20 janvier 2020" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" GridPane.columnSpan="2"/>
+
+        <DatePicker fx:id="DatePicker" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" GridPane.columnSpan="2"/>
+
+        <TextField fx:id="HeureDebut" GridPane.rowIndex="3" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" GridPane.hgrow="ALWAYS"/>
+        <TextField fx:id="MinuteDebut" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" GridPane.hgrow="ALWAYS"/>
+
+        <TextField fx:id="HeureFin" GridPane.rowIndex="4" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" GridPane.hgrow="ALWAYS"/>
+        <TextField fx:id="MinuteFin" GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" GridPane.hgrow="ALWAYS"/>
+
+        <TextArea fx:id="Desc" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" GridPane.columnSpan="2"/>
+
+        <Button fx:id="ButtonAjout" GridPane.rowIndex="6" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" onAction="#ajoutEvenement" GridPane.columnSpan="2"/>
+
+    </GridPane>
+
+    <GridPane GridPane.columnIndex="2" GridPane.vgrow="ALWAYS" GridPane.hgrow="ALWAYS">
+        <rowConstraints>
+            <RowConstraints percentHeight="10"/>
+            <RowConstraints/>
+        </rowConstraints>
+
+        <Text text="Tous les événements" GridPane.halignment="CENTER" GridPane.columnIndex="0">
+            <font>
+                <Font name="Berlin Sans FB" size="18.0"/>
+            </font>
+        </Text>
+
+        <ListView fx:id="ListeEvenements" style="-fx-background-color: #A84011; -fx-background-radius: 30;" GridPane.hgrow="ALWAYS"
+                  GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+            <GridPane.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="5.0"/>
+            </GridPane.margin>
+        </ListView>
+
+    </GridPane>
+
+
+</GridPane>

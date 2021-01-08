@@ -24,7 +24,7 @@ public class ListeToDo {
     //*********************Constructeur*********************//
 
     /**
-     * Constructeur de la classe ListeToDo
+     * Constructeur de la classe Liste
      */
     public ListeToDo(){
         listeToDo = new LinkedList<>();
