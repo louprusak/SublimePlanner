@@ -5,7 +5,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Notes {
+public class Note {
 
     //*********************Propriétés / Getter / Setter*********************//
 
@@ -41,7 +41,7 @@ public class Notes {
      * @param nom nom de la Notes
      * @param textNote texte de la Notes
      */
-    public Notes(String nom, String textNote) {
+    public Note(String nom, String textNote) {
         setNom(nom);
         setTextNote(textNote);
     }
@@ -61,7 +61,7 @@ public class Notes {
         if (obj == null || getClass() != obj.getClass()){
             return false;
         }
-        Notes item = (Notes) obj;
+        Note item = (Note) obj;
         return this.getId() == item.getId() && this.getNom().equals(item.getNom()) && this.getTextNote().equals(item.getTextNote());
     }
 
@@ -71,12 +71,13 @@ public class Notes {
      */
     @Override
     public String toString(){
-        String message =  idNote + " : "+ nom + "\n\t";
-        if (textNote.equals("")) {
+        String message =  this.getId() + " : "+ this.getNom() + "\n\t";
+        if (this.getTextNote().equals("")) {
             message += "La note est vide.";
         } else {
-            message += textNote;
+            message += this.getTextNote();
         }
         return message;
     }
+
 }
