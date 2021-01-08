@@ -1,13 +1,15 @@
 package modele;
 
+import java.util.LinkedList;
+
 public class Documents {
 
     //*********************Attributs*********************//
 
     /**
-     * Attribut contenant la todoliste
+     * Attribut contenant les todolistes
      */
-    private ListeToDo malistetodo;
+    private LinkedList<ToDoListe> malistetodo;
 
     /**
      * Attibut contenant le planner
@@ -25,7 +27,7 @@ public class Documents {
      * Getter de la todoliste
      * @return le contenus de ma todoliste
      */
-    public ListeToDo getMalistetodo() {
+    public LinkedList<ToDoListe> getMalistetodo() {
         return malistetodo;
     }
 
@@ -51,7 +53,7 @@ public class Documents {
      * Constructeur de ma classe Documents
      */
     public Documents() {
-        malistetodo = new ListeToDo();
+        malistetodo = new LinkedList<ToDoListe>();
         monplanner = new Planner();
         monblocnotes = new BlocNotes();
     }

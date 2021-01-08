@@ -38,17 +38,20 @@ public class FonctionTest {
      * - test de la suppression
      * - test de la modification
      */
-    public void testToDoListe(Documents doc){
+    /*public void testToDoListe(Documents doc){
         System.out.println("***************test to do liste***************");
         ToDoListe to1 = new ToDoListe("todoliste 1");
         ToDoListe to2 = new ToDoListe("todoliste 2");
         ToDoListe to3 = null;
-        assert doc.getMalistetodo().ajouterToDoListe(to1) : "Ajout de to1";
-        assert doc.getMalistetodo().ajouterToDoListe(to2) : "Ajout de to2";
-        assert !doc.getMalistetodo().ajouterToDoListe(to2) : "Ajout de to2";
-        assert !doc.getMalistetodo().ajouterToDoListe(to3) : "Ajout de to3";
-        assert doc.getMalistetodo().supprimerToDoListe(to1) : "Suppr de to1 : ";
-        assert !doc.getMalistetodo().supprimerToDoListe(to1) : "Suppr de to1 : ";
+
+
+
+        assert doc.getMalistetodo().add(new ToDoListe("to1")) : "Ajout de to1";
+        assert doc.getMalistetodo().add(new ToDoListe("to2")) : "Ajout de to2";
+        assert !doc.getMalistetodo().add(new ToDoListe("to2")) : "Ajout de to2";
+        assert !doc.getMalistetodo().add(new ToDoListe("to3")) : "Ajout de to3";
+        assert doc.getMalistetodo().remove(new ToDoListe("to1")) : "Suppr de to1 : ";
+        assert !doc.getMalistetodo().remove(new ToDoListe("to1")) : "Suppr de to1 : ";
         assert doc.getMalistetodo().modifierNomToDoListe(to2, "todoliste2bis") : "Modif du nom de to2 : ";
         Tache t1 = new Tache("tache 1");
         Tache t2 = new Tache("tache 2");
@@ -65,7 +68,7 @@ public class FonctionTest {
         assert !doc.getMalistetodo().modifierUneTache(to2, t3,t2) : "Modif de t2";
         assert doc.getMalistetodo().modifierAvancement(to2, t2) : "Modif de l'avancement de t2";
         System.out.println(doc.getMalistetodo().toString());
-    }
+    }*/
 
     /**
      * Fonction permettant de tester toutes les fonctions de la classe Planner ainsi que celles de la classe Creneau
