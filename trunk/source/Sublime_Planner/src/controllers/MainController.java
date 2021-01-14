@@ -47,7 +47,7 @@ public class MainController implements Initializable {
 
 
     private static List<Creneau> planning = new ArrayList<>(List.of(
-            new Creneau("Evenement 1", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 1", LocalDateTime.now(),LocalDateTime.now()),
             new Creneau("Evenement 2", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
             new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
             new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
@@ -81,7 +81,7 @@ public class MainController implements Initializable {
         initializeDate();
 
         TodayPlanning.setItems(FXCollections.observableList(planning));
-        TodayPlanning.setCellFactory(l -> new CreneauListCell());
+        //TodayPlanning.setCellFactory(l -> new CreneauListCell());
         MainToDoList.setItems(FXCollections.observableList(todoliste));
         MainToDoList.setCellFactory(l -> new TacheListCell());
     }
