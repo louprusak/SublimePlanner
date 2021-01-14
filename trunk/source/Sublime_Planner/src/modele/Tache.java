@@ -4,7 +4,7 @@ import javafx.beans.property.*;
 
 public class Tache {
 
-    //*********************Attributs*********************//
+    //*********************Propriétés / Getter / Setter*********************//
 
     /**
      * id de la Tache
@@ -69,6 +69,6 @@ public class Tache {
      */
     @Override
     public String toString(){
-        return idTache + " : " + desc +  " " + avancement;
+        return getId() + " : " + getDesc() +  " " + getAvancement();
     }
 }

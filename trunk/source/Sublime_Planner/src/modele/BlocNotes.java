@@ -6,9 +6,9 @@ public class BlocNotes extends LinkedList<Note> {
 
     @Override
     public boolean add(Note item){
-        int id = 0;
-        for (Note note : this){
-            id = note.getId() + 1;
+        int id = 1;
+        if (this.size() > 0){
+            id = this.getLast().getId()+1;
         }
         item.setId(id);
         return super.add(item);
@@ -16,8 +16,7 @@ public class BlocNotes extends LinkedList<Note> {
 
     @Override
     public Note set(int index, Note item){
-        Note n = this.get(index);
-        item.setId(n.getId());
+        item.setId(this.get(index).getId());
         return super.set(index, item);
     }
 

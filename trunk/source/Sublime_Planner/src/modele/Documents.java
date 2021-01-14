@@ -27,9 +27,11 @@ public class Documents {
      * Getter de la todoliste
      * @return le contenus de ma todoliste
      */
-    public LinkedList<ToDoListe> getMalistetodo() {
+    public LinkedList<ToDoListe> getMeslistetodo() {
         return malistetodo;
     }
+
+    public ToDoListe getMatodoliste(int index){return malistetodo.get(index);}
 
     /**
      * Getter du planner
@@ -66,7 +68,31 @@ public class Documents {
      */
     @Override
     public String toString(){
-        return malistetodo.toString() + "\n" + monplanner.toString() + "\n" + monblocnotes.toString();
+        String message = "Ma liste de ToDo liste : ";
+        if (malistetodo.size() == 0){
+            message += "\n\t Il n'y a pas de ToDo liste.";
+        } else {
+            StringBuilder messageBuilder = new StringBuilder(message);
+            for(ToDoListe todo : malistetodo){
+                messageBuilder.append("\n\t").append(todo.toString());
+            }
+            message = messageBuilder.toString();
+        }
+        return message + "\n" + monplanner.toString() + "\n" + monblocnotes.toString();
+    }
+
+    public String toStringListeToDoListe(){
+        String message = "Ma liste de ToDo liste : ";
+        if (malistetodo.size() == 0){
+            message += "\n\t Il n'y a pas de ToDo liste.";
+        } else {
+            StringBuilder messageBuilder = new StringBuilder(message);
+            for(ToDoListe todo : malistetodo){
+                messageBuilder.append("\n\t").append(todo.toString());
+            }
+            message = messageBuilder.toString();
+        }
+        return message;
     }
 
 }

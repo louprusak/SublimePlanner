@@ -71,11 +71,11 @@ public class Note {
      */
     @Override
     public String toString(){
-        String message =  this.getId() + " : "+ this.getNom() + "\n\t";
+        String message = "\t" + this.getId() + " : "+ this.getNom() + "\n\t";
         if (this.getTextNote().equals("")) {
-            message += "La note est vide.";
+            message += "\tLa note est vide.";
         } else {
-            message += this.getTextNote();
+            message += "\t" + this.getTextNote();
         }
         return message;
     }

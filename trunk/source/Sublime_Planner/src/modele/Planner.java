@@ -6,9 +6,9 @@ public class Planner extends LinkedList<Creneau>{
 
     @Override
     public boolean add(Creneau item){
-        int id = 0;
-        for (Creneau creneau : this){
-            id = creneau.getId() + 1;
+        int id = 1;
+        if (this.size() > 0){
+            id = this.getLast().getId()+1;
         }
         item.setId(id);
         return super.add(item);
@@ -16,8 +16,7 @@ public class Planner extends LinkedList<Creneau>{
 
     @Override
     public Creneau set(int index, Creneau item){
-        Creneau c = this.get(index);
-        item.setId(c.getId());
+        item.setId(this.get(index).getId());
         return super.set(index, item);
     }
 
@@ -29,7 +28,7 @@ public class Planner extends LinkedList<Creneau>{
         } else {
             StringBuilder messageBuilder = new StringBuilder(message);
             for (Creneau creneau : this){
-                messageBuilder.append("\n").append(creneau.toString());
+                messageBuilder.append("\n\t").append(creneau.toString());
             }
             message = messageBuilder.toString();
         }
