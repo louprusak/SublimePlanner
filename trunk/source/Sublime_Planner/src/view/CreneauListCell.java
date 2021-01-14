@@ -1,18 +1,8 @@
 package view;
 
-import javafx.beans.InvalidationListener;
-import javafx.beans.property.IntegerProperty;
-import javafx.collections.ArrayChangeListener;
-import javafx.collections.ObservableArray;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListCell;
-import javafx.scene.text.Text;
-import modele.Creneau;
-
 import javafx.beans.binding.Bindings;
-
-import java.util.List;
+import javafx.scene.control.ListCell;
+import modele.Creneau;
 
 public class CreneauListCell extends ListCell<Creneau> {
 
@@ -21,6 +11,7 @@ public class CreneauListCell extends ListCell<Creneau> {
         super.updateItem(creneau, b);
         if(!b){
             textProperty().bind(creneau.evenementProperty());
+
         }
     }
 }

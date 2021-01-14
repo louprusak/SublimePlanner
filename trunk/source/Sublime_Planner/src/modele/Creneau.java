@@ -1,15 +1,13 @@
 package modele;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 import java.time.LocalDateTime;
 
 public class Creneau {
 
     //*********************Propriétés / Getter / Setter*********************//
+
 
     /**
      * id du Creneau
@@ -92,7 +90,7 @@ public class Creneau {
      */
     public Creneau(String evenement, LocalDateTime dateDebut, LocalDateTime dateFin) {
         setEvenement(evenement);
-        setDateFin(dateDebut);
+        setDateDebut(dateDebut);
         setDateFin(dateFin);
     }
 
@@ -121,7 +119,14 @@ public class Creneau {
      */
     @Override
     public String toString(){
-        return this.getId() + " : " + this.getEvenement()+ "\n\tDate de début : " + getDateDebut() + "\n\tDate de fin : " + getDateFin();
+        int heureDebut = this.getDateDebut().getHour();
+        int minuteDebut = this.getDateDebut().getMinute();
+        int heureFin = this.getDateFin().getHour();
+        int minuteFin = this.getDateFin().getMinute();
+
+        String message = "- "+getEvenement() + "\n\tDe " + heureDebut+"h"+minuteDebut + " à "+ heureFin+"h"+minuteFin;
+        return message;
+        //return this.getId() + " : " + this.getEvenement()+ "\n\tDate de début : " + getDateDebut() + "\n\tDate de fin : " + getDateFin();
     }
 
 }
