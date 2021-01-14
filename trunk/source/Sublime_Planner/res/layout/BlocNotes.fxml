@@ -112,7 +112,7 @@
                 </GridPane.margin>
             </Text>
             <Button fx:id="ButtonAddNote" text="Ajouter Une Note" GridPane.columnIndex="1" GridPane.halignment="CENTER"
-                    GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                    GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" onAction="#addNote">
                 <GridPane.margin>
                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                 </GridPane.margin>

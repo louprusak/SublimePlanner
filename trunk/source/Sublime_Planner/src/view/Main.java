@@ -36,7 +36,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(MAIN_WINDOW_FXML));
-        Parent root = loader.load();
+        Parent root;
+        root = loader.load();
         primaryStage.setTitle(MAIN_WINDOW_TITLE);
         Scene scene = new Scene(root,H_SIZE,V_SIZE);
         scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());

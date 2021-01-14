@@ -2,15 +2,21 @@ package controllers;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import modele.Note;
 import view.NoteListCell;
 
@@ -105,5 +111,17 @@ public class BlocNotesController implements Initializable{
         scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
         window.setScene(scene2);
         window.show();
+    }
+
+
+    public void addNote(ActionEvent actionEvent) throws Exception{
+        Parent root2 = FXMLLoader.load(getClass().getResource("/layout/addNote.fxml"));
+        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        final Stage dialog = new Stage();
+        dialog.initModality(Modality.APPLICATION_MODAL);
+        dialog.initOwner(window);
+        Scene dialogScene = new Scene(root2, 300, 200);
+        dialog.setScene(dialogScene);
+        dialog.show();
     }
 }

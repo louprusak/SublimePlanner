@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane style="-fx-background-color: #A84011;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="controllers.addNoteController">
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+
+    <Text fill="WHITE" stroke="WHITE" text="Ajout d'une nouvelle note" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+      <GridPane.margin>
+         <Insets bottom="10.0" top="10.0" />
+      </GridPane.margin>
+      <font>
+         <Font size="24.0" />
+      </font></Text>
+    <Label text="Titre de la note:" textFill="WHITE" GridPane.rowIndex="1" />
+    <TextField GridPane.rowIndex="2" />
+    <Label text="Contenu de la note:" textFill="WHITE" GridPane.rowIndex="3" />
+    <TextArea wrapText="true" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
+    <Button text="Ajouter" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" />
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+
+</GridPane>
