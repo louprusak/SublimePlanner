@@ -10,7 +10,7 @@ public class Note {
     //*********************Propriétés / Getter / Setter*********************//
 
     /**
-     * Propriété JavaFx de l'ID de la note
+     * id de la note
      */
     private IntegerProperty idNote = new SimpleIntegerProperty();
     public int getId(){return idNote.get();}
@@ -18,7 +18,7 @@ public class Note {
     public void setId(int id){this.idNote.set(id);}
 
     /**
-     * Propriété JavaFx du nom de la note
+     * nom de la note
      */
     private StringProperty nom = new SimpleStringProperty();
     public String getNom(){return nom.get();}
@@ -26,7 +26,7 @@ public class Note {
     public void setNom(String nom){this.nom.set(nom);}
 
     /**
-     * Propriété JavaFx du text / contenu de la note
+     * text de la note
      */
     private StringProperty textNote = new SimpleStringProperty();
     public String getTextNote(){return textNote.get();}

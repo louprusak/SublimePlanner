@@ -4,6 +4,13 @@ import java.util.LinkedList;
 
 public class Planner extends LinkedList<Creneau>{
 
+    //*********************Redéfinition*********************//
+
+    /**
+     * redéfinition de la méthode add
+     * @param item Creneau à ajouter
+     * @return true si l'ajout a été effectuer et false si non
+     */
     @Override
     public boolean add(Creneau item){
         int id = 1;
@@ -14,12 +21,22 @@ public class Planner extends LinkedList<Creneau>{
         return super.add(item);
     }
 
+    /**
+     * redéfinition de la méthode set
+     * @param index int index dans la liste de l'item à modifier
+     * @param item nouvelle Tache
+     * @return l'objet modifié
+     */
     @Override
     public Creneau set(int index, Creneau item){
         item.setId(this.get(index).getId());
         return super.set(index, item);
     }
 
+    /**
+     * redéfinition de la méthode toString de la classe Planner
+     * @return le message à afficher
+     */
     @Override
     public String toString(){
         String message = "Mon planneur : ";

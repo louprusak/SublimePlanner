@@ -68,19 +68,13 @@ public class Documents {
      */
     @Override
     public String toString(){
-        String message = "Ma liste de ToDo liste : ";
-        if (malistetodo.size() == 0){
-            message += "\n\t Il n'y a pas de ToDo liste.";
-        } else {
-            StringBuilder messageBuilder = new StringBuilder(message);
-            for(ToDoListe todo : malistetodo){
-                messageBuilder.append("\n\t").append(todo.toString());
-            }
-            message = messageBuilder.toString();
-        }
-        return message + "\n" + monplanner.toString() + "\n" + monblocnotes.toString();
+        return this.toStringListeToDoListe() + "\n" + monplanner.toString() + "\n" + monblocnotes.toString();
     }
 
+    /**
+     * fonction toString de la liste de To Do liste
+     * @return le message a afficher
+     */
     public String toStringListeToDoListe(){
         String message = "Ma liste de ToDo liste : ";
         if (malistetodo.size() == 0){

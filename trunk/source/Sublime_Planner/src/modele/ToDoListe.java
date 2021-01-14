@@ -7,15 +7,33 @@ import java.util.LinkedList;
 
 public class ToDoListe extends LinkedList<Tache> {
 
+    //*********************Propriétés / Getter / Setter*********************//
+
+    /**
+     * nom de la liste
+     */
     private StringProperty nomToDo = new SimpleStringProperty();
     public String getNomToDo(){return nomToDo.get();}
     public StringProperty nomToDoProperty(){return nomToDo;}
     public void setNomToDo(String nom){this.nomToDo.set(nom);}
 
+    //*********************Constructeur*********************//
+
+    /**
+     * constructeur de la classe ToDoListe
+     * @param nom nom de la liste
+     */
     public ToDoListe (String nom){
         setNomToDo(nom);
     }
 
+    //*********************Redéfinition*********************//
+
+    /**
+     * redéfinition de la méthode add
+     * @param item Tache à ajouter
+     * @return true si l'ajout a été effectuer et false si non
+     */
     @Override
     public boolean add(Tache item){
         int id = 1;
@@ -26,6 +44,12 @@ public class ToDoListe extends LinkedList<Tache> {
         return super.add(item);
     }
 
+    /**
+     * redéfinition de la méthode set
+     * @param index int index dans la liste de l'item à modifier
+     * @param item nouvelle Tache
+     * @return l'objet modifié
+     */
     @Override
     public Tache set(int index, Tache item){
         item.setId(this.get(index).getId());
