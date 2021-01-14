@@ -36,6 +36,9 @@ public class BlocNotesController implements Initializable{
     @FXML
     private ListView NotesList;
 
+    private static final String CSS_PATH = "../view/main.css";
+    private static final String NOTECSS_PATH = "../view/note.css";
+
     private static List<Note> listNotes = new ArrayList<Note>(List.of(
             new Note("Note 1","jdhrgjihdirg"),
             new Note("Note 2","jdhrgjihdirg"),
@@ -69,6 +72,7 @@ public class BlocNotesController implements Initializable{
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
+        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
         window.setScene(scene2);
         window.show();
     }
@@ -78,6 +82,7 @@ public class BlocNotesController implements Initializable{
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
+        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
         window.setScene(scene2);
         window.show();
     }
@@ -87,6 +92,7 @@ public class BlocNotesController implements Initializable{
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
+        scene2.getStylesheets().add(getClass().getResource(NOTECSS_PATH).toExternalForm());
         window.setScene(scene2);
         window.show();
     }
@@ -96,6 +102,7 @@ public class BlocNotesController implements Initializable{
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
+        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
         window.setScene(scene2);
         window.show();
     }

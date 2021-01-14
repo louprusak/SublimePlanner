@@ -20,21 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63dad3ad-338f-4965-92be-8e38f32058bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/view/CreneauListCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/TacheListCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Sublime_Planner.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/note.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sublime_Planner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sublime_Planner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/layout/Accueil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/res/layout/Accueil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/layout/BlocNotes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/res/layout/BlocNotes.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/BlocNotesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BlocNotesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/EDTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/EDTController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Creneau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Creneau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/NoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ToDoListeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ToDoListeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/NoteListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/NoteListCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +87,18 @@
       <option name="presentableId" value="Default" />
       <updated>1610105295002</updated>
     </task>
+    <task id="LOCAL-00001" summary="modifications">
+      <created>1610622377703</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1610622377703</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -106,6 +111,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="modifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifications" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610105494120">
@@ -120,26 +129,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610105428151" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1610622114814">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1610632595824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610622114814" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1610622114814">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610632595824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1610632595824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610622114814" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1610622114814">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610632595824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1610632595824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610622114814" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1610622114814">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610632595824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1610632595824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610622114814" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610632595824" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1610619789464">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610619789464" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610622494830">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610622494830" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610613111231">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

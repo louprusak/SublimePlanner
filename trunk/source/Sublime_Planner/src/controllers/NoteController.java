@@ -28,7 +28,8 @@ public class NoteController implements Initializable {
     @FXML
     private Button ButtonExport;
 
-
+    private static final String CSS_PATH = "../view/main.css";
+    private static final String NOTECSS_PATH = "../view/note.css";
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -49,6 +50,7 @@ public class NoteController implements Initializable {
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
+        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
         window.setScene(scene2);
         window.show();
     }
@@ -58,6 +60,7 @@ public class NoteController implements Initializable {
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
+        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
         window.setScene(scene2);
         window.show();
     }
@@ -67,6 +70,7 @@ public class NoteController implements Initializable {
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
+        scene2.getStylesheets().add(getClass().getResource(NOTECSS_PATH).toExternalForm());
         window.setScene(scene2);
         window.show();
     }
@@ -76,6 +80,7 @@ public class NoteController implements Initializable {
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
+        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
         window.setScene(scene2);
         window.show();
     }

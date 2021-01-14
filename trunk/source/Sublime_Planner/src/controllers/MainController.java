@@ -41,6 +41,9 @@ public class MainController implements Initializable {
     private ListView TodayPlanning;
     @FXML
     private ListView MainToDoList;
+    
+    private static final String CSS_PATH = "../view/main.css";
+    private static final String NOTECSS_PATH = "../view/note.css";
 
 
     private static List<Creneau> planning = new ArrayList<>(List.of(
@@ -57,7 +60,7 @@ public class MainController implements Initializable {
     ));
 
     private static List<Tache> todoliste = new ArrayList<>(List.of(
-            new Tache("Tache numéro 1"),
+            new Tache("Tache numéro 1Tache numéro 1Tache numéro 1Tache numéro 1Tache numéro 1"),
             new Tache("Tache numéro 1"),
             new Tache("Tache numéro 1"),
             new Tache("Tache numéro 1"),
@@ -110,6 +113,7 @@ public class MainController implements Initializable {
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
+        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
         window.setScene(scene2);
         window.show();
     }
@@ -119,6 +123,7 @@ public class MainController implements Initializable {
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
+        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
         window.setScene(scene2);
         window.show();
     }
@@ -128,6 +133,7 @@ public class MainController implements Initializable {
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
+        scene2.getStylesheets().add(getClass().getResource(NOTECSS_PATH).toExternalForm());
         window.setScene(scene2);
         window.show();
     }

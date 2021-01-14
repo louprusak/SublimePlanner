@@ -39,7 +39,7 @@ public class Main extends Application {
         Parent root = loader.load();
         primaryStage.setTitle(MAIN_WINDOW_TITLE);
         Scene scene = new Scene(root,H_SIZE,V_SIZE);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
     }

@@ -1,0 +1,22 @@
+.list-cell
+{
+    -fx-background-color: transparent;
+    -fx-font: 15pt "Arial";
+    -fx-margin: 10px;
+    -fx-padding: 10px;
+    -fx-text-fill: black;
+
+}
+
+.list-cell:selected:focused
+{
+    -fx-background-color: white;
+    -fx-background-radius: 30px;
+    -fx-text-fill: black;
+}
+
+.list-view
+{
+    -fx-background-color: transparent;
+    -fx-padding: 30px;
+}
