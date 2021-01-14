@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,9 +9,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import modele.ToDoListe;
+import view.TacheListCell;
+import view.ToDoListCell;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ToDoListeController implements Initializable {
@@ -23,14 +30,29 @@ public class ToDoListeController implements Initializable {
     private Button ButtonBlocNotes;
     @FXML
     private Button ButtonToDoListe;
+    @FXML
+    private ListView ListToDo;
 
     private static final String MAIN_VIEW = "/layout/Accueil.fxml";
     private static final String CSS_PATH = "../view/main.css";
     private static final String NOTECSS_PATH = "../view/note.css";
 
+    private static List<ToDoListe> listeToDo = new ArrayList<>(List.of(
+            new ToDoListe("Catégorie 1"),
+            new ToDoListe("Catégorie 2"),
+            new ToDoListe("Catégorie 3"),
+            new ToDoListe("Catégorie 4"),
+            new ToDoListe("Catégorie 5"),
+            new ToDoListe("Catégorie 6")
+    ));
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeTxt();
+
+        ListToDo.setItems(FXCollections.observableList(listeToDo));
+        ListToDo.setCellFactory(l -> new ToDoListCell());
     }
 
     public void initializeTxt(){

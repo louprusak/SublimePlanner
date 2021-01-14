@@ -60,7 +60,7 @@ public class MainController implements Initializable {
     ));
 
     private static List<Tache> todoliste = new ArrayList<>(List.of(
-            new Tache("Tache numéro 1Tache numéro 1Tache numéro 1Tache numéro 1Tache numéro 1"),
+            new Tache("Tache numéro 1"),
             new Tache("Tache numéro 1"),
             new Tache("Tache numéro 1"),
             new Tache("Tache numéro 1"),

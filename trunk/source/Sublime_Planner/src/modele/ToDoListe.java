@@ -6,8 +6,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import java.util.LinkedList;
+import java.util.List;
 
-public class ToDoListe {
+public class ToDoListe extends LinkedList<Tache> {
 
     //*********************Attributs*********************//
 

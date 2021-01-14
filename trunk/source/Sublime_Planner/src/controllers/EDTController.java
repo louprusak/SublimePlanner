@@ -1,6 +1,7 @@
 package controllers;
 
 import javafx.beans.binding.Bindings;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,11 +14,14 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.converter.DateStringConverter;
 import modele.Creneau;
+import view.CreneauListCell;
 import view.Main;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -52,11 +56,26 @@ public class EDTController implements Initializable {
     private static final String CSS_PATH = "../view/main.css";
     private static final String NOTECSS_PATH = "../view/note.css";
 
+    private static List<Creneau> planning = new ArrayList<>(List.of(
+            new Creneau("Evenement 1", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 2", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 4", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0))
+    ));
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeTxt();
         initializeDate();
 
+        ListeEvenements.setItems(FXCollections.observableList(planning));
+        ListeEvenements.setCellFactory(l -> new CreneauListCell());
     }
 
     public void initializeTxt(){
