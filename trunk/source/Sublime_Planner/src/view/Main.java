@@ -38,8 +38,9 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(MAIN_WINDOW_FXML));
         Parent root = loader.load();
         primaryStage.setTitle(MAIN_WINDOW_TITLE);
-
-        primaryStage.setScene(new Scene(root,H_SIZE,V_SIZE));
+        Scene scene = new Scene(root,H_SIZE,V_SIZE);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 }

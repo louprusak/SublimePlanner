@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,16 +10,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import modele.Creneau;
+import modele.Planner;
+import modele.Tache;
+import view.CreneauListCell;
+import view.TacheListCell;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Locale;
-import java.util.ResourceBundle;
-
+import java.time.LocalDateTime;
+import java.util.*;
 
 
 public class MainController implements Initializable {
@@ -32,15 +37,50 @@ public class MainController implements Initializable {
     private Button ButtonToDoListe;
     @FXML
     private DatePicker DatePicker;
+    @FXML
+    private ListView TodayPlanning;
+    @FXML
+    private ListView MainToDoList;
 
 
+    private static List<Creneau> planning = new ArrayList<>(List.of(
+            new Creneau("Evenement 1", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 2", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
+            new Creneau("Evenement 4", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0))
+    ));
 
+    private static List<Tache> todoliste = new ArrayList<>(List.of(
+            new Tache("Tache numéro 1"),
+            new Tache("Tache numéro 1"),
+            new Tache("Tache numéro 1"),
+            new Tache("Tache numéro 1"),
+            new Tache("Tache numéro 1"),
+            new Tache("Tache numéro 1"),
+            new Tache("Tache numéro 1"),
+            new Tache("Tache numéro 1"),
+            new Tache("Tache numéro 1"),
+            new Tache("Tache numéro 1"),
+            new Tache("Tache numéro 1"),
+            new Tache("Tache numéro 1")
+    ));
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeTxt();
         initializeDate();
+
+        TodayPlanning.setItems(FXCollections.observableList(planning));
+        TodayPlanning.setCellFactory(l -> new CreneauListCell());
+        MainToDoList.setItems(FXCollections.observableList(todoliste));
+        MainToDoList.setCellFactory(l -> new TacheListCell());
     }
 
     public void initializeTxt(){

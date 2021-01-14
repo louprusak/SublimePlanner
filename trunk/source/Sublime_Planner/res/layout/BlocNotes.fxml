@@ -126,7 +126,7 @@
 
         </GridPane>
 
-        <ListView GridPane.rowIndex="1" GridPane.vgrow="ALWAYS"/>
+        <ListView fx:id="NotesList" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS"/>
 
         <columnConstraints>
             <ColumnConstraints/>

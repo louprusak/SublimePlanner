@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,9 +9,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import modele.Note;
+import view.NoteListCell;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -27,11 +33,25 @@ public class BlocNotesController implements Initializable{
     private Button ButtonToDoListe;
     @FXML
     private Button ButtonAddNote;
+    @FXML
+    private ListView NotesList;
 
+    private static List<Note> listNotes = new ArrayList<Note>(List.of(
+            new Note("Note 1","jdhrgjihdirg"),
+            new Note("Note 2","jdhrgjihdirg"),
+            new Note("Note 3","jdhrgjihdirg"),
+            new Note("Note 4","jdhrgjihdirg"),
+            new Note("Note 5","jdhrgjihdirg"),
+            new Note("Note 6","jdhrgjihdirg"),
+            new Note("Note 7","jdhrgjihdirg")
+    ));
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeTxt();
+
+        NotesList.setItems(FXCollections.observableList(listNotes));
+        NotesList.setCellFactory(l -> new NoteListCell());
     }
 
     public void initializeTxt(){

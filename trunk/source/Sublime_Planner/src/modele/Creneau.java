@@ -28,18 +28,59 @@ public class Creneau {
     public void setEvenement(String evenement){this.evenement.set(evenement);}
 
     /**
+     * hour de début
+     */
+    private IntegerProperty hourDebut = new SimpleIntegerProperty();
+    public int getHourDebut(){return hourDebut.get();}
+    public IntegerProperty hourDebutProperty(){return hourDebut;}
+    public void setHourDebut(int hourDebut){this.hourDebut.set(hourDebut);}
+
+    /**
+     * minute de début
+     */
+    private IntegerProperty minDebut = new SimpleIntegerProperty();
+    public int getMinDebut(){return minDebut.get();}
+    public IntegerProperty minDebutProperty(){return minDebut;}
+    public void setMinDebut(int minDebut){this.minDebut.set(minDebut);}
+
+    /**
+     * hour de début
+     */
+    private IntegerProperty hourFin = new SimpleIntegerProperty();
+    public int getHourFin(){return hourFin.get();}
+    public IntegerProperty hourFinProperty(){return hourFin;}
+    public void setHourFin(int hourFin){this.hourFin.set(hourFin);}
+
+    /**
+     * minute de début
+     */
+    private IntegerProperty minFin = new SimpleIntegerProperty();
+    public int getMinFin(){return minFin.get();}
+    public IntegerProperty minFinProperty(){return minFin;}
+    public void setMinFin(int minFin){this.minFin.set(minFin);}
+
+    /**
      * date de début de l'évenement
      */
+
     private LocalDateTime dateDebut;
     public LocalDateTime getDateDebut(){return dateDebut;};
-    public void setDateDebut(LocalDateTime ldt){this.dateDebut = ldt;}
+    public void setDateDebut(LocalDateTime ldt){
+        setHourDebut(ldt.getHour());
+        setMinDebut(ldt.getMinute());
+        this.dateDebut = ldt;
+    }
 
     /**
      * date de fin de l'évenement
      */
     private LocalDateTime dateFin;
     public LocalDateTime getDateFin(){return dateFin;};
-    public void setDateFin(LocalDateTime ldt){this.dateFin = ldt;}
+    public void setDateFin(LocalDateTime ldt){
+        setHourFin(ldt.getHour());
+        setMinFin(ldt.getMinute());
+        this.dateFin = ldt;
+    }
 
     //*********************Constructeur*********************//
 
