@@ -60,7 +60,7 @@ public class BlocNotesController implements Initializable{
         initializeTxt();
 
         NotesList.setItems(FXCollections.observableList(listNotes));
-        NotesList.setCellFactory(l -> new NoteListCell());
+        NotesList.setCellFactory(l -> new NoteListCell(this));
     }
 
     public void initializeTxt(){

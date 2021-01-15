@@ -14,13 +14,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import modele.Creneau;
-import modele.Planner;
 import modele.Tache;
-import view.CreneauListCell;
 import view.TacheListCell;
 
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -38,7 +35,7 @@ public class MainController implements Initializable {
     @FXML
     private DatePicker DatePicker;
     @FXML
-    private ListView TodayPlanning;
+    private ListView<Creneau> TodayPlanning;
     @FXML
     private ListView MainToDoList;
     
@@ -59,7 +56,7 @@ public class MainController implements Initializable {
             new Creneau("Evenement 4", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0))
     ));
 
-    private static List<Tache> todoliste = new ArrayList<>(List.of(
+    private List<Tache> todoliste = new ArrayList<>(List.of(
             new Tache("Tache numéro 1"),
             new Tache("Tache numéro 1"),
             new Tache("Tache numéro 1"),
@@ -74,6 +71,10 @@ public class MainController implements Initializable {
             new Tache("Tache numéro 1")
     ));
 
+    public List<Tache> getTodoliste() {
+        return this.todoliste;
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -81,9 +82,8 @@ public class MainController implements Initializable {
         initializeDate();
 
         TodayPlanning.setItems(FXCollections.observableList(planning));
-        //TodayPlanning.setCellFactory(l -> new CreneauListCell());
         MainToDoList.setItems(FXCollections.observableList(todoliste));
-        MainToDoList.setCellFactory(l -> new TacheListCell());
+        MainToDoList.setCellFactory(l -> new TacheListCell(this));
     }
 
     public void initializeTxt(){

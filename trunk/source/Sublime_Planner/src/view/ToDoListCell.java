@@ -10,6 +10,7 @@ public class ToDoListCell extends ListCell<ToDoListe> {
         super.updateItem(toDoListe, b);
         if(!b){
             textProperty().bind(toDoListe.nomToDoProperty());
+
         }
     }
 }

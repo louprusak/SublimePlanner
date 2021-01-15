@@ -21,9 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="63dad3ad-338f-4965-92be-8e38f32058bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/layout/BlocNotes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/res/layout/BlocNotes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/BlocNotesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BlocNotesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Creneau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Creneau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/CreneauListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreneauListCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/NoteListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/NoteListCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/TacheListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TacheListCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ToDoListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ToDoListCell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,10 +62,10 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="view.Main" />
@@ -103,7 +106,21 @@
       <option name="project" value="LOCAL" />
       <updated>1610636053549</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Modifications">
+      <created>1610643525883</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1610643525883</updated>
+    </task>
+    <task id="LOCAL-00005" summary="modif note.css">
+      <created>1610700302688</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1610700302688</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -125,13 +142,15 @@
     <MESSAGE value="modifications" />
     <MESSAGE value="Modifs et création d'un fichier de style pour la page blocNotes" />
     <MESSAGE value="Modification de l'affichage des listes dans les vues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification de l'affichage des listes dans les vues" />
+    <MESSAGE value="Modifications" />
+    <MESSAGE value="modif note.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="modif note.css" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610105494120">
+    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610707813733">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610105494120" />
+    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610707813733" />
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1610641524349">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -140,50 +159,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610105428151" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1610643328029">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1610708550533">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610643328029" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1610643328029">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610708550533" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1610708550533">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610643328029" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1610643328029">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610708550533" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1610708550533">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610643328029" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1610643328029">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610708550533" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1610708550533">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610643328029" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1610642807455">
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610708550533" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1610644139165">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610642807455" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1610642807455">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610644139165" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1610644139165">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610642807455" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1610642807455">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610644139165" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1610644139165">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610642807455" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1610642807455">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610644139165" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1610644139165">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610642807455" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1610638941133">
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610644139165" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1610708179459">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610638941133" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610636058979">
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610708179459" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610700305251">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610636058979" />
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610641556993">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610700305251" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610703384133">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610641556993" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610703384133" />
     <state x="507" y="256" width="906" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1610108278653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -198,6 +217,15 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="Sublime_Planner" type="b2602c69:ProjectViewProjectNode" />
+        <item name="Sublime_Planner" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sublime_Planner$Unnamed.ic" NAME="Unnamed Coverage Results" MODIFIED="1610108327527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
