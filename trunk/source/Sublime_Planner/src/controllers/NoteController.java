@@ -88,20 +88,21 @@ public class NoteController implements Initializable {
     }
 
     public void deleteNote(ActionEvent actionEvent) {
+
     }
 
     public void export(ActionEvent actionEvent) {
         JFileChooser filechoose = new JFileChooser();
-        filechoose.setCurrentDirectory(new File("."));  /* ouvrir la boite de dialogue dans répertoire courant */
-        filechoose.setDialogTitle("Enregistrer sous"); /* nom de la boite de dialogue */
-
-        filechoose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); /* pour afficher seulement les répertoires */
-
+        filechoose.setCurrentDirectory(new File("/"));
+        filechoose.setDialogTitle("Enregistrer sous");
+        filechoose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         String approve = new String("Enregistrer"); /* Le bouton pour valider l’enregistrement portera la mention Enregistrer */
         int resultatEnregistrer = filechoose.showDialog(filechoose, approve);
         if (resultatEnregistrer == JFileChooser.APPROVE_OPTION){ /* Si l’utilisateur clique sur le bouton Enregistrer */
             String chemin = filechoose.getSelectedFile().getAbsolutePath()+"\\"; /* pour avoir le chemin absolu */
-    /* ici il faut appeler une méthode pour écrire dans un fichier
+            File file = new File(chemin+"titre_note.txt");
+
+            /* ici il faut appeler une méthode pour écrire dans un fichier
     dans mon exemple je l'ai nommé enregistrer_txt et son prototype
     c'est void enregistrer_txt(String fichier, String texte)   */
 
