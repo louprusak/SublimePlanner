@@ -41,9 +41,6 @@
             <padding>
                 <Insets bottom="10.0" top="10.0"/>
             </padding>
-            <font>
-                <Font name="Britannic Bold" size="12.0"/>
-            </font>
         </Button>
 
         <Button fx:id="ButtonBlocNotes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
@@ -55,9 +52,6 @@
             <padding>
                 <Insets bottom="10.0" top="10.0"/>
             </padding>
-            <font>
-                <Font name="Britannic Bold" size="12.0"/>
-            </font>
         </Button>
 
         <Button fx:id="ButtonToDoListe" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
@@ -69,9 +63,6 @@
             <padding>
                 <Insets bottom="10.0" top="10.0"/>
             </padding>
-            <font>
-                <Font name="Britannic Bold" size="12.0"/>
-            </font>
         </Button>
 
         <columnConstraints>
@@ -116,7 +107,7 @@
             </Button>
             <Text fill="WHITE" text="Titre Note" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                 <font>
-                    <Font name="Berlin Sans FB" size="40"/>
+                    <Font size="40"/>
                 </font>
                 <GridPane.margin>
                     <Insets left="10.0"/>

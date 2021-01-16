@@ -30,11 +30,7 @@
                 <Image url="/images/logo.png"/>
             </image>
         </ImageView>
-        <Text fill="white" text="HOME" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-            <font>
-                <Font name="Britannic Bold" size="20.0"/>
-            </font>
-        </Text>
+        <Text styleClass="HomeText" fill="white" text="HOME" GridPane.halignment="CENTER" GridPane.rowIndex="1"/>
         <Button fx:id="ButtonEDT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                 style="-fx-background-color: white;" wrapText="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2"
                 GridPane.vgrow="ALWAYS" onAction="#goToEDT">
@@ -59,9 +55,6 @@
             <padding>
                 <Insets bottom="10.0" top="10.0"/>
             </padding>
-            <font>
-                <Font name="Britannic Bold" size="12.0"/>
-            </font>
         </Button>
         <Button fx:id="ButtonToDoListe" onAction="#goToToDoListe" maxHeight="1.7976931348623157E308"
                 maxWidth="1.7976931348623157E308" style="-fx-background-color: white;" wrapText="true"
@@ -72,9 +65,6 @@
             <padding>
                 <Insets bottom="10.0" top="10.0"/>
             </padding>
-            <font>
-                <Font name="Britannic Bold" size="12.0"/>
-            </font>
         </Button>
 
         <columnConstraints>
@@ -94,11 +84,8 @@
 
 
     <GridPane GridPane.columnIndex="1" GridPane.vgrow="ALWAYS">
-        <Text stroke="#070707" text="Belle Journée !" textAlignment="CENTER" GridPane.halignment="CENTER"
+        <Text styleClass="MainTitle" stroke="#070707" text="Belle Journée !" textAlignment="CENTER" GridPane.halignment="CENTER"
               GridPane.hgrow="ALWAYS" GridPane.rowIndex="0">
-            <font>
-                <Font name="Berlin Sans FB" size="30.0"/>
-            </font>
             <GridPane.margin>
                 <Insets/>
             </GridPane.margin>
@@ -108,10 +95,7 @@
                 <Insets bottom="10.0" top="10.0"/>
             </GridPane.margin>
         </Text>
-        <Text fx:id="TodayDate" text="Lundi 20 décembre 2020" GridPane.rowIndex="2" GridPane.halignment="CENTER">
-            <font>
-                <Font name="Berlin Sans FB" size="15.0"/>
-            </font>
+        <Text styleClass="DateText" fx:id="TodayDate" text="Lundi 20 décembre 2020" GridPane.rowIndex="2" GridPane.halignment="CENTER">
             <GridPane.margin>
                 <Insets bottom="10.0"/>
             </GridPane.margin>
@@ -141,10 +125,7 @@
     </GridPane>
 
     <GridPane GridPane.columnIndex="2" GridPane.vgrow="ALWAYS">
-        <Text text="ToDoListe" GridPane.halignment="CENTER">
-            <font>
-                <Font name="Berlin Sans FB" size="18.0"/>
-            </font>
+        <Text styleClass="ListViewText" text="ToDoListe" GridPane.halignment="CENTER">
             <GridPane.margin>
                 <Insets top="10.0"/>
             </GridPane.margin>

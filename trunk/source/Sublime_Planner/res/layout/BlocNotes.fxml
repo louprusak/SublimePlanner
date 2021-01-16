@@ -83,9 +83,6 @@
             <padding>
                 <Insets bottom="10.0" top="10.0" />
             </padding>
-            <font>
-                <Font name="Britannic Bold" size="12.0" />
-            </font>
         </Button>
 
         <Button fx:id="ButtonBlocNotes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#goToBlocNotes" style="-fx-background-color: white;" text="Notes" wrapText="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
@@ -95,9 +92,6 @@
             <padding>
                 <Insets bottom="10.0" top="10.0" />
             </padding>
-            <font>
-                <Font name="Britannic Bold" size="12.0" />
-            </font>
         </Button>
 
         <Button fx:id="ButtonToDoListe" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#goToToDoListe" style="-fx-background-color: white;" text="ToDoList" wrapText="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
@@ -107,9 +101,6 @@
             <padding>
                 <Insets bottom="10.0" top="10.0" />
             </padding>
-            <font>
-                <Font name="Britannic Bold" size="12.0" />
-            </font>
         </Button>
 
         <columnConstraints>

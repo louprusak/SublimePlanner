@@ -42,9 +42,6 @@
             <padding>
                 <Insets bottom="10.0" top="10.0"/>
             </padding>
-            <font>
-                <Font name="Britannic Bold" size="12.0"/>
-            </font>
         </Button>
 
         <Button fx:id="ButtonBlocNotes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
@@ -56,9 +53,6 @@
             <padding>
                 <Insets bottom="10.0" top="10.0"/>
             </padding>
-            <font>
-                <Font name="Britannic Bold" size="12.0"/>
-            </font>
         </Button>
 
         <Button fx:id="ButtonToDoListe" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
@@ -70,9 +64,6 @@
             <padding>
                 <Insets bottom="10.0" top="10.0"/>
             </padding>
-            <font>
-                <Font name="Britannic Bold" size="12.0"/>
-            </font>
         </Button>
 
         <columnConstraints>
@@ -109,14 +100,11 @@
             <Insets left="20"/>
         </padding>
 
-        <Text text="Emploi du Temps" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.halignment="LEFT"
+        <Text styleClass="WindowTitle" text="Emploi du Temps" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.halignment="LEFT"
               GridPane.vgrow="ALWAYS" GridPane.columnSpan="2">
-            <font>
-                <Font name="Berlin Sans FB" size="40"/>
-            </font>
         </Text>
 
-        <Text fx:id="TextDate" text="Lundi 20 janvier 2020" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" GridPane.columnSpan="2"/>
+        <Text styleClass="DateText" fx:id="TextDate" text="Lundi 20 janvier 2020" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" GridPane.columnSpan="2"/>
 
         <DatePicker fx:id="DatePicker" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" GridPane.columnSpan="2"/>
 
@@ -138,11 +126,7 @@
             <RowConstraints/>
         </rowConstraints>
 
-        <Text text="Tous les événements" GridPane.halignment="CENTER" GridPane.columnIndex="0">
-            <font>
-                <Font name="Berlin Sans FB" size="18.0"/>
-            </font>
-        </Text>
+        <Text styleClass="ListViewText" text="Tous les événements" GridPane.halignment="CENTER" GridPane.columnIndex="0"/>
 
         <ListView fx:id="ListeEvenements" style="-fx-background-color: #A84011; -fx-background-radius: 30;" GridPane.hgrow="ALWAYS"
                   GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
