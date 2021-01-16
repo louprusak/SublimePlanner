@@ -1,3 +1,9 @@
+@font-face { font-family: 'Viga'  ; src: url('/font/viga.ttf'); }
+#labelNomPage .text{
+    -fx-font-family: "Viga";
+}
+
+
 .list-cell
 {
     -fx-background-color: transparent;

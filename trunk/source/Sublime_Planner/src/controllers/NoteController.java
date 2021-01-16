@@ -106,7 +106,6 @@ public class NoteController implements Initializable {
             BufferedWriter writer = new BufferedWriter(savefile);
             writer.write("blablablabla");
             writer.close();
-            //JOptionPane.showMessageDialog(null, "File has been saved","File Saved",JOptionPane.INFORMATION_MESSAGE);
         }catch (IOException exception){
             exception.printStackTrace();
         }
