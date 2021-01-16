@@ -8,10 +8,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -90,25 +94,21 @@ public class NoteController implements Initializable {
     public void deleteNote(ActionEvent actionEvent) {
     }
 
-    public void export(ActionEvent actionEvent) {
-        JFileChooser filechoose = new JFileChooser();
-        filechoose.setCurrentDirectory(new File("."));  /* ouvrir la boite de dialogue dans répertoire courant */
-        filechoose.setDialogTitle("Enregistrer sous"); /* nom de la boite de dialogue */
-
-        filechoose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); /* pour afficher seulement les répertoires */
-
-        String approve = new String("Enregistrer"); /* Le bouton pour valider l’enregistrement portera la mention Enregistrer */
-        int resultatEnregistrer = filechoose.showDialog(filechoose, approve);
-        if (resultatEnregistrer == JFileChooser.APPROVE_OPTION){ /* Si l’utilisateur clique sur le bouton Enregistrer */
-            String chemin = filechoose.getSelectedFile().getAbsolutePath()+"\\"; /* pour avoir le chemin absolu */
-    /* ici il faut appeler une méthode pour écrire dans un fichier
-    dans mon exemple je l'ai nommé enregistrer_txt et son prototype
-    c'est void enregistrer_txt(String fichier, String texte)   */
-
-            //enregistrer_txt(chemin+"fichier1.txt", "texte A");
-            //enregistrer_txt(chemin+"fichier2.txt", "texte B");
-            //enregistrer_txt(chemin+"fichier3.txt", "texte C");
-            // et vous pouvez enregistrer autant de fichiers que vous voulez
+    public void export(ActionEvent actionEvent){
+        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Enregistrer la note sous ...");
+        fileChooser.setInitialFileName("Titre_note.txt");
+        fileChooser.setInitialDirectory(new File("/"));
+        File selectedFile = fileChooser.showSaveDialog(window);
+        try{
+            FileWriter savefile = new FileWriter("Titre_Note.txt");
+            BufferedWriter writer = new BufferedWriter(savefile);
+            writer.write("blablabla");
+            writer.close();
+            JOptionPane.showMessageDialog(null, "File has been saved","File Saved",JOptionPane.INFORMATION_MESSAGE);
+        }catch (IOException exception){
+            exception.printStackTrace();
         }
     }
 }

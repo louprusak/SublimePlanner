@@ -20,13 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63dad3ad-338f-4965-92be-8e38f32058bc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/layout/BlocNotes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/res/layout/BlocNotes.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/BlocNotesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BlocNotesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/NoteListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/NoteListCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/TacheListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TacheListCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ToDoListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ToDoListCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/NoteController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,14 +55,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$JFX_PATH$" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="view.Main" />
       <module name="Sublime_Planner" />
@@ -147,33 +143,39 @@
     <option name="LAST_COMMIT_MESSAGE" value="modif note.css" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610707813733">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="331" y="139" width="874" height="590" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610793747503">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="331" y="139" width="874" height="590" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1610793747503" />
     <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610707813733" />
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1610641524349">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610641524349" />
-    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1610105428151">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="533" y="207" key="FileChooserDialogImpl" timestamp="1610793642315">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="533" y="207" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610793642315" />
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610105428151" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1610708550533">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1610798058422">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610798058422" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610708550533" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1610708550533">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1610798058422">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610798058422" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610708550533" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1610708550533">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1610798058422">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610798058422" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610708550533" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1610708550533">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1610798058422">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610798058422" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610708550533" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1610644139165">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -191,9 +193,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610644139165" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1610708179459">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="352" y="0" key="SettingsEditor" timestamp="1610793651943">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="352" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610793651943" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610708179459" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610700305251">
       <screen x="0" y="0" width="1920" height="1040" />
