@@ -5,13 +5,16 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Note {
+import java.io.Serializable;
+
+public class Note implements Serializable {
 
     //*********************Propriétés / Getter / Setter*********************//
 
     /**
      * id de la note
      */
+
     private IntegerProperty idNote = new SimpleIntegerProperty();
     public int getId(){return idNote.get();}
     public IntegerProperty idProperty(){return idNote;}
@@ -20,6 +23,7 @@ public class Note {
     /**
      * nom de la note
      */
+
     private StringProperty nom = new SimpleStringProperty();
     public String getNom(){return nom.get();}
     public StringProperty nomProperty(){return nom;}
@@ -28,11 +32,11 @@ public class Note {
     /**
      * text de la note
      */
+
     private StringProperty textNote = new SimpleStringProperty();
     public String getTextNote(){return textNote.get();}
     public StringProperty textNoteProperty(){return textNote;}
     public void setTextNote(String textNote){this.textNote.set(textNote);}
-
 
     //*********************Constructeur*********************//
 

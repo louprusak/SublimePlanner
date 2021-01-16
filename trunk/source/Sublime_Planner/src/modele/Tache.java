@@ -2,7 +2,9 @@ package modele;
 
 import javafx.beans.property.*;
 
-public class Tache {
+import java.io.Serializable;
+
+public class Tache implements Serializable {
 
     //*********************Propriétés / Getter / Setter*********************//
 

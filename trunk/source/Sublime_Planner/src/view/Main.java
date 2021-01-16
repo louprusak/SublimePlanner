@@ -1,12 +1,14 @@
 package view;
 
 
+import Serialize.Serialize;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import modele.Documents;
+import modele.Note;
 import test.FonctionTest;
 
 public class Main extends Application {
@@ -30,6 +32,13 @@ public class Main extends Application {
         doc = new Documents();
         FonctionTest test = new FonctionTest();
         test.test(doc);
+        /*
+        Note n = new Note("test", "txt test");
+        Serialize.serialize("test.txt", n);
+        Note m;
+        m = (Note) Serialize.deSerialize("test.txt", n);
+        System.out.println(m);
+         */
         launch(args);
     }
 
