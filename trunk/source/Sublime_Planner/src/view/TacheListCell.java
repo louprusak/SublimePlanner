@@ -28,7 +28,7 @@ public class TacheListCell extends ListCell<Tache> {
             cb.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-                    controller.getTodoliste().remove(tache);
+                    controller.getDoc().getMatodoliste(1).remove(tache);
                 }
             });
             setGraphic(cb);

@@ -52,3 +52,7 @@
     -fx-background-color: #61615E;
     -fx-padding: 30px;
 }
+
+.NavButton{
+    -fx-font: 12pt "Viga";
+}

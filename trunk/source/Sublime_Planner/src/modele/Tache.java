@@ -2,6 +2,9 @@ package modele;
 
 import javafx.beans.property.*;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class Tache implements Serializable {
@@ -11,7 +14,7 @@ public class Tache implements Serializable {
     /**
      * id de la Tache
      */
-    private IntegerProperty idTache = new SimpleIntegerProperty();
+    private transient IntegerProperty idTache = new SimpleIntegerProperty();
     public int getId(){return idTache.get();}
     public IntegerProperty idTacheProperty(){return idTache;}
     public void setId(int id){this.idTache.set(id);}
@@ -19,20 +22,10 @@ public class Tache implements Serializable {
     /**
      * description de la tache
      */
-    private StringProperty desc = new SimpleStringProperty();
+    private transient StringProperty desc = new SimpleStringProperty();
     public String getDesc(){return desc.get();}
     public StringProperty descProperty(){return desc;}
     public void setDesc(String desc){this.desc.set(desc);}
-
-    /**
-     * avancement de la tache
-     * true = finie
-     * false = en cour
-     */
-    private BooleanProperty avancement = new SimpleBooleanProperty();
-    public Boolean getAvancement(){return avancement.get();}
-    public BooleanProperty avancementProperty(){return avancement;}
-    public void setAvancement(Boolean avancement){this.avancement.set(avancement);}
 
 
 
@@ -71,6 +64,16 @@ public class Tache implements Serializable {
      */
     @Override
     public String toString(){
-        return getId() + " : " + getDesc() +  " " + getAvancement();
+        return getId() + " : " + getDesc();
+    }
+
+    private void writeObject(ObjectOutputStream s) throws IOException {
+        s.writeInt(getId());
+        s.writeUTF(getDesc());
+    }
+
+    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        setId(s.readInt());
+        setDesc(s.readUTF());
     }
 }

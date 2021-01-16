@@ -2,6 +2,7 @@ package view;
 
 
 import Serialize.Serialize;
+import controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,23 +30,27 @@ public class Main extends Application {
     //*********************Fonctions*********************//
 
     public static void main(String[] args) {
-        doc = new Documents();
-        FonctionTest test = new FonctionTest();
-        test.test(doc);
-        /*
-        Note n = new Note("test", "txt test");
-        Serialize.serialize("test.txt", n);
-        Note m;
-        m = (Note) Serialize.deSerialize("test.txt", n);
-        System.out.println(m);
-         */
+
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        doc = new Documents();
+        FonctionTest test = new FonctionTest();
+        test.test(doc);
+        System.out.println(doc.toString());
+
+        //Serialize.serialize("test.ser",doc);
+
+        //Documents doc2 = (Documents) Serialize.deSerialize("test.ser",doc);
+
+        System.out.println("------------------------------");
+        System.out.println(doc.toString());
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource(MAIN_WINDOW_FXML));
         Parent root;
+        loader.setController(new MainController(doc));
         root = loader.load();
         primaryStage.setTitle(MAIN_WINDOW_TITLE);
         Scene scene = new Scene(root,H_SIZE,V_SIZE);

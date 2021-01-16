@@ -13,7 +13,7 @@
 <?import javafx.scene.image.Image?>
 
 
-<GridPane fx:controller="controllers.EDTController" xmlns="http://javafx.com/javafx/11.0.1"
+<GridPane xmlns="http://javafx.com/javafx/11.0.1"
           xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
         <ColumnConstraints percentWidth="15"/>
@@ -22,8 +22,8 @@
     </columnConstraints>
 
     <GridPane style="-fx-background-color: #1E3E59;" GridPane.columnIndex="0" GridPane.vgrow="ALWAYS">
-        <Button fx:id="HomeButton" textFill="white" style="-fx-background-color: black" GridPane.hgrow="ALWAYS"
-                GridPane.vgrow="ALWAYS" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#goToHome">
+        <Button  fx:id="HomeButton" textFill="white" style="-fx-background-color: black" GridPane.hgrow="ALWAYS"
+                GridPane.vgrow="ALWAYS" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
             <graphic>
                 <ImageView fitHeight="50" fitWidth="70">
                     <image>
@@ -33,9 +33,9 @@
             </graphic>
         </Button>
 
-        <Button fx:id="ButtonEDT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+        <Button styleClass="NavButton" fx:id="ButtonEDT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                 style="-fx-background-color: white;" wrapText="true" GridPane.hgrow="ALWAYS"
-                GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" onAction="#goToEDT">
+                GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
             <GridPane.margin>
                 <Insets top="20.0"/>
             </GridPane.margin>
@@ -44,9 +44,9 @@
             </padding>
         </Button>
 
-        <Button fx:id="ButtonBlocNotes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+        <Button styleClass="NavButton" fx:id="ButtonBlocNotes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                 style="-fx-background-color: white;" wrapText="true" GridPane.hgrow="ALWAYS"
-                GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" onAction="#goToBlocNotes">
+                GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" >
             <GridPane.margin>
                 <Insets top="20.0"/>
             </GridPane.margin>
@@ -55,9 +55,9 @@
             </padding>
         </Button>
 
-        <Button fx:id="ButtonToDoListe" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+        <Button styleClass="NavButton" fx:id="ButtonToDoListe" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                 style="-fx-background-color: white;" wrapText="true" GridPane.hgrow="ALWAYS"
-                GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" onAction="#goToToDoListe">
+                GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" >
             <GridPane.margin>
                 <Insets top="20.0"/>
             </GridPane.margin>
@@ -116,7 +116,7 @@
 
         <TextArea fx:id="Desc" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" GridPane.columnSpan="2"/>
 
-        <Button fx:id="ButtonAjout" GridPane.rowIndex="6" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" onAction="#ajoutEvenement" GridPane.columnSpan="2"/>
+        <Button fx:id="ButtonAjout" GridPane.rowIndex="6" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS" GridPane.columnSpan="2"/>
 
     </GridPane>
 

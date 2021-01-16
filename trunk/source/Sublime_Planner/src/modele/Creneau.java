@@ -2,6 +2,9 @@ package modele;
 
 import javafx.beans.property.*;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -13,7 +16,7 @@ public class Creneau implements Serializable {
     /**
      * id du Creneau
      */
-    private IntegerProperty idCreneau = new SimpleIntegerProperty();
+    private transient IntegerProperty idCreneau = new SimpleIntegerProperty();
     public int getId(){return idCreneau.get();}
     public IntegerProperty idCreneauProperty(){return idCreneau;}
     public void setId(int id){this.idCreneau.set(id);}
@@ -21,42 +24,10 @@ public class Creneau implements Serializable {
     /**
      * evenement du Creneau
      */
-    private StringProperty evenement = new SimpleStringProperty();
+    private transient StringProperty evenement = new SimpleStringProperty();
     public String getEvenement(){return evenement.get();}
     public StringProperty evenementProperty(){return evenement;}
     public void setEvenement(String evenement){this.evenement.set(evenement);}
-
-    /**
-     * hour de début
-     */
-    private IntegerProperty hourDebut = new SimpleIntegerProperty();
-    public int getHourDebut(){return hourDebut.get();}
-    public IntegerProperty hourDebutProperty(){return hourDebut;}
-    public void setHourDebut(int hourDebut){this.hourDebut.set(hourDebut);}
-
-    /**
-     * minute de début
-     */
-    private IntegerProperty minDebut = new SimpleIntegerProperty();
-    public int getMinDebut(){return minDebut.get();}
-    public IntegerProperty minDebutProperty(){return minDebut;}
-    public void setMinDebut(int minDebut){this.minDebut.set(minDebut);}
-
-    /**
-     * hour de début
-     */
-    private IntegerProperty hourFin = new SimpleIntegerProperty();
-    public int getHourFin(){return hourFin.get();}
-    public IntegerProperty hourFinProperty(){return hourFin;}
-    public void setHourFin(int hourFin){this.hourFin.set(hourFin);}
-
-    /**
-     * minute de début
-     */
-    private IntegerProperty minFin = new SimpleIntegerProperty();
-    public int getMinFin(){return minFin.get();}
-    public IntegerProperty minFinProperty(){return minFin;}
-    public void setMinFin(int minFin){this.minFin.set(minFin);}
 
     /**
      * date de début de l'évenement
@@ -65,8 +36,6 @@ public class Creneau implements Serializable {
     private LocalDateTime dateDebut;
     public LocalDateTime getDateDebut(){return dateDebut;};
     public void setDateDebut(LocalDateTime ldt){
-        setHourDebut(ldt.getHour());
-        setMinDebut(ldt.getMinute());
         this.dateDebut = ldt;
     }
 
@@ -76,8 +45,6 @@ public class Creneau implements Serializable {
     private LocalDateTime dateFin;
     public LocalDateTime getDateFin(){return dateFin;};
     public void setDateFin(LocalDateTime ldt){
-        setHourFin(ldt.getHour());
-        setMinFin(ldt.getMinute());
         this.dateFin = ldt;
     }
 
@@ -128,6 +95,20 @@ public class Creneau implements Serializable {
         String message = "- "+getEvenement() + "\n\tDe " + heureDebut+"h"+minuteDebut + " à "+ heureFin+"h"+minuteFin;
         return message;
         //return this.getId() + " : " + this.getEvenement()+ "\n\tDate de début : " + getDateDebut() + "\n\tDate de fin : " + getDateFin();
+    }
+
+    private void writeObject(ObjectOutputStream s) throws IOException {
+        s.writeInt(getId());
+        s.writeUTF(getEvenement());
+        s.writeObject(getDateDebut());
+        s.writeObject(getDateFin());
+    }
+
+    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        setId(s.readInt());
+        setEvenement(s.readUTF());
+        setDateDebut((LocalDateTime) s.readObject());
+        setDateFin((LocalDateTime) s.readObject());
     }
 
 }

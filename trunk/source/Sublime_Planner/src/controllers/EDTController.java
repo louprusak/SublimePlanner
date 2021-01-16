@@ -3,6 +3,7 @@ package controllers;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,16 +15,17 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.converter.DateStringConverter;
 import modele.Creneau;
+import modele.Documents;
 import view.CreneauListCell;
 import view.Main;
 
+import javax.swing.text.html.CSS;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.ResourceBundle;
+import java.time.ZoneId;
+import java.util.*;
 
 public class EDTController implements Initializable {
     @FXML
@@ -52,9 +54,15 @@ public class EDTController implements Initializable {
     private Button ButtonAjout;
     @FXML
     private ListView ListeEvenements;
+    private Documents doc;
+    private Documents getDoc(){return doc;}
 
     private static final String CSS_PATH = "../view/main.css";
     private static final String NOTECSS_PATH = "../view/note.css";
+    private static final String ACCUEIL_PATH = "/layout/Accueil.fxml";
+    private static final String EDT_PATH = "/layout/EDT.fxml";
+    private static final String BLOCNOTES_PATH = "/layout/BlocNotes.fxml";
+    private static final String TODO_PATH = "/layout/ToDoListe.fxml";
 
     private static List<Creneau> planning = new ArrayList<>(List.of(
             new Creneau("Evenement 1", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
@@ -69,10 +77,15 @@ public class EDTController implements Initializable {
             new Creneau("Evenement 4", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0))
     ));
 
+    public EDTController(Documents doc){
+        this.doc = doc;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeTxt();
         initializeDate();
+        initializeButton();
 
         ListeEvenements.setItems(FXCollections.observableList(planning));
 
@@ -94,51 +107,84 @@ public class EDTController implements Initializable {
     }
 
     public void initializeDate(){
-        Locale.setDefault(Locale.FRANCE);
+        Date date = new Date();
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE dd MMM yyyy", Locale.FRANCE);
+        String formatted = dateFormat.format(date);
+
+        TextDate.setText(formatted);
+
+        /*Locale.setDefault(Locale.FRANCE);
         DatePicker.setValue(LocalDate.now());
-        TextDate.textProperty().bind(Bindings.format("%s %d %s %d",DatePicker.valueProperty().getValue().getDayOfWeek(),
-                DatePicker.valueProperty().getValue().getDayOfMonth(),DatePicker.valueProperty().getValue().getMonth(),
-                DatePicker.valueProperty().getValue().getYear()));
-
-        //TextDate.textProperty().bindBidirectional(DatePicker.valueProperty().getValue(),new DateStringConverter());
+        Date date = Date.from(DatePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        TextDate.textProperty().bind(Bindings.createStringBinding(() ->
+                date.format(myObject.myDateProperty().get()), myObject.myDateProperty()));
+        //TextDate.textProperty().bindBidirectional(DatePicker.valueProperty().getValue(),new DateStringConverter());*/
     }
 
-    public void goToToDoListe(ActionEvent actionEvent) throws Exception {
-        Parent root2 = FXMLLoader.load(getClass().getResource("/layout/ToDoListe.fxml"));
+    public void initializeButton(){
+
+        HomeButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    goTo(actionEvent,ACCUEIL_PATH,CSS_PATH,new MainController(doc));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        ButtonEDT.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    goTo(actionEvent,EDT_PATH,CSS_PATH,new EDTController(doc));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        ButtonBlocNotes.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    goTo(actionEvent,BLOCNOTES_PATH,NOTECSS_PATH,new BlocNotesController(doc));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        ButtonToDoListe.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    goTo(actionEvent,TODO_PATH,CSS_PATH,new ToDoListeController(doc));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        ButtonAjout.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    ajoutEvenement(actionEvent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+    }
+
+    public void goTo(ActionEvent actionEvent, String PATH, String CSSPATH, Object CTRLPATH) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(PATH));
+        loader.setController(CTRLPATH);
+        Parent root2 = loader.load();
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
-        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
-        window.setScene(scene2);
-        window.show();
-    }
-
-    public void goToEDT(ActionEvent actionEvent) throws Exception {
-        Parent root2 = FXMLLoader.load(getClass().getResource("/layout/EDT.fxml"));
-        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        Scene actual = window.getScene();
-        Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
-        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
-        window.setScene(scene2);
-        window.show();
-    }
-
-    public void goToBlocNotes(ActionEvent actionEvent) throws Exception {
-        Parent root2 = FXMLLoader.load(getClass().getResource("/layout/BlocNotes.fxml"));
-        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        Scene actual = window.getScene();
-        Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
-        scene2.getStylesheets().add(getClass().getResource(NOTECSS_PATH).toExternalForm());
-        window.setScene(scene2);
-        window.show();
-    }
-
-    public void goToHome(ActionEvent actionEvent) throws Exception {
-        Parent root2 = FXMLLoader.load(getClass().getResource("/layout/Accueil.fxml"));
-        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        Scene actual = window.getScene();
-        Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
-        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
+        scene2.getStylesheets().add(getClass().getResource(CSSPATH).toExternalForm());
         window.setScene(scene2);
         window.show();
     }

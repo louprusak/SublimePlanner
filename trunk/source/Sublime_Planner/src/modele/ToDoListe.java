@@ -3,6 +3,9 @@ package modele;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.LinkedList;
 
@@ -13,7 +16,7 @@ public class ToDoListe extends LinkedList<Tache> implements Serializable {
     /**
      * nom de la liste
      */
-    private StringProperty nomToDo = new SimpleStringProperty();
+    private transient StringProperty nomToDo = new SimpleStringProperty();
     public String getNomToDo(){return nomToDo.get();}
     public StringProperty nomToDoProperty(){return nomToDo;}
     public void setNomToDo(String nom){this.nomToDo.set(nom);}
@@ -74,6 +77,16 @@ public class ToDoListe extends LinkedList<Tache> implements Serializable {
             message = messageBuilder.toString();
         }
         return message;
+    }
+
+    private void writeObject(ObjectOutputStream s) throws IOException {
+        s.defaultWriteObject();
+        s.writeUTF(getNomToDo());
+    }
+
+    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        s.defaultReadObject();
+        setNomToDo(s.readUTF());
     }
 
 }

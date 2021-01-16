@@ -10,43 +10,31 @@ public abstract class Serialize {
 
     public static void serialize (String filename, Object object){
         try {
-            FileOutputStream file = new FileOutputStream(filename);
-            ObjectOutputStream oos;
-            try {
-                oos = new ObjectOutputStream(file);
-                oos.writeObject(object);
-                oos.flush();
-                oos.close();
-            } catch (IOException e){
-                e.printStackTrace();
-            }
-        }catch (FileNotFoundException e){
+            File fichier = new File(filename);
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichier));
+            oos.writeObject(object);
+            oos.flush();
+            oos.close();
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
 
-    public static Object deSerialize (String filename, Object ensembleDocs){
+    public static Documents deSerialize (String filename, Object ensembleDocs){
         try {
-            FileInputStream file = new FileInputStream(filename);
-            ObjectInputStream ois;
-            try {
-                ois = new ObjectInputStream(file);
-                try {
-                    Object object = ois.readObject();
-                    ois.close();
-                    return object;
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
-            } catch (Exception e){
-                e.printStackTrace();
+            File fichier = new File(filename);
+            if(!fichier.exists()){
+                serialize(filename,ensembleDocs);
             }
-        }catch (FileNotFoundException e){
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fichier));
+            Documents doc = new Documents();
+            doc = (Documents) ois.readObject();
+            ois.close();
+            return doc;
+        }catch (Exception e){
             e.printStackTrace();
-            serialize(filename, ensembleDocs);
-            return deSerialize(filename, ensembleDocs);
+            return new Documents();
         }
-        return null;
     }
 
 }

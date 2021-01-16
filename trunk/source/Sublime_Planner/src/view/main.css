@@ -56,4 +56,8 @@
     -fx-font-family: "Viga";
 }
 
+.NavButton{
+    -fx-font: 12pt "Viga";
+}
+
 

@@ -5,6 +5,9 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class Note implements Serializable {
@@ -15,7 +18,7 @@ public class Note implements Serializable {
      * id de la note
      */
 
-    private IntegerProperty idNote = new SimpleIntegerProperty();
+    private transient IntegerProperty idNote = new SimpleIntegerProperty();
     public int getId(){return idNote.get();}
     public IntegerProperty idProperty(){return idNote;}
     public void setId(int id){this.idNote.set(id);}
@@ -24,7 +27,7 @@ public class Note implements Serializable {
      * nom de la note
      */
 
-    private StringProperty nom = new SimpleStringProperty();
+    private transient StringProperty nom = new SimpleStringProperty();
     public String getNom(){return nom.get();}
     public StringProperty nomProperty(){return nom;}
     public void setNom(String nom){this.nom.set(nom);}
@@ -33,7 +36,7 @@ public class Note implements Serializable {
      * text de la note
      */
 
-    private StringProperty textNote = new SimpleStringProperty();
+    private transient StringProperty textNote = new SimpleStringProperty();
     public String getTextNote(){return textNote.get();}
     public StringProperty textNoteProperty(){return textNote;}
     public void setTextNote(String textNote){this.textNote.set(textNote);}
@@ -84,4 +87,15 @@ public class Note implements Serializable {
         return message;
     }
 
+    private void writeObject(ObjectOutputStream s) throws IOException {
+        s.writeLong(getId());
+        s.writeUTF(getNom());
+        s.writeUTF(getTextNote());
+    }
+
+    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        setId(s.readInt());
+        setNom(s.readUTF());
+        setTextNote(s.readUTF());
+    }
 }

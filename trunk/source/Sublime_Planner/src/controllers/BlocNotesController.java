@@ -17,6 +17,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import modele.Documents;
 import modele.Note;
 import view.NoteListCell;
 
@@ -42,8 +43,16 @@ public class BlocNotesController implements Initializable{
     @FXML
     private ListView NotesList;
 
+    private Documents doc;
+    public Documents getDoc(){return doc;}
+
     private static final String CSS_PATH = "../view/main.css";
     private static final String NOTECSS_PATH = "../view/note.css";
+    private static final String ACCUEIL_PATH = "/layout/Accueil.fxml";
+    private static final String EDT_PATH = "/layout/EDT.fxml";
+    private static final String BLOCNOTES_PATH = "/layout/BlocNotes.fxml";
+    private static final String TODO_PATH = "/layout/ToDoListe.fxml";
+    private static final String ADDNOTE_PATH = "/layout/addNote.fxml";
 
     private static List<Note> listNotes = new ArrayList<Note>(List.of(
             new Note("Note 1","jdhrgjihdirg"),
@@ -55,11 +64,16 @@ public class BlocNotesController implements Initializable{
             new Note("Note 7","jdhrgjihdirg")
     ));
 
+    public BlocNotesController(Documents doc){
+        this.doc = doc;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeTxt();
+        initializeButton();
 
-        NotesList.setItems(FXCollections.observableList(listNotes));
+        NotesList.setItems(FXCollections.observableList(doc.getMonblocnotes()));
         NotesList.setCellFactory(l -> new NoteListCell(this));
     }
 
@@ -71,65 +85,81 @@ public class BlocNotesController implements Initializable{
         ButtonAddNote.setText("Ajouter une Note");
     }
 
+    public void initializeButton(){
+        HomeButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    goTo(actionEvent,ACCUEIL_PATH, CSS_PATH, new MainController(doc));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        ButtonEDT.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    goTo(actionEvent,EDT_PATH,CSS_PATH, new EDTController(doc));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        ButtonBlocNotes.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    goTo(actionEvent,BLOCNOTES_PATH, NOTECSS_PATH, new BlocNotesController(doc));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        ButtonToDoListe.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    goTo(actionEvent,TODO_PATH,CSS_PATH,new ToDoListeController(doc));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        ButtonAddNote.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    addNote(actionEvent);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 
-
-    public void goToToDoListe(ActionEvent actionEvent) throws Exception {
-        Parent root2 = FXMLLoader.load(getClass().getResource("/layout/ToDoListe.fxml"));
+    public void goTo(ActionEvent actionEvent, String PATH, String CSSPATH, Object CTRLPATH) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(PATH));
+        loader.setController(CTRLPATH);
+        Parent root2 = loader.load();
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
-        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
+        scene2.getStylesheets().add(getClass().getResource(CSSPATH).toExternalForm());
         window.setScene(scene2);
         window.show();
     }
 
-    public void goToEDT(ActionEvent actionEvent) throws Exception {
-        Parent root2 = FXMLLoader.load(getClass().getResource("/layout/EDT.fxml"));
-        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        Scene actual = window.getScene();
-        Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
-        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
-        window.setScene(scene2);
-        window.show();
-    }
-
-    public void goToBlocNotes(ActionEvent actionEvent) throws Exception {
-        Parent root2 = FXMLLoader.load(getClass().getResource("/layout/BlocNotes.fxml"));
-        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        Scene actual = window.getScene();
-        Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
-        scene2.getStylesheets().add(getClass().getResource(NOTECSS_PATH).toExternalForm());
-        window.setScene(scene2);
-        window.show();
-    }
-
-    public void goToHome(ActionEvent actionEvent) throws Exception {
-        Parent root2 = FXMLLoader.load(getClass().getResource("/layout/Accueil.fxml"));
-        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        Scene actual = window.getScene();
-        Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
-        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
-        window.setScene(scene2);
-        window.show();
-    }
-
-    public void tempGoToNote(ActionEvent actionEvent) throws Exception {
-        Parent root2 = FXMLLoader.load(getClass().getResource("/layout/Note.fxml"));
-        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        Scene actual = window.getScene();
-        Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
-        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
-        window.setScene(scene2);
-        window.show();
-    }
 
     public void addNote(ActionEvent actionEvent) throws Exception{
-        Parent root2 = FXMLLoader.load(getClass().getResource("/layout/addNote.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(ADDNOTE_PATH));
+        loader.setController(new addNoteController(doc));
+        Parent root2 = loader.load();
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         final Stage dialog = new Stage();
         dialog.initModality(Modality.APPLICATION_MODAL);
         dialog.initOwner(window);
-        Scene dialogScene = new Scene(root2, 300, 200);
+        Scene dialogScene = new Scene(root2, 400, 300);
         dialog.setScene(dialogScene);
         dialog.show();
     }
