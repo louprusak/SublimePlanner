@@ -102,11 +102,11 @@ public class NoteController implements Initializable {
         fileChooser.setInitialDirectory(new File("/"));
         File selectedFile = fileChooser.showSaveDialog(window);
         try{
-            FileWriter savefile = new FileWriter("Titre_Note.txt");
+            FileWriter savefile = new FileWriter(selectedFile);
             BufferedWriter writer = new BufferedWriter(savefile);
-            writer.write("blablabla");
+            writer.write("blablablabla");
             writer.close();
-            JOptionPane.showMessageDialog(null, "File has been saved","File Saved",JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "File has been saved","File Saved",JOptionPane.INFORMATION_MESSAGE);
         }catch (IOException exception){
             exception.printStackTrace();
         }
