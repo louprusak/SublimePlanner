@@ -1,8 +1,9 @@
 package modele;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 
-public class Documents {
+public class Documents implements Serializable {
 
     //*********************Attributs*********************//
 

@@ -2,9 +2,10 @@ package modele;
 
 import javafx.beans.property.*;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Creneau {
+public class Creneau implements Serializable {
 
     //*********************Propriétés / Getter / Setter*********************//
 

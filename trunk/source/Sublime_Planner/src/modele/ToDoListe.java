@@ -3,9 +3,10 @@ package modele;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 
-public class ToDoListe extends LinkedList<Tache> {
+public class ToDoListe extends LinkedList<Tache> implements Serializable {
 
     //*********************Propriétés / Getter / Setter*********************//
 
