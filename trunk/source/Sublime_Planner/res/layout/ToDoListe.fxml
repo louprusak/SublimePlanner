@@ -88,7 +88,7 @@
         </rowConstraints>
 
         <GridPane GridPane.rowIndex="0">
-            <Text fill="BLACK" text="ToDoListe" GridPane.columnIndex="0" GridPane.halignment="LEFT">
+            <Text styleClass="WindowTitle" fill="BLACK" text="ToDoListe" GridPane.columnIndex="0" GridPane.halignment="LEFT">
                 <font>
                     <Font size="40"/>
                 </font>
@@ -130,7 +130,7 @@
                 <ColumnConstraints percentWidth="10"/>
                 <ColumnConstraints percentWidth="10"/>
             </columnConstraints>
-            <Text text="Titre Catégorie" GridPane.halignment="CENTER" GridPane.columnIndex="0">
+            <Text styleClass="ListViewText" text="Titre Catégorie" GridPane.halignment="CENTER" GridPane.columnIndex="0">
                 <font>
                     <Font size="18.0"/>
                 </font>

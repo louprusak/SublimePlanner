@@ -105,7 +105,7 @@
                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
                 </padding>
             </Button>
-            <Text fill="WHITE" text="Titre Note" GridPane.columnIndex="1" GridPane.halignment="LEFT">
+            <Text styleClass="WindowTitle" fill="WHITE" text="Titre Note" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                 <font>
                     <Font size="40"/>
                 </font>

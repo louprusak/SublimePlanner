@@ -1,7 +1,39 @@
+@font-face { font-family: 'Viga'  ; src: url('/font/viga.ttf'); }
+
+.text{
+    -fx-font-family: "Viga";
+}
+
+.Text{
+    -fx-font-family: "Viga";
+}
+
+.HomeText{
+   -fx-font: 15pt "Viga";
+}
+
+.MainTitle{
+    -fx-font: 30pt "Viga";
+}
+
+.WindowTitle{
+    -fx-font: 30pt "Viga";
+}
+
+.DateText{
+    -fx-font: 10pt "Viga";
+}
+
+.ListViewText{
+    -fx-font: 13pt "Viga";
+}
+
+
+
 .list-cell
 {
     -fx-background-color: transparent;
-    -fx-font: 15pt "Arial";
+    -fx-font: 15pt "Viga";
     -fx-margin: 10px;
     -fx-padding: 10px;
     -fx-text-fill: white;

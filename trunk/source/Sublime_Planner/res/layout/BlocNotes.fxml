@@ -32,9 +32,9 @@
             </columnConstraints>
 
 
-            <Text fill="WHITE" text="Notes" GridPane.columnIndex="0" GridPane.halignment="LEFT">
+            <Text styleClass="WindowTitle" fill="WHITE" text="Notes" GridPane.columnIndex="0" GridPane.halignment="LEFT">
                 <font>
-                    <Font name="Berlin Sans FB" size="40" />
+                    <Font size="40" />
                 </font>
                 <GridPane.margin>
                     <Insets left="10.0" />
