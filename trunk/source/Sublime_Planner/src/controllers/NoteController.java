@@ -10,6 +10,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -86,8 +88,28 @@ public class NoteController implements Initializable {
     }
 
     public void deleteNote(ActionEvent actionEvent) {
+
     }
 
     public void export(ActionEvent actionEvent) {
+        JFileChooser filechoose = new JFileChooser();
+        filechoose.setCurrentDirectory(new File("/"));
+        filechoose.setDialogTitle("Enregistrer sous");
+        filechoose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        String approve = new String("Enregistrer"); /* Le bouton pour valider l’enregistrement portera la mention Enregistrer */
+        int resultatEnregistrer = filechoose.showDialog(filechoose, approve);
+        if (resultatEnregistrer == JFileChooser.APPROVE_OPTION){ /* Si l’utilisateur clique sur le bouton Enregistrer */
+            String chemin = filechoose.getSelectedFile().getAbsolutePath()+"\\"; /* pour avoir le chemin absolu */
+            File file = new File(chemin+"titre_note.txt");
+
+            /* ici il faut appeler une méthode pour écrire dans un fichier
+    dans mon exemple je l'ai nommé enregistrer_txt et son prototype
+    c'est void enregistrer_txt(String fichier, String texte)   */
+
+            //enregistrer_txt(chemin+"fichier1.txt", "texte A");
+            //enregistrer_txt(chemin+"fichier2.txt", "texte B");
+            //enregistrer_txt(chemin+"fichier3.txt", "texte C");
+            // et vous pouvez enregistrer autant de fichiers que vous voulez
+        }
     }
 }
