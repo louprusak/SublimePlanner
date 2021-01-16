@@ -113,6 +113,15 @@ public class BlocNotesController implements Initializable{
         window.show();
     }
 
+    public void tempGoToNote(ActionEvent actionEvent) throws Exception {
+        Parent root2 = FXMLLoader.load(getClass().getResource("/layout/Note.fxml"));
+        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        Scene actual = window.getScene();
+        Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());
+        scene2.getStylesheets().add(getClass().getResource(CSS_PATH).toExternalForm());
+        window.setScene(scene2);
+        window.show();
+    }
 
     public void addNote(ActionEvent actionEvent) throws Exception{
         Parent root2 = FXMLLoader.load(getClass().getResource("/layout/addNote.fxml"));
