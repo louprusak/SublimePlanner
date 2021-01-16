@@ -11,6 +11,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import modele.Documents;
 import modele.ToDoListe;
@@ -33,7 +35,15 @@ public class ToDoListeController implements Initializable {
     @FXML
     private Button ButtonToDoListe;
     @FXML
-    private ListView ListToDo;
+    private ListView<ToDoListe> ListToDo;
+    @FXML
+    private Button AddToDoButton;
+    @FXML
+    private Button AddTacheButton;
+    @FXML
+    private Button DeleteToDoButton;
+    @FXML
+    private Text CurrentListName;
 
     private Documents doc;
     public Documents getDoc(){return doc;}
@@ -45,6 +55,7 @@ public class ToDoListeController implements Initializable {
     private static final String EDT_PATH = "/layout/EDT.fxml";
     private static final String BLOCNOTES_PATH = "/layout/BlocNotes.fxml";
     private static final String TODO_PATH = "/layout/ToDoListe.fxml";
+    private static final String ADDTODO_PATH = "/layout/addToDoListe.fxml";
 
 
     private static List<ToDoListe> listeToDo = new ArrayList<>(List.of(
@@ -66,7 +77,7 @@ public class ToDoListeController implements Initializable {
         initializeTxt();
         initializeButton();
 
-        ListToDo.setItems(FXCollections.observableList(listeToDo));
+        ListToDo.setItems(FXCollections.observableList(doc.getMeslistetodo()));
         ListToDo.setCellFactory(l -> new ToDoListCell());
     }
 
@@ -75,6 +86,14 @@ public class ToDoListeController implements Initializable {
         ButtonEDT.setText("EDT");
         ButtonBlocNotes.setText("Bloc-Notes");
         ButtonToDoListe.setText("To-Do Liste");
+
+        if(ListToDo.getSelectionModel().getSelectedItem() == null){
+            CurrentListName.setText("");
+        }
+        else{
+            CurrentListName.textProperty().bind(ListToDo.getSelectionModel().getSelectedItem().nomToDoProperty());
+        }
+
     }
 
     public void initializeButton(){
@@ -118,6 +137,29 @@ public class ToDoListeController implements Initializable {
                 }
             }
         });
+        AddToDoButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    addToDoListe(actionEvent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void addToDoListe(ActionEvent actionEvent) throws Exception{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(ADDTODO_PATH));
+        loader.setController(new addToDoListeController(doc));
+        Parent root2 = loader.load();
+        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        final Stage dialog = new Stage();
+        dialog.initModality(Modality.APPLICATION_MODAL);
+        dialog.initOwner(window);
+        Scene dialogScene = new Scene(root2, 400, 300);
+        dialog.setScene(dialogScene);
+        dialog.show();
     }
 
     public void goTo(ActionEvent actionEvent, String PATH, String CSSPATH, Object CTRLPATH) throws Exception {

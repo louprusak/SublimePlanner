@@ -20,30 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63dad3ad-338f-4965-92be-8e38f32058bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/res/layout/addToDoListe.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/addToDoListeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/layout/Accueil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/res/layout/Accueil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/layout/BlocNotes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/res/layout/BlocNotes.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/layout/EDT.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/res/layout/EDT.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/layout/Note.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/res/layout/Note.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/layout/ToDoListe.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/res/layout/ToDoListe.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/layout/addNote.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/res/layout/addNote.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Serialize/Serialize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Serialize/Serialize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/BlocNotesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BlocNotesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/EDTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/EDTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/NoteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/ToDoListeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ToDoListeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/addNoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/addNoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Creneau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Creneau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Documents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Documents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Note.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Tache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Tache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/ToDoListe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/ToDoListe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/NoteListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/NoteListCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/TacheListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TacheListCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/note.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/note.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +34,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -144,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610805305277</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Pleins de trucs qui fonctionnent :p">
+      <created>1610837717614</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1610837717614</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -169,7 +158,8 @@
     <MESSAGE value="Modifications" />
     <MESSAGE value="modif note.css" />
     <MESSAGE value="fin changement police" />
-    <option name="LAST_COMMIT_MESSAGE" value="fin changement police" />
+    <MESSAGE value="Pleins de trucs qui fonctionnent :p" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pleins de trucs qui fonctionnent :p" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610806655449">
@@ -180,30 +170,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="735" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610820055912" />
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1610836445996">
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1610838290956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610836445996" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610838290956" />
     <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1610105428151">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610105428151" />
-    <state width="1877" height="203" key="GridCell.Tab.0.bottom" timestamp="1610837428727">
+    <state width="1877" height="203" key="GridCell.Tab.0.bottom" timestamp="1610839662699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610837428727" />
-    <state width="1877" height="203" key="GridCell.Tab.0.center" timestamp="1610837428727">
+    <state width="1877" height="203" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610839662699" />
+    <state width="1877" height="203" key="GridCell.Tab.0.center" timestamp="1610839662698">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610837428727" />
-    <state width="1877" height="203" key="GridCell.Tab.0.left" timestamp="1610837428727">
+    <state width="1877" height="203" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610839662698" />
+    <state width="1877" height="203" key="GridCell.Tab.0.left" timestamp="1610839662698">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610837428727" />
-    <state width="1877" height="203" key="GridCell.Tab.0.right" timestamp="1610837428727">
+    <state width="1877" height="203" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610839662698" />
+    <state width="1877" height="203" key="GridCell.Tab.0.right" timestamp="1610839662698">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610837428727" />
+    <state width="1877" height="203" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610839662698" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1610644139165">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -224,10 +214,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610708179459" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610805307182">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610837721733">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610805307182" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610837721733" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610703384133">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -236,10 +226,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="507" y="256" width="906" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610108278653" />
-    <state x="-1636" y="8" width="1636" height="1027" key="dock-window-1" timestamp="1610835986910">
+    <state x="-1636" y="8" width="1636" height="1027" key="dock-window-1" timestamp="1610839473557">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1636" y="8" width="1636" height="1027" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610835986910" />
+    <state x="-1636" y="8" width="1636" height="1027" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610839473557" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

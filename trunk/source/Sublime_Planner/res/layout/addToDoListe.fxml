@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<GridPane style="-fx-background-color: #A84011;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+
+    <Text fill="WHITE" stroke="WHITE" text="Ajout d'une nouvelle ToDo Liste" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+        <GridPane.margin>
+            <Insets bottom="10.0" top="10.0" />
+        </GridPane.margin>
+        <font>
+            <Font size="24.0" />
+        </font></Text>
+    <Label text="Titre de la liste:" textFill="WHITE" GridPane.rowIndex="1" />
+    <TextField fx:id="ToDoName" GridPane.rowIndex="2" />
+    <Button fx:id="AddButton" text="Ajouter" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" />
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+
+</GridPane>
