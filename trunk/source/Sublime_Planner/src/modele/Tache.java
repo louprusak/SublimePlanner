@@ -27,8 +27,6 @@ public class Tache implements Serializable {
     public StringProperty descProperty(){return desc;}
     public void setDesc(String desc){this.desc.set(desc);}
 
-
-
     //*********************Constructeur*********************//
 
     /**
@@ -67,11 +65,22 @@ public class Tache implements Serializable {
         return getId() + " : " + getDesc();
     }
 
+    /**
+     * Fonction permettant d'écrire dans un fichier pour la sérialisation
+     * @param s objet à écrire
+     * @throws IOException erreur
+     */
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.writeInt(getId());
         s.writeUTF(getDesc());
     }
 
+    /**
+     * Fonction permettant de lire dans un fichier pour la sérialisation
+     * @param s objet à écrire
+     * @throws IOException erreur
+     * @throws ClassNotFoundException erreur
+     */
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         setId(s.readInt());
         setDesc(s.readUTF());

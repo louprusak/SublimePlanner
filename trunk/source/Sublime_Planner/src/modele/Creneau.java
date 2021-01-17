@@ -12,7 +12,6 @@ public class Creneau implements Serializable {
 
     //*********************Propriétés / Getter / Setter*********************//
 
-
     /**
      * id du Creneau
      */
@@ -97,6 +96,10 @@ public class Creneau implements Serializable {
         //return this.getId() + " : " + this.getEvenement()+ "\n\tDate de début : " + getDateDebut() + "\n\tDate de fin : " + getDateFin();
     }
 
+    /**
+     * deuxième fonction toString
+     * @return le message à afficher
+     */
     public String toString2(){
         int heureDebut = this.getDateDebut().getHour();
         int minuteDebut = this.getDateDebut().getMinute();
@@ -108,6 +111,11 @@ public class Creneau implements Serializable {
         //return this.getId() + " : " + this.getEvenement()+ "\n\tDate de début : " + getDateDebut() + "\n\tDate de fin : " + getDateFin();
     }
 
+    /**
+     * Fonction permettant d'écrire dans un fichier pour la sérialisation
+     * @param s objet à écrire
+     * @throws IOException erreur
+     */
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.writeInt(getId());
         s.writeUTF(getEvenement());
@@ -115,6 +123,12 @@ public class Creneau implements Serializable {
         s.writeObject(getDateFin());
     }
 
+    /**
+     * Fonction permettant de lire dans un fichier pour la sérialisation
+     * @param s objet à écrire
+     * @throws IOException erreur
+     * @throws ClassNotFoundException erreur
+     */
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         setId(s.readInt());
         setEvenement(s.readUTF());

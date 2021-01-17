@@ -1,11 +1,9 @@
 package modele;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.io.Serializable;
-import java.util.LinkedList;
 
 public class Documents implements Serializable {
 
@@ -36,6 +34,11 @@ public class Documents implements Serializable {
         return malistetodo;
     }
 
+    /**
+     * Getter permettant de donner une liste en particulier
+     * @param index index de la liste
+     * @return le contenus de la liste
+     */
     public ToDoListe getMatodoliste(int index){return malistetodo.get(index);}
 
     /**

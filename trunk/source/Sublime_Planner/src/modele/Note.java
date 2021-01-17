@@ -87,12 +87,23 @@ public class Note implements Serializable {
         return message;
     }
 
+    /**
+     * Fonction permettant d'écrire dans un fichier pour la sérialisation
+     * @param s objet à écrire
+     * @throws IOException erreur
+     */
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.writeLong(getId());
         s.writeUTF(getNom());
         s.writeUTF(getTextNote());
     }
 
+    /**
+     * Fonction permettant de lire dans un fichier pour la sérialisation
+     * @param s objet à écrire
+     * @throws IOException erreur
+     * @throws ClassNotFoundException erreur
+     */
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         setId(s.readInt());
         setNom(s.readUTF());

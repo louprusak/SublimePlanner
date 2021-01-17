@@ -4,9 +4,14 @@ import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 
 import java.io.Serializable;
-import java.util.LinkedList;
 
 public class BlocNotes extends SimpleListProperty<Note> implements Serializable {
+
+    //*********************Constructeur*********************//
+
+    /**
+     * Constructeur de la classe BlocNotes
+     */
     public BlocNotes() {
         super(FXCollections.observableArrayList());
     }

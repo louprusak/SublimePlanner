@@ -4,13 +4,19 @@ import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 
 import java.io.Serializable;
-import java.util.LinkedList;
 
 public class Planner extends SimpleListProperty<Creneau> implements Serializable {
+
+    //*********************Constructeur*********************//
+
+    /**
+     * Constructeur de la classe Planner
+     */
     public Planner() {
         super(FXCollections.observableArrayList());
     }
-//*********************Redéfinition*********************//
+
+    //*********************Redéfinition*********************//
 
     /**
      * redéfinition de la méthode add
