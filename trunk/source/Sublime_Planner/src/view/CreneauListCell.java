@@ -15,6 +15,7 @@ public class CreneauListCell extends ListCell<Creneau> {
     @Override
     protected void updateItem(Creneau creneau, boolean empty) {
         super.updateItem(creneau, empty);
+
         if (empty || creneau == null) {
             textProperty().unbind();
             setText(null);
@@ -22,5 +23,6 @@ public class CreneauListCell extends ListCell<Creneau> {
         }else{
             setText(creneau.toString2());
         }
+        setWrapText(true);
     }
 }

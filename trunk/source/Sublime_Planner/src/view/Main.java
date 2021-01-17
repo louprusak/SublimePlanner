@@ -2,6 +2,7 @@ package view;
 
 
 import controllers.MainController;
+import init.InitializeData;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import modele.Documents;
 import test.FonctionTest;
+import Serialize.Serialize;
 
 public class Main extends Application {
 
@@ -43,15 +45,19 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         doc = new Documents();
+        InitializeData init = new InitializeData(doc);
+
+        /*
         FonctionTest test = new FonctionTest();
         test.test(doc);
         System.out.println(doc.toString());
-
-        //Serialize.serialize("test.ser",doc);
-        //Documents doc2 = (Documents) Serialize.deSerialize("test.ser",doc);
-
+        */
+        /*
+        Serialize.serialize("test.ser",doc);
+        Documents doc2 = (Documents) Serialize.deSerialize("test.ser",doc);
         System.out.println("------------------------------");
-        System.out.println(doc.toString());
+        System.out.println(doc2.toString());
+        */
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(MAIN_WINDOW_FXML));
         Parent root;

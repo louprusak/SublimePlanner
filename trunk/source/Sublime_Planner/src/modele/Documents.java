@@ -2,8 +2,15 @@ package modele;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Documents implements Serializable {
 
@@ -98,5 +105,33 @@ public class Documents implements Serializable {
         return message;
     }
 
+    /**
+     * Fonction permettant d'écrire dans un fichier pour la sérialisation
+     * @param s objet à écrire
+     * @throws IOException erreur
+     */
+    private void writeObject(ObjectOutputStream s) throws IOException {
+        s.writeObject(new ArrayList<ToDoListe>(malistetodo));
+        s.writeObject(new ArrayList<Creneau>(monplanner.get()));
+        s.writeObject(new ArrayList<Note>(monblocnotes.get()));
+    }
+
+    /**
+     * Fonction permettant de lire dans un fichier pour la sérialisation
+     * @param s objet à écrire
+     * @throws IOException erreur
+     * @throws ClassNotFoundException erreur
+     */
+    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        List<ToDoListe> listToDoListe = (List<ToDoListe>) s.readObject();
+        malistetodo = FXCollections.observableList(listToDoListe);
+
+        ArrayList<Creneau> planner = (ArrayList<Creneau>) s.readObject();
+        monplanner = new Planner(FXCollections.observableList(planner));
+
+        ArrayList<Note> blocNotes = (ArrayList<Note>) s.readObject();
+        monblocnotes = new BlocNotes(FXCollections.observableList(blocNotes));
+
+    }
 
 }

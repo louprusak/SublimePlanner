@@ -104,6 +104,7 @@ public class ToDoListeController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeTxt();
         initializeButton();
+
         ListToDo.setItems(doc.getMeslistetodo());
         ListToDo.setCellFactory(l -> new ToDoListCell());
         ListToDo.getSelectionModel().selectedItemProperty().addListener((new ChangeListener<ToDoListe>() {

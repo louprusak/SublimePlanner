@@ -2,8 +2,14 @@ package modele;
 
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Planner extends SimpleListProperty<Creneau> implements Serializable {
 
@@ -15,6 +21,8 @@ public class Planner extends SimpleListProperty<Creneau> implements Serializable
     public Planner() {
         super(FXCollections.observableArrayList());
     }
+
+    public Planner(ObservableList<Creneau> liste){super(liste);}
 
     //*********************Redéfinition*********************//
 
@@ -63,5 +71,6 @@ public class Planner extends SimpleListProperty<Creneau> implements Serializable
         }
         return message;
     }
+
 
 }

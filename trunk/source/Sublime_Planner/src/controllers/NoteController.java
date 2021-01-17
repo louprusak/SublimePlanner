@@ -115,6 +115,7 @@ public class NoteController implements Initializable {
         ButtonDelete.setText("Supprimer");
         ButtonExport.setText("Exporter en .txt");
         NoteTitle.textProperty().bind(note.nomProperty());
+        TextNote.setWrapText(true);
         TextNote.textProperty().bindBidirectional(note.textNoteProperty());
     }
 

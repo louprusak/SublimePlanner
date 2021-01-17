@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ToDoListe extends SimpleListProperty<Tache> implements Serializable{
 
@@ -81,25 +83,6 @@ public class ToDoListe extends SimpleListProperty<Tache> implements Serializable
         return message;
     }
 
-    /**
-     * Fonction permettant d'écrire dans un fichier pour la sérialisation
-     * @param s objet à écrire
-     * @throws IOException erreur
-     */
-    private void writeObject(ObjectOutputStream s) throws IOException {
-        s.defaultWriteObject();
-        s.writeUTF(getNomToDo());
-    }
 
-    /**
-     * Fonction permettant de lire dans un fichier pour la sérialisation
-     * @param s objet à écrire
-     * @throws IOException erreur
-     * @throws ClassNotFoundException erreur
-     */
-    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
-        s.defaultReadObject();
-        setNomToDo(s.readUTF());
-    }
 
 }

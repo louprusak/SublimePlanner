@@ -69,6 +69,7 @@ public class TacheListCell2 extends ListCell<Tache> {
     @Override
     protected void updateItem(Tache tache, boolean empty) {
         super.updateItem(tache, empty);
+
         if (empty || tache == null) {
             textProperty().unbind();
             setText(null);
@@ -84,6 +85,7 @@ public class TacheListCell2 extends ListCell<Tache> {
                 }
             });
             setGraphic(cb);
+            setWrapText(true);
         }
     }
 

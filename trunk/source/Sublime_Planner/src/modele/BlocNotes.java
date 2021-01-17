@@ -2,8 +2,15 @@ package modele;
 
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BlocNotes extends SimpleListProperty<Note> implements Serializable {
 
@@ -15,6 +22,8 @@ public class BlocNotes extends SimpleListProperty<Note> implements Serializable 
     public BlocNotes() {
         super(FXCollections.observableArrayList());
     }
+
+    public BlocNotes(ObservableList<Note> liste){super(liste);}
 
     //*********************Redéfinition*********************//
 
@@ -64,6 +73,8 @@ public class BlocNotes extends SimpleListProperty<Note> implements Serializable 
         }
         return message;
     }
+
+
 
 }
 

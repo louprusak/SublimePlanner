@@ -59,6 +59,7 @@ public class TacheListCell extends ListCell<Tache> {
             textProperty().bind(tache.descProperty());
             cb = new CheckBox();
             cb.setMaxWidth(Double.MAX_VALUE);
+
             cb.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
@@ -66,6 +67,7 @@ public class TacheListCell extends ListCell<Tache> {
                 }
             });
             setGraphic(cb);
+            setWrapText(true);
         }
     }
 
