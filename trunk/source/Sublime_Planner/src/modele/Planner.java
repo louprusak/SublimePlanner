@@ -1,11 +1,16 @@
 package modele;
 
+import javafx.beans.property.SimpleListProperty;
+import javafx.collections.FXCollections;
+
 import java.io.Serializable;
 import java.util.LinkedList;
 
-public class Planner extends LinkedList<Creneau> implements Serializable {
-
-    //*********************Redéfinition*********************//
+public class Planner extends SimpleListProperty<Creneau> implements Serializable {
+    public Planner() {
+        super(FXCollections.observableArrayList());
+    }
+//*********************Redéfinition*********************//
 
     /**
      * redéfinition de la méthode add
@@ -16,7 +21,7 @@ public class Planner extends LinkedList<Creneau> implements Serializable {
     public boolean add(Creneau item){
         int id = 1;
         if (this.size() > 0){
-            id = this.getLast().getId()+1;
+            id = this.get(size()-1).getId()+1;
         }
         item.setId(id);
         return super.add(item);

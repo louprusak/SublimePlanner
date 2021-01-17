@@ -35,7 +35,8 @@ public class Tache implements Serializable {
      * Constructeur de la tache
      * @param desc description de la tache
      */
-    public Tache(String desc) {
+    public Tache(int id, String desc) {
+        setId(id);
          setDesc(desc);
     }
 

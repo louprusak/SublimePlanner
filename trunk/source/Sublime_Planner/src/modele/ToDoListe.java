@@ -1,7 +1,9 @@
 package modele;
 
+import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -9,7 +11,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.LinkedList;
 
-public class ToDoListe extends LinkedList<Tache> implements Serializable {
+public class ToDoListe extends SimpleListProperty<Tache> implements Serializable{
 
     //*********************Propriétés / Getter / Setter*********************//
 
@@ -28,6 +30,7 @@ public class ToDoListe extends LinkedList<Tache> implements Serializable {
      * @param nom nom de la liste
      */
     public ToDoListe (String nom){
+        super(FXCollections.observableArrayList());
         setNomToDo(nom);
     }
 
@@ -42,7 +45,7 @@ public class ToDoListe extends LinkedList<Tache> implements Serializable {
     public boolean add(Tache item){
         int id = 1;
         if (this.size() > 0){
-            id = this.getLast().getId()+1;
+            id = this.get(size()-1).getId()+1;
         }
         item.setId(id);
         return super.add(item);

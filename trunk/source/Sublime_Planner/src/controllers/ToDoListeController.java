@@ -84,8 +84,8 @@ public class ToDoListeController implements Initializable {
     public void initializeTxt(){
         HomeButton.setText("Home");
         ButtonEDT.setText("EDT");
-        ButtonBlocNotes.setText("Bloc-Notes");
         ButtonToDoListe.setText("To-Do Liste");
+        ButtonBlocNotes.setText("Bloc-Notes");
 
         if(ListToDo.getSelectionModel().getSelectedItem() == null){
             CurrentListName.setText("");

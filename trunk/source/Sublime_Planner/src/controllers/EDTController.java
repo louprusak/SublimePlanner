@@ -87,7 +87,8 @@ public class EDTController implements Initializable {
         initializeDate();
         initializeButton();
 
-        ListeEvenements.setItems(FXCollections.observableList(planning));
+        ListeEvenements.setItems(doc.getMonplanner());
+        ListeEvenements.setCellFactory(l -> new CreneauListCell());
 
     }
 

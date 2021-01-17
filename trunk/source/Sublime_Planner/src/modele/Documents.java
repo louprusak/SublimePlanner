@@ -1,5 +1,9 @@
 package modele;
 
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.Serializable;
 import java.util.LinkedList;
 
@@ -10,7 +14,7 @@ public class Documents implements Serializable {
     /**
      * Attribut contenant les todolistes
      */
-    private LinkedList<ToDoListe> malistetodo;
+    private ObservableList<ToDoListe> malistetodo;
 
     /**
      * Attibut contenant le planner
@@ -28,7 +32,7 @@ public class Documents implements Serializable {
      * Getter de la todoliste
      * @return le contenus de ma todoliste
      */
-    public LinkedList<ToDoListe> getMeslistetodo() {
+    public ObservableList<ToDoListe> getMeslistetodo() {
         return malistetodo;
     }
 
@@ -56,7 +60,8 @@ public class Documents implements Serializable {
      * Constructeur de ma classe Documents
      */
     public Documents() {
-        malistetodo = new LinkedList<ToDoListe>();
+        malistetodo = FXCollections.observableArrayList();
+
         monplanner = new Planner();
         monblocnotes = new BlocNotes();
     }

@@ -1,8 +1,10 @@
 package controllers;
 
 import javafx.beans.Observable;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -19,17 +21,16 @@ import javafx.stage.Stage;
 import modele.Creneau;
 import modele.Documents;
 import modele.Tache;
+import modele.ToDoListe;
 import view.TacheListCell;
 import view.ToDoListCell;
 
-import javax.print.Doc;
-import javax.swing.text.Document;
-import javax.swing.text.html.CSS;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.function.Predicate;
 
 
 public class MainController implements Initializable {
@@ -48,6 +49,8 @@ public class MainController implements Initializable {
     @FXML
     private ListView MainToDoList;
 
+    private FilteredList<Creneau> currentCreneau;
+
     private Documents doc;
     public Documents getDoc(){return doc;}
 
@@ -62,42 +65,10 @@ public class MainController implements Initializable {
 
 
 
-    private static List<Creneau> planning = new ArrayList<>(List.of(
-            new Creneau("Evenement 1", LocalDateTime.now(),LocalDateTime.now()),
-            new Creneau("Evenement 2", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 4", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0))
-    ));
-
-    private ObservableList<Tache> todoliste = FXCollections.observableArrayList(new ArrayList<Tache>(List.of(
-            new Tache("Tache numéro 1"),
-            new Tache("Tache numéro 1"),
-            new Tache("Tache numéro 1"),
-            new Tache("Tache numéro 1"),
-            new Tache("Tache numéro 1"),
-            new Tache("Tache numéro 1"),
-            new Tache("Tache numéro 1"),
-            new Tache("Tache numéro 1"),
-            new Tache("Tache numéro 1"),
-            new Tache("Tache numéro 1"),
-            new Tache("Tache numéro 1"),
-            new Tache("Tache numéro 1")
-    ))) ;
-
     public MainController(Documents doc) {
         this.doc = doc;
     }
 
-
-    public List<Tache> getTodoliste() {
-        return this.todoliste;
-    }
 
 
     @Override
@@ -105,19 +76,19 @@ public class MainController implements Initializable {
         initializeTxt();
         initializeDate();
         initializeButton();
+        currentCreneau = new FilteredList<>(doc.getMonplanner());
+        Predicate<Creneau> estDansDate = creneau-> creneau.getDateDebut().toLocalDate().equals(DatePicker.getValue());
+        currentCreneau.setPredicate(estDansDate);
+                DatePicker.valueProperty().addListener((date) ->{
+                            Predicate<Creneau> estDansDateRefrehsed = i -> i.getDateDebut().toLocalDate().equals(DatePicker.getValue());
+                    currentCreneau.setPredicate(estDansDateRefrehsed);
+                }
 
-        TodayPlanning.setItems(FXCollections.observableList(planning));
-        //MainToDoList.setItems(FXCollections.observableList(todoliste));
+                );
+        TodayPlanning.setItems(currentCreneau);
 
-        ArrayList<Tache> liste = new ArrayList<>();
 
-        for(int i=0 ; i<doc.getMeslistetodo().size() ; i++){
-            for (int j=0 ; j<doc.getMatodoliste(i).size();j++){
-                liste.add(doc.getMatodoliste(i).get(j));
-            }
-        }
-
-        MainToDoList.setItems(FXCollections.observableList(doc.getMatodoliste(1)));
+        MainToDoList.setItems(doc.getMatodoliste(1));
         MainToDoList.setCellFactory(l -> new TacheListCell(this));
     }
 
