@@ -1,11 +1,17 @@
 package view;
 
-import javafx.beans.binding.Bindings;
 import javafx.scene.control.ListCell;
 import modele.Creneau;
 
 public class CreneauListCell extends ListCell<Creneau> {
 
+    //*********************Fonctions*********************//
+
+    /**
+     * Fonction permettant de remplir la cellules du Creneau
+     * @param creneau le Creneau
+     * @param empty boolean
+     */
     @Override
     protected void updateItem(Creneau creneau, boolean empty) {
         super.updateItem(creneau, empty);
@@ -14,9 +20,7 @@ public class CreneauListCell extends ListCell<Creneau> {
             setText(null);
             setGraphic(null);
         }else{
-
-        setText(creneau.toString2());
-
+            setText(creneau.toString2());
         }
     }
 }

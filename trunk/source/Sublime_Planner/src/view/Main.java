@@ -1,7 +1,6 @@
 package view;
 
 
-import Serialize.Serialize;
 import controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import modele.Documents;
-import modele.Note;
 import test.FonctionTest;
 
 public class Main extends Application {
@@ -29,11 +27,19 @@ public class Main extends Application {
 
     //*********************Fonctions*********************//
 
+    /**
+     * Fonction main
+     * @param args arguments
+     */
     public static void main(String[] args) {
-
         launch(args);
     }
 
+    /**
+     * Fonction lancant l'application et récupérant les données
+     * @param primaryStage stage
+     * @throws Exception erreur
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
         doc = new Documents();
@@ -42,7 +48,6 @@ public class Main extends Application {
         System.out.println(doc.toString());
 
         //Serialize.serialize("test.ser",doc);
-
         //Documents doc2 = (Documents) Serialize.deSerialize("test.ser",doc);
 
         System.out.println("------------------------------");

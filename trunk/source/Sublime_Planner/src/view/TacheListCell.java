@@ -1,43 +1,55 @@
 package view;
 
 import controllers.MainController;
-import controllers.ToDoListeController;
-import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListCell;
-import javafx.stage.Stage;
 import modele.Tache;
-
-import java.io.IOException;
-
 
 public class TacheListCell extends ListCell<Tache> {
 
-    CheckBox cb;
+    //*********************Attributs*********************//
+
+    /**
+     * Controlleur lié a la cellule
+     */
     MainController controller;
 
+    /**
+     * CheckBox de la cellule
+     */
+    CheckBox cb;
+
+    /**
+     * Attribut contenant tous les documents
+     */
     private static final String CSS_PATH = "../view/main.css";
     private static final String NOTECSS_PATH = "../view/note.css";
-
     private static final String EDT_PATH = "/layout/EDT.fxml";
     private static final String MAIN_PATH = "/layout/Accueil.fxml";
     private static final String BLOCNOTES_PATH = "/layout/BlocNotes.fxml";
     private static final String TODO_PATH = "/layout/ToDoListe.fxml";
 
+    //*********************Constructeur*********************//
 
+    /**
+     * Constructeur de la classe tacheListCell
+     * @param mainController controleur
+     */
     public TacheListCell(MainController mainController) {
         this.controller = mainController;
     }
 
+    //*********************Fonctions*********************//
+
+    /**
+     * Fonction permettant de remplir une cellule
+     * @param tache la Tache
+     * @param empty boolean
+     */
     @Override
     protected void updateItem(Tache tache, boolean empty) {
-
         super.updateItem(tache, empty);
         if (empty || tache == null) {
             textProperty().unbind();
@@ -51,13 +63,10 @@ public class TacheListCell extends ListCell<Tache> {
                 @Override
                 public void handle(ActionEvent actionEvent) {
                     controller.getDoc().getMatodoliste(0).remove(tache);
-
                 }
             });
             setGraphic(cb);
         }
-
     }
-
 
 }

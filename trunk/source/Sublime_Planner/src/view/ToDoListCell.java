@@ -5,6 +5,13 @@ import modele.ToDoListe;
 
 public class ToDoListCell extends ListCell<ToDoListe> {
 
+    //*********************Fonctions*********************//
+
+    /**
+     * Fonction permettant de remplir la cellule
+     * @param toDoListe la ToDoListe
+     * @param empty boolean
+     */
     @Override
     protected void updateItem(ToDoListe toDoListe, boolean empty) {
         super.updateItem(toDoListe, empty);
@@ -14,7 +21,7 @@ public class ToDoListCell extends ListCell<ToDoListe> {
             setGraphic(null);
         }else{
             textProperty().bind(toDoListe.nomToDoProperty());
-
         }
     }
+
 }
