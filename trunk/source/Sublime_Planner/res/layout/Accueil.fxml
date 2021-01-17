@@ -115,7 +115,7 @@
     </GridPane>
 
     <GridPane GridPane.columnIndex="2" GridPane.vgrow="ALWAYS">
-        <Text styleClass="ListViewText" text="ToDoListe" GridPane.halignment="CENTER">
+        <Text fx:id="MainToDoText" styleClass="ListViewText" text="ToDoListe" GridPane.halignment="CENTER">
             <GridPane.margin>
                 <Insets top="10.0"/>
             </GridPane.margin>

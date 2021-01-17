@@ -158,7 +158,7 @@
             </Button>
         </GridPane>
 
-        <ListView style="-fx-background-color: #61615E; -fx-background-radius: 30;" GridPane.hgrow="ALWAYS"
+        <ListView style="-fx-background-color: #61615E; -fx-background-radius: 30;" GridPane.hgrow="ALWAYS" fx:id="todoListView"
                   GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
             <GridPane.margin>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="5.0"/>

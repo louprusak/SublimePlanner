@@ -1,5 +1,7 @@
 package controllers;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,10 +17,13 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import modele.Documents;
+import modele.Tache;
 import modele.ToDoListe;
 import view.TacheListCell;
+import view.TacheListCell2;
 import view.ToDoListCell;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +42,8 @@ public class ToDoListeController implements Initializable {
     @FXML
     private ListView<ToDoListe> ListToDo;
     @FXML
+    private ListView<Tache> todoListView;
+    @FXML
     private Button AddToDoButton;
     @FXML
     private Button AddTacheButton;
@@ -45,8 +52,13 @@ public class ToDoListeController implements Initializable {
     @FXML
     private Text CurrentListName;
 
+    private ToDoListe currentTODO;
+
+
     private Documents doc;
     public Documents getDoc(){return doc;}
+
+    private ToDoListeController controller;
 
 
     private static final String CSS_PATH = "../view/main.css";
@@ -56,6 +68,7 @@ public class ToDoListeController implements Initializable {
     private static final String BLOCNOTES_PATH = "/layout/BlocNotes.fxml";
     private static final String TODO_PATH = "/layout/ToDoListe.fxml";
     private static final String ADDTODO_PATH = "/layout/addToDoListe.fxml";
+    private static final String ADDTACHE_PATH = "/layout/addTache.fxml";
 
 
     private static List<ToDoListe> listeToDo = new ArrayList<>(List.of(
@@ -69,6 +82,7 @@ public class ToDoListeController implements Initializable {
 
     public ToDoListeController(Documents doc) {
         this.doc=doc;
+        this.controller = this;
     }
 
 
@@ -77,8 +91,17 @@ public class ToDoListeController implements Initializable {
         initializeTxt();
         initializeButton();
 
-        ListToDo.setItems(FXCollections.observableList(doc.getMeslistetodo()));
+        ListToDo.setItems(doc.getMeslistetodo());
         ListToDo.setCellFactory(l -> new ToDoListCell());
+        ListToDo.getSelectionModel().selectedItemProperty().addListener((new ChangeListener<ToDoListe>() {
+            @Override
+            public void changed(ObservableValue<? extends ToDoListe> observable, ToDoListe oldValue, ToDoListe newValue) {
+                todoListView.setItems(newValue);
+                todoListView.setCellFactory(l -> new TacheListCell2(controller,doc.getMeslistetodo().indexOf(currentTODO)));
+                currentTODO  =  newValue;
+                CurrentListName.setText(newValue.getNomToDo());
+            }
+        }));
     }
 
     public void initializeTxt(){
@@ -86,14 +109,6 @@ public class ToDoListeController implements Initializable {
         ButtonEDT.setText("EDT");
         ButtonToDoListe.setText("To-Do Liste");
         ButtonBlocNotes.setText("Bloc-Notes");
-
-        if(ListToDo.getSelectionModel().getSelectedItem() == null){
-            CurrentListName.setText("");
-        }
-        else{
-            CurrentListName.textProperty().bind(ListToDo.getSelectionModel().getSelectedItem().nomToDoProperty());
-        }
-
     }
 
     public void initializeButton(){
@@ -147,6 +162,47 @@ public class ToDoListeController implements Initializable {
                 }
             }
         });
+        AddTacheButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try{
+                    addTache(actionEvent);
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
+        DeleteToDoButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try{
+                    deleteTodoListe(actionEvent);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void deleteTodoListe(ActionEvent actionEvent) {
+        if(currentTODO != null){
+            doc.getMeslistetodo().remove(currentTODO);
+        }
+    }
+
+    private void addTache(ActionEvent actionEvent) throws Exception {
+        if(currentTODO != null){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(ADDTACHE_PATH));
+            loader.setController(new addTacheController(doc,doc.getMeslistetodo().indexOf(currentTODO)));
+            Parent root2 = loader.load();
+            Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            final Stage dialog = new Stage();
+            dialog.initModality(Modality.APPLICATION_MODAL);
+            dialog.initOwner(window);
+            Scene dialogScene = new Scene(root2, 400, 300);
+            dialog.setScene(dialogScene);
+            dialog.show();
+        }
     }
 
     private void addToDoListe(ActionEvent actionEvent) throws Exception{

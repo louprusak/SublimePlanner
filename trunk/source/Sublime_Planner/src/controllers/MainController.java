@@ -22,6 +22,7 @@ import modele.Creneau;
 import modele.Documents;
 import modele.Tache;
 import modele.ToDoListe;
+import view.Main;
 import view.TacheListCell;
 import view.ToDoListCell;
 
@@ -47,7 +48,9 @@ public class MainController implements Initializable {
     @FXML
     private ListView<Creneau> TodayPlanning;
     @FXML
-    private ListView MainToDoList;
+    private ListView<Tache> MainToDoList;
+    @FXML
+    private Text MainToDoText;
 
     private FilteredList<Creneau> currentCreneau;
 
@@ -87,15 +90,16 @@ public class MainController implements Initializable {
                 );
         TodayPlanning.setItems(currentCreneau);
 
+        MainToDoList.itemsProperty().bindBidirectional(doc.getMatodoliste(0));
+         MainToDoList.setCellFactory(l -> new TacheListCell(this));
 
-        MainToDoList.setItems(doc.getMatodoliste(1));
-        MainToDoList.setCellFactory(l -> new TacheListCell(this));
     }
 
     public void initializeTxt(){
         ButtonEDT.setText("EDT");
         ButtonBlocNotes.setText("Bloc-Notes");
         ButtonToDoListe.setText("To-Do Liste");
+        MainToDoText.textProperty().bind(doc.getMatodoliste(0).nomToDoProperty());
 
     }
 
@@ -147,6 +151,7 @@ public class MainController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(PATH));
         loader.setController(CTRLPATH);
         Parent root2 = loader.load();
+
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());

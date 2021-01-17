@@ -1,9 +1,15 @@
 package modele;
 
+import javafx.beans.property.SimpleListProperty;
+import javafx.collections.FXCollections;
+
 import java.io.Serializable;
 import java.util.LinkedList;
 
-public class BlocNotes extends LinkedList<Note> implements Serializable {
+public class BlocNotes extends SimpleListProperty<Note> implements Serializable {
+    public BlocNotes() {
+        super(FXCollections.observableArrayList());
+    }
 
     //*********************Redéfinition*********************//
 
@@ -16,7 +22,7 @@ public class BlocNotes extends LinkedList<Note> implements Serializable {
     public boolean add(Note item){
         int id = 1;
         if (this.size() > 0){
-            id = this.getLast().getId()+1;
+            id = this.get(this.size()-1).getId()+1;
         }
         item.setId(id);
         return super.add(item);

@@ -33,7 +33,12 @@ public class NoteListCell extends ListCell<Note> {
     @Override
     protected void updateItem(Note item, boolean empty){
         super.updateItem(item, empty);
-        if(!empty){
+        if (empty || item == null) {
+            textProperty().unbind();
+            setText(null);
+            setGraphic(null);
+        }else{
+
             textProperty().bind(item.nomProperty());
             b = new Button("Voir la Note");
 

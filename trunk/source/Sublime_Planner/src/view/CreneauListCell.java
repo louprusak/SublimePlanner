@@ -6,19 +6,16 @@ import modele.Creneau;
 
 public class CreneauListCell extends ListCell<Creneau> {
 
-    //boolean showDate;
-
-    //public CreneauListCell(boolean showDate) {
-        //super();
-       // this.showDate = showDate;
-    //}
-
     @Override
-    protected void updateItem(Creneau creneau, boolean b) {
-        super.updateItem(creneau, b);
-        if(!b){
-            setText(creneau.getDateDebut().toString());
-            //textProperty().bind(creneau);
+    protected void updateItem(Creneau creneau, boolean empty) {
+        super.updateItem(creneau, empty);
+        if (empty || creneau == null) {
+            textProperty().unbind();
+            setText(null);
+            setGraphic(null);
+        }else{
+
+        setText(creneau.toString2());
 
         }
     }

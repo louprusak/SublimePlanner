@@ -97,6 +97,17 @@ public class Creneau implements Serializable {
         //return this.getId() + " : " + this.getEvenement()+ "\n\tDate de début : " + getDateDebut() + "\n\tDate de fin : " + getDateFin();
     }
 
+    public String toString2(){
+        int heureDebut = this.getDateDebut().getHour();
+        int minuteDebut = this.getDateDebut().getMinute();
+        int heureFin = this.getDateFin().getHour();
+        int minuteFin = this.getDateFin().getMinute();
+
+        String message = "- "+getEvenement() +"\n\tLe "+ getDateDebut().getDayOfMonth()+"/"+ getDateDebut().getMonthValue()+"/"+getDateDebut().getYear() + "\n\tDe " + heureDebut+"h"+minuteDebut + " à "+ heureFin+"h"+minuteFin;
+        return message;
+        //return this.getId() + " : " + this.getEvenement()+ "\n\tDate de début : " + getDateDebut() + "\n\tDate de fin : " + getDateFin();
+    }
+
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.writeInt(getId());
         s.writeUTF(getEvenement());

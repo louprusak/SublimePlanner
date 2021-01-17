@@ -13,14 +13,16 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListCell;
 import javafx.stage.Stage;
 import modele.Tache;
+import modele.ToDoListe;
 
 import java.io.IOException;
 
 
-public class TacheListCell extends ListCell<Tache> {
+public class TacheListCell2 extends ListCell<Tache> {
 
-    CheckBox cb;
-    MainController controller;
+    private CheckBox cb;
+    private ToDoListeController controller;
+    private int index;
 
     private static final String CSS_PATH = "../view/main.css";
     private static final String NOTECSS_PATH = "../view/note.css";
@@ -31,8 +33,11 @@ public class TacheListCell extends ListCell<Tache> {
     private static final String TODO_PATH = "/layout/ToDoListe.fxml";
 
 
-    public TacheListCell(MainController mainController) {
+
+    public TacheListCell2(ToDoListeController mainController, int index) {
         this.controller = mainController;
+        this.index = index;
+
     }
 
     @Override
@@ -50,7 +55,7 @@ public class TacheListCell extends ListCell<Tache> {
             cb.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-                    controller.getDoc().getMatodoliste(0).remove(tache);
+                    controller.getDoc().getMatodoliste(index).remove(tache);
 
                 }
             });

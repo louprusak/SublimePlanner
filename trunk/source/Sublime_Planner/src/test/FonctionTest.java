@@ -40,20 +40,26 @@ public class FonctionTest {
      */
     public void testToDoListe(Documents doc){
         System.out.println("***************test to do liste***************");
-        Tache t1 = new Tache(1,"tache 1");
-        Tache t2 = new Tache(2,"tache 2");
+        Tache t1 = new Tache("tache 1");
+        Tache t2 = new Tache("tache 2");
+        Tache t3 = new Tache("tache 3");
+        Tache t4 = new Tache("tache 4");
+        Tache t5 = new Tache("tache 5");
+        Tache t6 = new Tache("tache 6");
         ToDoListe td1 = new ToDoListe("todoliste 1");
         ToDoListe td2 = new ToDoListe("todoliste 2");
         assert doc.getMeslistetodo().add(td1) : "ajout todoliste 1";
         assert doc.getMeslistetodo().add(td2) : "ajout todoliste 2";
         assert doc.getMatodoliste(0).add(t1) : "ajout tache 1";
         assert doc.getMatodoliste(0).add(t2) : "ajout tache 2";
-        assert doc.getMatodoliste(1).add(t1) : "ajout tache 1";
-        assert doc.getMatodoliste(1).add(t2) : "ajout tache 2";
-        assert doc.getMatodoliste(0).remove(t1) : "suppr tache 1 dans todoliste 1";
-        assert doc.getMatodoliste(1).remove(t1) : "suppr tache 1 dans todoliste 2";
-        assert doc.getMatodoliste(0).set(doc.getMatodoliste(0).indexOf(t2),t1) == t2 : "";
-        assert doc.getMatodoliste(1).set(doc.getMatodoliste(1).indexOf(t2),t1) == t2 : "";
+        assert doc.getMatodoliste(0).add(t3) : "ajout tache 2";
+        assert doc.getMatodoliste(0).add(t4) : "ajout tache 2";
+        assert doc.getMatodoliste(1).add(t6) : "ajout tache 5";
+        assert doc.getMatodoliste(1).add(t5) : "ajout tache 6";
+        //assert doc.getMatodoliste(0).remove(t1) : "suppr tache 1 dans todoliste 1";
+        //assert doc.getMatodoliste(1).remove(t1) : "suppr tache 1 dans todoliste 2";
+        //assert doc.getMatodoliste(0).set(doc.getMatodoliste(0).indexOf(t2),t1) == t2 : "";
+        //assert doc.getMatodoliste(1).set(doc.getMatodoliste(1).indexOf(t2),t1) == t2 : "";
         System.out.println(doc.toStringListeToDoListe());
     }
 

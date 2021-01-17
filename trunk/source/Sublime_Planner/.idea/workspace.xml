@@ -20,15 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63dad3ad-338f-4965-92be-8e38f32058bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/res/layout/addTache.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/addTacheController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/TacheListCell2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/EDTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/EDTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/layout/Accueil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/res/layout/Accueil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/layout/ToDoListe.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/res/layout/ToDoListe.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/BlocNotesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BlocNotesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Documents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Documents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Planner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Planner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ToDoListeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ToDoListeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/BlocNotes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/BlocNotes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/Creneau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Creneau.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modele/Tache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Tache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/ToDoListe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/ToDoListe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/FonctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/FonctionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/CreneauListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreneauListCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/NoteListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/NoteListCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/TacheListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TacheListCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ToDoListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ToDoListCell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610839718183</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="modifs">
+      <created>1610881854808</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610881854808</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -170,7 +185,8 @@
     <MESSAGE value="modif note.css" />
     <MESSAGE value="fin changement police" />
     <MESSAGE value="Pleins de trucs qui fonctionnent :p" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pleins de trucs qui fonctionnent :p" />
+    <MESSAGE value="modifs" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610806655449">
@@ -181,30 +197,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="735" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610820055912" />
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1610881436507">
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1610898465450">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610881436507" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610898465450" />
     <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1610105428151">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610105428151" />
-    <state width="1877" height="203" key="GridCell.Tab.0.bottom" timestamp="1610881157748">
+    <state width="1877" height="208" key="GridCell.Tab.0.bottom" timestamp="1610903962704">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610881157748" />
-    <state width="1877" height="203" key="GridCell.Tab.0.center" timestamp="1610881157748">
+    <state width="1877" height="208" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610903962704" />
+    <state width="1877" height="208" key="GridCell.Tab.0.center" timestamp="1610903962704">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610881157748" />
-    <state width="1877" height="203" key="GridCell.Tab.0.left" timestamp="1610881157748">
+    <state width="1877" height="208" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610903962704" />
+    <state width="1877" height="208" key="GridCell.Tab.0.left" timestamp="1610903962704">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610881157748" />
-    <state width="1877" height="203" key="GridCell.Tab.0.right" timestamp="1610881157748">
+    <state width="1877" height="208" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610903962704" />
+    <state width="1877" height="208" key="GridCell.Tab.0.right" timestamp="1610903962704">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610881157748" />
+    <state width="1877" height="208" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610903962704" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1610644139165">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -225,10 +241,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610708179459" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610839721726">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610881860792">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610839721726" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610881860792" />
+    <state x="566" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1610900334336">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="566" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610900334336" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610703384133">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -237,14 +257,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="507" y="256" width="906" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610108278653" />
-    <state x="194" y="134" width="1636" height="1027" key="dock-window-1" timestamp="1610877994943">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1648" y="27" width="1636" height="974" key="dock-window-1" timestamp="1610902786320">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="194" y="134" width="1636" height="1027" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610877994943" />
+    <state x="-1648" y="27" width="1636" height="974" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610902786320" />
     <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1610878778426">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610878778426" />
+    <state x="623" y="225" key="search.everywhere.popup" timestamp="1610896661314">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610896661314" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
