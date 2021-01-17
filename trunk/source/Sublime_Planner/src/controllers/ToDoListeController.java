@@ -2,7 +2,6 @@ package controllers;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -19,18 +18,19 @@ import javafx.stage.Stage;
 import modele.Documents;
 import modele.Tache;
 import modele.ToDoListe;
-import view.TacheListCell;
 import view.TacheListCell2;
 import view.ToDoListCell;
 
-import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class ToDoListeController implements Initializable {
 
+    //*********************Attributs*********************//
+
+    /**
+     * Elements FXML
+     */
     @FXML
     private Button HomeButton;
     @FXML
@@ -54,13 +54,25 @@ public class ToDoListeController implements Initializable {
 
     private ToDoListe currentTODO;
 
-
-    private Documents doc;
-    public Documents getDoc(){return doc;}
-
+    /**
+     * Controlleur de la todoliste
+     */
     private ToDoListeController controller;
 
+    /**
+     * Mes documents
+     */
+    private Documents doc;
 
+    /**
+     * Getter de mes documents
+     * @return mes documents
+     */
+    public Documents getDoc(){return doc;}
+
+    /**
+     * Attribut contenant tous les documents
+     */
     private static final String CSS_PATH = "../view/main.css";
     private static final String NOTECSS_PATH = "../view/note.css";
     private static final String ACCUEIL_PATH = "/layout/Accueil.fxml";
@@ -70,27 +82,28 @@ public class ToDoListeController implements Initializable {
     private static final String ADDTODO_PATH = "/layout/addToDoListe.fxml";
     private static final String ADDTACHE_PATH = "/layout/addTache.fxml";
 
+    //*********************Constructeur*********************//
 
-    private static List<ToDoListe> listeToDo = new ArrayList<>(List.of(
-            new ToDoListe("Catégorie 1"),
-            new ToDoListe("Catégorie 2"),
-            new ToDoListe("Catégorie 3"),
-            new ToDoListe("Catégorie 4"),
-            new ToDoListe("Catégorie 5"),
-            new ToDoListe("Catégorie 6")
-    ));
-
+    /**
+     * Constructeur de la classe ToDoListe
+     * @param doc mes documents
+     */
     public ToDoListeController(Documents doc) {
         this.doc=doc;
         this.controller = this;
     }
 
+    //*********************Fonctions*********************//
 
+    /**
+     * initialisation de la partie graphique
+     * @param url url
+     * @param resourceBundle ressources
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeTxt();
         initializeButton();
-
         ListToDo.setItems(doc.getMeslistetodo());
         ListToDo.setCellFactory(l -> new ToDoListCell());
         ListToDo.getSelectionModel().selectedItemProperty().addListener((new ChangeListener<ToDoListe>() {
@@ -104,6 +117,9 @@ public class ToDoListeController implements Initializable {
         }));
     }
 
+    /**
+     * initialisation des textes
+     */
     public void initializeTxt(){
         HomeButton.setText("Home");
         ButtonEDT.setText("EDT");
@@ -111,6 +127,9 @@ public class ToDoListeController implements Initializable {
         ButtonBlocNotes.setText("Bloc-Notes");
     }
 
+    /**
+     * initialisation des actions des buttons
+     */
     public void initializeButton(){
         HomeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -184,12 +203,21 @@ public class ToDoListeController implements Initializable {
         });
     }
 
+    /**
+     * Fonction permettant de supprimer une ToDoListe
+     * @param actionEvent action
+     */
     private void deleteTodoListe(ActionEvent actionEvent) {
         if(currentTODO != null){
             doc.getMeslistetodo().remove(currentTODO);
         }
     }
 
+    /**
+     * Fonction permettant d'ajouter une tache
+     * @param actionEvent action
+     * @throws Exception erreur
+     */
     private void addTache(ActionEvent actionEvent) throws Exception {
         if(currentTODO != null){
             FXMLLoader loader = new FXMLLoader(getClass().getResource(ADDTACHE_PATH));
@@ -205,6 +233,11 @@ public class ToDoListeController implements Initializable {
         }
     }
 
+    /**
+     * Fonction permettant d'ajouter une ToDoListe
+     * @param actionEvent action
+     * @throws Exception erreur
+     */
     private void addToDoListe(ActionEvent actionEvent) throws Exception{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(ADDTODO_PATH));
         loader.setController(new addToDoListeController(doc));
@@ -218,6 +251,14 @@ public class ToDoListeController implements Initializable {
         dialog.show();
     }
 
+    /**
+     * Fonction permettant d'afficher une page donnée
+     * @param actionEvent action
+     * @param PATH lien vers la page
+     * @param CSSPATH css de la page
+     * @param CTRLPATH controlleur de la page
+     * @throws Exception erreur
+     */
     public void goTo(ActionEvent actionEvent, String PATH, String CSSPATH, Object CTRLPATH) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(PATH));
         loader.setController(CTRLPATH);

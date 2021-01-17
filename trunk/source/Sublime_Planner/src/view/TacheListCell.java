@@ -14,12 +14,12 @@ public class TacheListCell extends ListCell<Tache> {
     /**
      * Controlleur lié a la cellule
      */
-    MainController controller;
+    private MainController controller;
 
     /**
      * CheckBox de la cellule
      */
-    CheckBox cb;
+    private CheckBox cb;
 
     /**
      * Attribut contenant tous les documents

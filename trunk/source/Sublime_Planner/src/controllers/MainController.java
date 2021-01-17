@@ -1,9 +1,5 @@
 package controllers;
 
-import javafx.beans.Observable;
-import javafx.beans.binding.Bindings;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -21,20 +17,22 @@ import javafx.stage.Stage;
 import modele.Creneau;
 import modele.Documents;
 import modele.Tache;
-import modele.ToDoListe;
-import view.Main;
 import view.TacheListCell;
-import view.ToDoListCell;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.*;
 import java.util.function.Predicate;
 
 
 public class MainController implements Initializable {
+
+    //*********************Attributs*********************//
+
+    /**
+     * Elements FXML
+     */
     @FXML
     private Text TodayDate;
     @FXML
@@ -52,28 +50,47 @@ public class MainController implements Initializable {
     @FXML
     private Text MainToDoText;
 
+    /**
+     * Liste de Creneau
+     */
     private FilteredList<Creneau> currentCreneau;
 
+    /**
+     * Mes documents
+     */
     private Documents doc;
+    /**
+     * Getter de mes documents
+     * @return mes documents
+     */
     public Documents getDoc(){return doc;}
 
-    
+    /**
+     * Attribut contenant tous les documents
+     */
     private static final String CSS_PATH = "../view/main.css";
     private static final String NOTECSS_PATH = "../view/note.css";
-
     private static final String EDT_PATH = "/layout/EDT.fxml";
     private static final String BLOCNOTES_PATH = "/layout/BlocNotes.fxml";
     private static final String TODO_PATH = "/layout/ToDoListe.fxml";
 
+    //*********************Constructeur*********************//
 
-
-
+    /**
+     * Constructeur de la classe MainController
+     * @param doc
+     */
     public MainController(Documents doc) {
         this.doc = doc;
     }
 
+    //*********************Fonctions*********************//
 
-
+    /**
+     * initialisation de la partie graphique
+     * @param url url
+     * @param resourceBundle ressource
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeTxt();
@@ -82,19 +99,19 @@ public class MainController implements Initializable {
         currentCreneau = new FilteredList<>(doc.getMonplanner());
         Predicate<Creneau> estDansDate = creneau-> creneau.getDateDebut().toLocalDate().equals(DatePicker.getValue());
         currentCreneau.setPredicate(estDansDate);
-                DatePicker.valueProperty().addListener((date) ->{
-                            Predicate<Creneau> estDansDateRefrehsed = i -> i.getDateDebut().toLocalDate().equals(DatePicker.getValue());
-                    currentCreneau.setPredicate(estDansDateRefrehsed);
-                }
-
-                );
+        DatePicker.valueProperty().addListener((date) ->{
+            Predicate<Creneau> estDansDateRefrehsed = i -> i.getDateDebut().toLocalDate().equals(DatePicker.getValue());
+            currentCreneau.setPredicate(estDansDateRefrehsed);
+        });
         TodayPlanning.setItems(currentCreneau);
-
         MainToDoList.itemsProperty().bindBidirectional(doc.getMatodoliste(0));
-         MainToDoList.setCellFactory(l -> new TacheListCell(this));
+        MainToDoList.setCellFactory(l -> new TacheListCell(this));
 
     }
 
+    /**
+     * initialisation du text
+     */
     public void initializeTxt(){
         ButtonEDT.setText("EDT");
         ButtonBlocNotes.setText("Bloc-Notes");
@@ -103,6 +120,9 @@ public class MainController implements Initializable {
 
     }
 
+    /**
+     * initialisation du actions sur des buttons
+     */
     public void initializeButton(){
         ButtonEDT.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -137,6 +157,9 @@ public class MainController implements Initializable {
 
     }
 
+    /**
+     * initialisation de la date
+     */
     public void initializeDate(){
         Locale.setDefault(Locale.FRANCE);
         LocalDate ld = LocalDate.now();
@@ -147,11 +170,13 @@ public class MainController implements Initializable {
         DatePicker.setValue(ld);
     }
 
+    /**
+     * fonction permettant d'afficher une autre page
+     */
     public void goTo(ActionEvent actionEvent, String PATH, String CSSPATH, Object CTRLPATH) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(PATH));
         loader.setController(CTRLPATH);
         Parent root2 = loader.load();
-
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene actual = window.getScene();
         Scene scene2 = new Scene(root2, actual.getWidth(), actual.getHeight());

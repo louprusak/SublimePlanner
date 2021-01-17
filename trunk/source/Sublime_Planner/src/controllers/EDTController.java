@@ -1,7 +1,5 @@
 package controllers;
 
-import javafx.beans.binding.Bindings;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -13,21 +11,24 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.converter.DateStringConverter;
 import modele.Creneau;
 import modele.Documents;
 import view.CreneauListCell;
 import view.Main;
 
-import javax.swing.text.html.CSS;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.*;
 
 public class EDTController implements Initializable {
+
+    //*********************Attributs*********************//
+
+    /**
+     * Elements FXML
+     */
     @FXML
     private Text TextDate;
     @FXML
@@ -54,9 +55,20 @@ public class EDTController implements Initializable {
     private Button ButtonAjout;
     @FXML
     private ListView ListeEvenements;
+
+    /**
+     * Mes documents
+     */
     private Documents doc;
+    /**
+     * Getter de mes documents
+     * @return mes documents
+     */
     private Documents getDoc(){return doc;}
 
+    /**
+     * Attribut contenant tous les documents
+     */
     private static final String CSS_PATH = "../view/main.css";
     private static final String NOTECSS_PATH = "../view/note.css";
     private static final String ACCUEIL_PATH = "/layout/Accueil.fxml";
@@ -64,34 +76,35 @@ public class EDTController implements Initializable {
     private static final String BLOCNOTES_PATH = "/layout/BlocNotes.fxml";
     private static final String TODO_PATH = "/layout/ToDoListe.fxml";
 
-    private static List<Creneau> planning = new ArrayList<>(List.of(
-            new Creneau("Evenement 1", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 2", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 3", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0)),
-            new Creneau("Evenement 4", LocalDateTime.now(),LocalDateTime.of(2020,01,15,8,0,0))
-    ));
+    //*********************Constructeur*********************//
 
+    /**
+     * Constructeur de la classe EDTController
+     * @param doc mes documents
+     */
     public EDTController(Documents doc){
         this.doc = doc;
     }
 
+    //*********************Fonctions*********************//
+
+    /**
+     * initialisation de la partie graphique
+     * @param url url
+     * @param resourceBundle ressources
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeTxt();
         initializeDate();
         initializeButton();
-
         ListeEvenements.setItems(doc.getMonplanner());
         ListeEvenements.setCellFactory(l -> new CreneauListCell());
-
     }
 
+    /**
+     * initialisation des textes
+     */
     public void initializeTxt(){
         HomeButton.setText("Home");
         ButtonEDT.setText("EDT");
@@ -103,28 +116,22 @@ public class EDTController implements Initializable {
         MinuteFin.setPromptText("Minutes fin");
         Desc.setPromptText("Description");
         ButtonAjout.setText("Ajouter un événement");
-
-
     }
 
+    /**
+     * initialisation de la date
+     */
     public void initializeDate(){
         Date date = new Date();
-
         SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE dd MMM yyyy", Locale.FRANCE);
         String formatted = dateFormat.format(date);
-
         TextDate.setText(formatted);
-
-        /*Locale.setDefault(Locale.FRANCE);
-        DatePicker.setValue(LocalDate.now());
-        Date date = Date.from(DatePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
-        TextDate.textProperty().bind(Bindings.createStringBinding(() ->
-                date.format(myObject.myDateProperty().get()), myObject.myDateProperty()));
-        //TextDate.textProperty().bindBidirectional(DatePicker.valueProperty().getValue(),new DateStringConverter());*/
     }
 
+    /**
+     * initialisation des actions des buttons
+     */
     public void initializeButton(){
-
         HomeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -178,6 +185,14 @@ public class EDTController implements Initializable {
 
     }
 
+    /**
+     * Fonction permettant d'ouvir une autre page donnée
+     * @param actionEvent action
+     * @param PATH lien vers la page
+     * @param CSSPATH css de la page
+     * @param CTRLPATH controlleur de la page
+     * @throws Exception erreur
+     */
     public void goTo(ActionEvent actionEvent, String PATH, String CSSPATH, Object CTRLPATH) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(PATH));
         loader.setController(CTRLPATH);
@@ -190,6 +205,11 @@ public class EDTController implements Initializable {
         window.show();
     }
 
+    /**
+     * Fonction permettent d'ajouter un Creneau
+     * @param actionEvent action
+     * @throws Exception erreur
+     */
     public void ajoutEvenement(ActionEvent actionEvent) throws Exception {
         Creneau c;
         try {

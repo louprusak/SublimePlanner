@@ -1,6 +1,5 @@
 package controllers;
 
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -10,26 +9,21 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import modele.Documents;
-import modele.Note;
 import view.NoteListCell;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-
-
 
 public class BlocNotesController implements Initializable{
 
+    //*********************Attributs*********************//
+
+    /**
+     * Elements FXML
+     */
     @FXML
     private Button HomeButton;
     @FXML
@@ -43,9 +37,19 @@ public class BlocNotesController implements Initializable{
     @FXML
     private ListView NotesList;
 
+    /**
+     * Mes documents
+     */
     private Documents doc;
+    /**
+     * Getter de mes documents
+     * @return mes documents
+     */
     public Documents getDoc(){return doc;}
 
+    /**
+     * Attribut contenant tous les documents
+     */
     private static final String CSS_PATH = "../view/main.css";
     private static final String NOTECSS_PATH = "../view/note.css";
     private static final String ACCUEIL_PATH = "/layout/Accueil.fxml";
@@ -54,29 +58,34 @@ public class BlocNotesController implements Initializable{
     private static final String TODO_PATH = "/layout/ToDoListe.fxml";
     private static final String ADDNOTE_PATH = "/layout/addNote.fxml";
 
-    private static List<Note> listNotes = new ArrayList<Note>(List.of(
-            new Note("Note 1","jdhrgjihdirg"),
-            new Note("Note 2","jdhrgjihdirg"),
-            new Note("Note 3","jdhrgjihdirg"),
-            new Note("Note 4","jdhrgjihdirg"),
-            new Note("Note 5","jdhrgjihdirg"),
-            new Note("Note 6","jdhrgjihdirg"),
-            new Note("Note 7","jdhrgjihdirg")
-    ));
+    //*********************Constructeur*********************//
 
+    /**
+     * Constructeur de la classe BlocNotesController
+     * @param doc mes documents
+     */
     public BlocNotesController(Documents doc){
         this.doc = doc;
     }
 
+    //*********************Fonctions*********************//
+
+    /**
+     * initialisation de la partie graphique
+     * @param url url
+     * @param resourceBundle ressource
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeTxt();
         initializeButton();
-
         NotesList.setItems(doc.getMonblocnotes());
         NotesList.setCellFactory(l -> new NoteListCell(this));
     }
 
+    /**
+     * initialisation des textes
+     */
     public void initializeTxt(){
         HomeButton.setText("Home");
         ButtonEDT.setText("EDT");
@@ -85,6 +94,9 @@ public class BlocNotesController implements Initializable{
         ButtonAddNote.setText("Ajouter une Note");
     }
 
+    /**
+     * initialisation de l'action sur les bouttons
+     */
     public void initializeButton(){
         HomeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -138,6 +150,14 @@ public class BlocNotesController implements Initializable{
         });
     }
 
+    /**
+     * Fonction permettant d'ouvrir une page donnée
+     * @param actionEvent action
+     * @param PATH lien vers la page
+     * @param CSSPATH css de la page
+     * @param CTRLPATH controlleur de la page
+     * @throws Exception erreur
+     */
     public void goTo(ActionEvent actionEvent, String PATH, String CSSPATH, Object CTRLPATH) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(PATH));
         loader.setController(CTRLPATH);
@@ -150,7 +170,11 @@ public class BlocNotesController implements Initializable{
         window.show();
     }
 
-
+    /**
+     * Fonction permettant d'ajouter une note
+     * @param actionEvent action
+     * @throws Exception erreur
+     */
     public void addNote(ActionEvent actionEvent) throws Exception{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(ADDNOTE_PATH));
         loader.setController(new addNoteController(doc));
@@ -163,4 +187,5 @@ public class BlocNotesController implements Initializable{
         dialog.setScene(dialogScene);
         dialog.show();
     }
+
 }

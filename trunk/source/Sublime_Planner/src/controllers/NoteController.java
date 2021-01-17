@@ -16,7 +16,6 @@ import javafx.stage.Stage;
 import modele.Documents;
 import modele.Note;
 
-import javax.swing.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -26,6 +25,11 @@ import java.util.ResourceBundle;
 
 public class NoteController implements Initializable {
 
+    //*********************Attributs*********************//
+
+    /**
+     * Elements FXML
+     */
     @FXML
     private Button HomeButton;
     @FXML
@@ -45,12 +49,29 @@ public class NoteController implements Initializable {
     @FXML
     private TextArea TextNote;
 
+    /**
+     * Mes documents
+     */
     private Documents doc;
+    /**
+     * Getter de mes documents
+     * @return mes documents
+     */
     public Documents getDoc(){return doc;}
 
+    /**
+     * ma Note
+     */
     private Note note;
+    /**
+     * Getter de ma note
+     * @return ma note
+     */
     public Note getNote(){return note;}
 
+    /**
+     * Attribut contenant tous les documents
+     */
     private static final String CSS_PATH = "../view/main.css";
     private static final String NOTECSS_PATH = "../view/note.css";
     private static final String ACCUEIL_PATH = "/layout/Accueil.fxml";
@@ -58,17 +79,34 @@ public class NoteController implements Initializable {
     private static final String BLOCNOTES_PATH = "/layout/BlocNotes.fxml";
     private static final String TODO_PATH = "/layout/ToDoListe.fxml";
 
+    //*********************Constructeur*********************//
+
+    /**
+     * Constructeur de la classe NoteController
+     * @param doc mes documents
+     * @param item ma note
+     */
     public NoteController(Documents doc, Note item){
         this.doc =doc;
         this.note = item;
     }
 
+    //*********************Fonctions*********************//
+
+    /**
+     * initialisation de la partie graphique
+     * @param url url
+     * @param resourceBundle ressources
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeTxt();
         initializeButton();
     }
 
+    /**
+     * initialisation des textes
+     */
     public void initializeTxt(){
         HomeButton.setText("Home");
         ButtonEDT.setText("EDT");
@@ -76,12 +114,13 @@ public class NoteController implements Initializable {
         ButtonToDoListe.setText("To-Do Liste");
         ButtonDelete.setText("Supprimer");
         ButtonExport.setText("Exporter en .txt");
-
-
         NoteTitle.textProperty().bind(note.nomProperty());
         TextNote.textProperty().bindBidirectional(note.textNoteProperty());
     }
 
+    /**
+     * initialisation des actions des buttons
+     */
     public void initializeButton(){
         HomeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -155,6 +194,14 @@ public class NoteController implements Initializable {
         });
     }
 
+    /**
+     * Fonction permettant d'ouvrir une page donnée
+     * @param actionEvent action
+     * @param PATH liens vers la page
+     * @param CSSPATH css de la page
+     * @param CTRLPATH controlleur de la page
+     * @throws Exception erreur
+     */
     public void goTo(ActionEvent actionEvent, String PATH, String CSSPATH, Object CTRLPATH) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(PATH));
         loader.setController(CTRLPATH);
@@ -167,16 +214,23 @@ public class NoteController implements Initializable {
         window.show();
     }
 
-
+    /**
+     * Fonction permettant de supprimer une Note
+     * @param actionEvent action
+     * @throws Exception erreur
+     */
     public void deleteNote(ActionEvent actionEvent) throws Exception {
         doc.getMonblocnotes().remove(note);
         goTo(actionEvent,BLOCNOTES_PATH,NOTECSS_PATH,new BlocNotesController(doc));
     }
 
+    /**
+     * Fonction permettant d'exporter une note
+     * @param actionEvent action
+     */
     public void export(ActionEvent actionEvent){
         String NoteTitle = note.getNom();
         String NoteText = note.getTextNote();
-
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Enregistrer la note sous ...");
@@ -192,4 +246,5 @@ public class NoteController implements Initializable {
             exception.printStackTrace();
         }
     }
+
 }
