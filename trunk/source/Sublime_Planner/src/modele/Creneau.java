@@ -32,7 +32,7 @@ public class Creneau implements Serializable {
      * date de début de l'évenement
      */
 
-    private LocalDateTime dateDebut;
+    private transient LocalDateTime dateDebut;
     public LocalDateTime getDateDebut(){return dateDebut;};
     public void setDateDebut(LocalDateTime ldt){
         this.dateDebut = ldt;
@@ -41,7 +41,7 @@ public class Creneau implements Serializable {
     /**
      * date de fin de l'évenement
      */
-    private LocalDateTime dateFin;
+    private transient LocalDateTime dateFin;
     public LocalDateTime getDateFin(){return dateFin;};
     public void setDateFin(LocalDateTime ldt){
         this.dateFin = ldt;
@@ -130,6 +130,8 @@ public class Creneau implements Serializable {
      * @throws ClassNotFoundException erreur
      */
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        this.idCreneau = new SimpleIntegerProperty();
+        this.evenement = new SimpleStringProperty();
         setId(s.readInt());
         setEvenement(s.readUTF());
         setDateDebut((LocalDateTime) s.readObject());

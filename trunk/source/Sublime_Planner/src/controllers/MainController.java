@@ -112,11 +112,16 @@ public class MainController implements Initializable {
     /**
      * initialisation du text
      */
-    public void initializeTxt(){
+    public void initializeTxt() {
         ButtonEDT.setText("EDT");
         ButtonBlocNotes.setText("Bloc-Notes");
         ButtonToDoListe.setText("To-Do Liste");
-        MainToDoText.textProperty().bind(doc.getMatodoliste(0).nomToDoProperty());
+        if(doc.getMeslistetodo().size() == 0){
+            System.out.println("Liste de ToDoListes vide !");
+        }
+        else {
+            MainToDoText.textProperty().bind(doc.getMatodoliste(0).nomToDoProperty());
+        }
 
     }
 

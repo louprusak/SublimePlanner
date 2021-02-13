@@ -45,13 +45,18 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         doc = new Documents();
+
+        /** Initialisation des données de test **/
         InitializeData init = new InitializeData(doc);
 
+        /** Execution des fonctions de tests **/
         /*
         FonctionTest test = new FonctionTest();
         test.test(doc);
         System.out.println(doc.toString());
         */
+
+        /** Sérialisation **/
         /*
         Serialize.serialize("test.ser",doc);
         Documents doc2 = (Documents) Serialize.deSerialize("test.ser",doc);

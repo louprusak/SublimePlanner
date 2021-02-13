@@ -51,6 +51,7 @@ public class FonctionTest {
         assert doc.getMeslistetodo().add(td1) : "ajout todoliste 1";
         assert doc.getMeslistetodo().add(td2) : "ajout todoliste 2";
         assert doc.getMatodoliste(0).add(t1) : "ajout tache 1";
+        assert doc.getMatodoliste(0).add(t2) : "ajout tache 1";
         assert doc.getMatodoliste(0).add(t2) : "ajout tache 2";
         assert doc.getMatodoliste(0).add(t3) : "ajout tache 2";
         assert doc.getMatodoliste(0).add(t4) : "ajout tache 2";
@@ -77,9 +78,13 @@ public class FonctionTest {
         LocalDateTime df2 = LocalDateTime.of(2021, 01, 18, 16, 45);
 
         Creneau c1 = new Creneau("creneau 1 ", dd1, df1);
-        Creneau c2 = new Creneau("creneau 2 ", dd2, df2);
+        Creneau c3 = new Creneau("RDV Coiffeur ", dd2, df2);
+        Creneau c4 = new Creneau("creneau 3 ", dd2, df2);
+        Creneau c2 = new Creneau("Rendez vous avec papé ", dd2, df2);
         assert doc.getMonplanner().add(c1) : "ajout creneau 1";
         assert doc.getMonplanner().add(c2) : "ajout creneau 2";
+        assert doc.getMonplanner().add(c3) : "ajout creneau 2";
+        assert doc.getMonplanner().add(c4) : "ajout creneau 2";
         //assert doc.getMonplanner().remove(c1) : "suppr creneau 1";
         //assert doc.getMonplanner().set(doc.getMonplanner().indexOf(c2), c1) == c2 : "modif creneau n2 en n1";
         System.out.println(doc.getMonplanner().toString());

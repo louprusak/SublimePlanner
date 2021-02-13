@@ -83,6 +83,23 @@ public class ToDoListe extends SimpleListProperty<Tache> implements Serializable
         return message;
     }
 
+    private void writeObject(ObjectOutputStream s) throws IOException {
+        s.writeUTF(getNomToDo());
+        s.writeObject(this);
+    }
 
+
+
+    /**
+     *
+     * @param s
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        this.nomToDo = new SimpleStringProperty();
+        setNomToDo(s.readUTF());
+
+    }
 
 }

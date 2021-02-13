@@ -19,17 +19,17 @@ public class Documents implements Serializable {
     /**
      * Attribut contenant les todolistes
      */
-    private ObservableList<ToDoListe> malistetodo;
+    private transient ObservableList<ToDoListe> malistetodo;
 
     /**
      * Attibut contenant le planner
      */
-    private Planner monplanner;
+    private transient Planner monplanner;
 
     /**
      * Attribut contenant le bloc note
      */
-    private BlocNotes monblocnotes;
+    private transient BlocNotes monblocnotes;
 
     //*********************Getter Setter*********************//
 
@@ -111,6 +111,7 @@ public class Documents implements Serializable {
      * @throws IOException erreur
      */
     private void writeObject(ObjectOutputStream s) throws IOException {
+        System.out.println("Je suis passé dans le writeobject de Documents");
         s.writeObject(new ArrayList<ToDoListe>(malistetodo));
         s.writeObject(new ArrayList<Creneau>(monplanner.get()));
         s.writeObject(new ArrayList<Note>(monblocnotes.get()));
@@ -123,6 +124,7 @@ public class Documents implements Serializable {
      * @throws ClassNotFoundException erreur
      */
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        System.out.println("Je suis passé dans le read Object de Documents");
         List<ToDoListe> listToDoListe = (List<ToDoListe>) s.readObject();
         malistetodo = FXCollections.observableList(listToDoListe);
 

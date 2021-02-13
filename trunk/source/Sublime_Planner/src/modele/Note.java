@@ -105,6 +105,9 @@ public class Note implements Serializable {
      * @throws ClassNotFoundException erreur
      */
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        this.idNote = new SimpleIntegerProperty();
+        this.nom = new SimpleStringProperty();
+        this.textNote = new SimpleStringProperty();
         setId(s.readInt());
         setNom(s.readUTF());
         setTextNote(s.readUTF());
