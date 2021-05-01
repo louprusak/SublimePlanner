@@ -33,3 +33,9 @@ grouped by personalized categories and finally to manage your to-do list by crea
 ### Doc
 
 You will find all the documentation of this project in the **trunk/doc** folder.
+
+
+### Visuals
+
+
+![](trunk/doc/edt.png)
