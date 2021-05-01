@@ -37,5 +37,17 @@ You will find all the documentation of this project in the **trunk/doc** folder.
 
 ### Visuals
 
+**Home page :**
+![](trunk/doc/home.png)
 
+**EDT page :**
 ![](trunk/doc/edt.png)
+
+**Notes page :**
+![](trunk/doc/notes1.png)
+
+**Note detail page :**
+![](trunk/doc/notes2.png)
+
+**ToDo Lists page :**
+![](trunk/doc/todolists.png)
