@@ -53,10 +53,13 @@ You will find all the documentation of this project in the **trunk/doc** folder.
 ![](trunk/doc/todolists.png)
 
 **Add note pop up :**
+
 ![](trunk/doc/addnote.png)
 
 **Add task pop up :**
+
 ![](trunk/doc/addtask.png)
 
 **Add todolist pop up :**
+
 ![](trunk/doc/addtodolist.png)
