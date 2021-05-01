@@ -28,3 +28,8 @@ for this day such as events and tasks to be carried out.
 
 It will also allow you to manage your schedule by creating events associated with time slots and days, but also to create textual notes 
 grouped by personalized categories and finally to manage your to-do list by creating personalized tasks grouped in specific categories.
+
+
+### Doc
+
+You will find all the documentation of this project in the **trunk/doc** folder.
