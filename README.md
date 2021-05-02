@@ -1,6 +1,8 @@
 # SublimePlanner
 SublimePlanner is a powerfull app that allows you to plan your days, with timetable, todo lists and notes. 
 
+(no data save)
+
 ### Description (French)
 
 Organiser ses journées et surtout son travail est d'une importance capitale pour réussir et pour avoir une vie privée à côté !:joy: 
